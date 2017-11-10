@@ -1,0 +1,148 @@
+<!--rescuecar.wxml-->
+<import src="../exit.wxml"/>
+<template is="exit" />
+<view wx:if='{{code}}'>
+ <view class="header">
+
+ <view class="logo"></view>
+  <view class="rescue-style">
+      <view class="defstyle">
+        <view class="time" wx:if="{{timeStep.stepStatus>0}}">{{timeStep.caseTime}}</view>
+        <view class="time gang" wx:else></view>
+        <view class="circle-blue" wx:if="{{timeStep.stepStatus==1}}"></view>
+        <view class="circle" wx:else></view>
+        <view class="style-name active" wx:if="{{timeStep.stepStatus==1}}">开案</view>
+        <view class="style-name" wx:else>开案</view>
+      </view>
+       <view class="defstyle">
+        <view class="time" wx:if="{{timeStep.stepStatus>1}}">{{timeStep.sendTime}}</view>
+        <view class="time gang" wx:else></view>
+        <view class="circle-blue" wx:if="{{timeStep.stepStatus==2}}"></view>
+        <view class="circle" wx:else></view>
+        <view class="style-name active" wx:if="{{timeStep.stepStatus==2}}">派案</view>
+        <view class="style-name" wx:else>派案</view>
+      </view>
+       <view class="defstyle">
+        <view class="time" wx:if="{{timeStep.stepStatus>2}}">{{timeStep.arrivalTime}}</view>
+        <view class="time gang" wx:else></view>
+        <view class="circle-blue" wx:if="{{timeStep.stepStatus==3}}"></view>
+        <view class="circle" wx:else></view>
+        <view class="style-name active" wx:if="{{timeStep.stepStatus==3}}">到达</view>
+        <view class="style-name" wx:else>到达</view>
+      </view>
+       <view class="defstyle">
+        <view class="time" wx:if="{{timeStep.stepStatus>3}}">{{timeStep.rescueTime}}</view>
+        <view class="time gang" wx:else></view>
+        <view class="circle-blue" wx:if="{{timeStep.stepStatus==4}}"></view>
+        <view class="circle" wx:else></view>
+        <view class="style-name active" wx:if="{{timeStep.stepStatus==4}}">救援中</view>
+        <view class="style-name" wx:else>救援中</view>
+      </view>
+       <view class="defstyle">
+       <view class="time" wx:if="{{timeStep.stepStatus>4}}">{{timeStep.rescueTime}}</view>
+        <view class="time gang" wx:else></view>
+        <view class="circle-blue" wx:if="{{timeStep.stepStatus==5}}"></view>
+        <view class="circle" wx:else></view>
+        <view class="style-name active" wx:if="{{timeStep.stepStatus==5}}">完成</view>
+        <view class="style-name" wx:else>完成</view>
+      </view>
+  </view>
+  <view class="title">
+      <view class="title-name"></view>
+  </view>
+</view>
+<view class="rescuebox"> 
+    <view class="box-content">
+      <view class="rescuecar-style"><text class="name">救援类型：</text>{{rescueStyle[apply.reliefType]}}</view>
+      <view class="rescuecar-style"><text class="name">救援位置：</text>{{apply.address}}</view>
+    </view>
+    <view class="clearbox"></view>
+</view>
+<view>
+  <view class="my-style"><text class="bold">救援状态：</text>{{rescueStaus[status]}}</view>
+  <view class="tel-box" bindtap ='toOwner'>
+      <view class="tell">
+          <view class="mytell"></view>
+          <view class="touch-our">联系车主</view>
+      </view>
+  </view>
+<view class="tishi">
+    <view class="tishi-title">提示：</view>
+    <view class="tishi-box">请保持手机打开本页面，以免信号丢失造成车主投诉！</view>
+  </view>
+</view>
+<view style="width:100%;height:100rpx"></view>
+<view class='flex-footer'>
+  <view class="flex-item" wx:if="{{btnflag==2}}" bindtap='tapUpdate' data-type='1'>到达</view>
+  <view class="flex-item active" wx:elif="{{btnflag>=3}}">到达</view>
+  <view class="flex-item" wx:if="{{btnflag==2||btnflag==3}}" bindtap='tapUpdate' data-type='2'>救援中</view>
+  <view class="flex-item active" wx:elif="{{btnflag>=4}}">救援中</view>
+  <view class="flex-item" wx:if="{{btnflag==2||btnflag==4||btnflag==3}}" bindtap='tapUpdate' data-type='3'>完成</view>
+  <view class="flex-item active" wx:elif="{{btnflag>=5}}">完成</view>
+</view>
+</view>
+<view wx:else>
+ <view class="header">
+ <view class="logo"></view>
+  <view class="rescue-style">
+      <view class="defstyle">
+        <view class="time gang"></view>
+        <view class="circle"></view>
+        <view class="style-name">开案</view>
+      </view>
+       <view class="defstyle">
+        <view class="time gang"></view>
+        <view class="circle"></view>
+        <view class="style-name">派案</view>
+      </view>
+       <view class="defstyle">
+        <view class="time gang"></view>
+        <view class="circle"></view>
+        <view class="style-name">到达</view>
+      </view>
+       <view class="defstyle">
+        <view class="time gang"></view>
+        <view class="circle"></view>
+        <view class="style-name">救援中</view>
+      </view>
+       <view class="defstyle">
+        <view class="time gang"></view>
+        <view class="circle"></view>
+        <view class="style-name">完成</view>
+      </view>
+  </view>
+  <view class="title">
+      <view class="title-name"></view>
+  </view>
+</view>
+<view class="rescuebox">
+    <view class="box-content">
+      <view class="rescuecar-style"><text class="name">救援类型：</text>暂无</view>
+      <view class="rescuecar-style"><text class="name">救援位置：</text>暂无</view>
+    </view>
+    <view class="clearbox"></view>
+</view>
+<view>
+  <view class="my-style"><text class="bold">救援状态：</text>暂无</view>
+  <view class="tel-box">
+      <view class="tell">
+          <view class="disbtel"></view>
+          <view class="touch-our" style="color:#6A7286">联系车主</view>
+      </view>
+  </view>
+<view class="tishi">
+    <view class="tishi-title">提示：</view>
+    <view class="tishi-box">请保持手机打开本页面，以免信号丢失造成车主投诉！</view>
+  </view>
+</view>
+<view style="width:100%;height:100rpx"></view>
+<view class='flex-footer'>
+  <view class="flex-item">到达</view>
+  <view class="flex-item">救援中</view>
+  <view class="flex-item">完成</view>
+</view>
+</view>
+<!--加载器-->
+<loading hidden="{{!loading}}">
+    {{loadingMsg}}
+</loading>

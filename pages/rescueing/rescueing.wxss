@@ -1,0 +1,249 @@
+page{
+    background:url('https://rescue.gacfcasales.com/carOwner/images/statusbg.png');
+    background-size:100% 100%;
+}
+/* .logo{
+    text-align:right;
+    padding:10px 10px 0px 0px;
+}
+.logo image{
+     width: 90px;
+    height: 30px;
+} */
+.time{
+    float:left;
+font-size:16px;
+line-height:100rpx;
+width:220rpx;
+text-align:right;
+font-weight: bold;
+box-sizing: border-box;
+padding-right: 20rpx;
+}
+.rescustatus{
+    float: left;
+    line-height: 100rpx;
+    width: 120rpx;
+    
+}
+.rescustatus image{
+    width: 80rpx;
+    height: 80rpx;
+        vertical-align: middle;
+        border-radius: 50%;
+}
+.txt{
+    line-height: 100rpx;
+    float: left;
+    font-weight: bold;
+}
+.clear:after{
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.paianing,.arraved,.helping,.company{
+    margin-top: 0px;
+}
+
+.time image{
+    width: 45px;
+    height: 15px;
+}
+.oper{
+    
+    line-height: 50px;
+    background-color: rgba(86, 95, 115,1); 
+}
+.operstatus{
+    margin-left:20rpx;
+color:#fff;
+font-size:12px;
+font-weight: bold;
+float: left;
+}
+.operdistace{
+    float:right;
+padding:0px 5px 0px 10px;
+font-weight:bold;
+
+}
+.operdistace .dista, .operdistace .pretime{
+    line-height: 25px;
+    font-size: 12px;
+    color: #fff;
+}
+.mapcontent{
+    background: #21242E;
+    box-sizing: border-box;
+}
+.map{
+    width:100%;
+    height: 700rpx;
+}
+.distlabel{
+display:inline-block;
+width:40px;
+text-align:center;
+
+}
+.cancel,.cui{
+    width: 50%;
+    float: left;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+.cancel{
+  background:#fff;
+    color: #003366;
+    
+
+}
+.cui{
+    /* background: #627ECC; */
+}
+.fixed{
+    position: fixed;
+    bottom: 0px;
+    width:100%;
+    background:#003366;
+    border:1px solid #003366;
+    border-right: 0;
+    border-left:1px solid #003366;
+}
+.header{
+    width:100%;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/header_bg.jpg);
+    background-size: cover;
+    box-sizing: content-box;
+    position:relative;
+    padding-top:28rpx;
+    padding-bottom:50rpx;
+}
+.header .title{
+    width:100%;
+    height:85rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/title.png) repeat;
+    position: absolute;
+    z-index:10;
+    bottom:0;
+    left:0;
+}
+.header .title .title-name{
+    width:204rpx;
+    height:85rpx;
+    margin:auto;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/info.png);
+    background-size:cover;
+}
+.header .rescue-style{
+    width:100%;
+    height:186rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/rescue-style.png);
+    background-size:cover;
+}
+.header .rescue-style .defstyle{
+    width:90rpx;
+    height:186rpx;
+    margin-left:17rpx;
+    float:left;
+}
+.header .rescue-style .defstyle:nth-child(1){
+    width:90rpx;
+    height:186rpx;
+    margin-left:122rpx;
+}
+.header .rescue-style .defstyle:nth-child(3){
+    width:90rpx;
+    height:186rpx;
+    margin-left:15rpx;
+}
+.header .rescue-style .defstyle:nth-child(5){
+    width:90rpx;
+    height:186rpx;
+    margin-left:11.25rpx;
+}
+.header .rescue-style .defstyle .time{
+    color:#21242e;
+    font-size:30rpx;
+    height:30rpx;
+    line-height:30rpx;
+    width:90rpx;
+    text-align: center;
+    font-weight: bold;
+}
+.header .rescue-style .defstyle .time.active{
+    color:#8a8a8d;
+}
+.header .rescue-style .defstyle .time.gang{
+    width:90rpx;
+    height:30rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/nostart.png);
+    background-size:cover;
+}
+.header .rescue-style .defstyle .circle{
+    width:90rpx;
+    height:90rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/circle.png);
+    background-size:cover;
+    margin-top:38rpx;
+}
+.header .rescue-style .defstyle .circle-blue{
+    width:90rpx;
+    height:90rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/circle-blue.png);
+    background-size:cover;
+     margin-top:38rpx;
+}
+.header .rescue-style .defstyle .style-name{
+   font-size:33rpx;
+   text-align: center;
+    font-weight: bold;
+    width:90rpx;
+    color:#8a8a8d;
+    margin-top:18.75rpx;
+    white-space:nowrap;
+}
+.header .rescue-style .defstyle .style-name.active{
+   color:#21242e;
+}
+
+.header .logo{
+    width:126rpx;
+    height:44rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/logo.png);
+    background-size:cover;
+    margin-left:80%;
+    margin-bottom:36.75rpx;
+}
+
+.rescuebox{
+    width:100%;
+    margin-top:18.75rpx;
+    padding:45rpx 0;
+    box-sizing:border-box;
+    position:relative;
+    background:#fff;
+}
+.rescuebox .box-content{
+    width:660rpx;
+    float:right;
+}
+.rescuecar-style{
+    font-size:33rpx;
+    color:#393f4f;
+    line-height:52rpx;
+}
+.rescuecar-style:nth-child(2){
+    margin-top:13rpx;
+}
+.rescuecar-style .name{
+    font-weight: bold;
+    color:#393f4f;
+}
+.clearbox{
+    clear:both;
+}

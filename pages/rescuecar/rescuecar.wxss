@@ -1,0 +1,230 @@
+page{
+    background: #21242e;
+}
+/*头部*/
+.header{
+    width:100%;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/header_bg.jpg);
+    background-size: cover;
+    box-sizing: content-box;
+    position:relative;
+    padding-top:28rpx;
+    padding-bottom:171rpx;
+}
+.header .title{
+    width:100%;
+    height:85rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/title.png) repeat;
+    position: absolute;
+    z-index:10;
+    bottom:0;
+    left:0;
+}
+.header .title .title-name{
+    width:204rpx;
+    height:85rpx;
+    margin:auto;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/info.png);
+    background-size:cover;
+}
+.header .rescue-style{
+    width:100%;
+    height:186rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/rescue-style.png);
+    background-size:cover;
+}
+.header .rescue-style .defstyle{
+    width:90rpx;
+    height:186rpx;
+    margin-left:17rpx;
+    float:left;
+}
+.header .rescue-style .defstyle:nth-child(1){
+    width:90rpx;
+    height:186rpx;
+    margin-left:122rpx;
+}
+.header .rescue-style .defstyle:nth-child(3){
+    width:90rpx;
+    height:186rpx;
+    margin-left:15rpx;
+}
+.header .rescue-style .defstyle:nth-child(5){
+    width:90rpx;
+    height:186rpx;
+    margin-left:11.25rpx;
+}
+.header .rescue-style .defstyle .time{
+    color:#21242e;
+    font-size:30rpx;
+    height:30rpx;
+    line-height:30rpx;
+    width:90rpx;
+    text-align: center;
+    font-weight: bold;
+}
+.header .rescue-style .defstyle .time.active{
+    color:#8a8a8d;
+}
+.header .rescue-style .defstyle .time.gang{
+    width:90rpx;
+    height:30rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/nostart.png);
+    background-size:cover;
+}
+.header .rescue-style .defstyle .circle{
+    width:90rpx;
+    height:90rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/circle.png);
+    background-size:cover;
+    margin-top:11.25rpx;
+}
+.header .rescue-style .defstyle .circle-blue{
+    width:90rpx;
+    height:90rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/circle-blue.png);
+    background-size:cover;
+     margin-top:11.25rpx;
+
+}
+.header .rescue-style .defstyle .style-name{
+   font-size:33rpx;
+   text-align: center;
+    font-weight: bold;
+    width:90rpx;
+    color:#8a8a8d;
+    margin-top:18.75rpx;
+    white-space:nowrap;
+}
+.header .rescue-style .defstyle .style-name.active{
+   color:#21242e;
+}
+
+.header .logo{
+    width:126rpx;
+    height:44rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/logo.png);
+    background-size:cover;
+    margin:0 auto;
+    margin-bottom:36.75rpx;
+}
+
+.rescuebox{
+    width:100%;
+    margin-top:18.75rpx;
+    padding:45rpx 0;
+    box-sizing:border-box;
+    position:relative;
+    background:#fff;
+}
+.rescuebox .box-content{
+    width:660rpx;
+    float:right;
+}
+.rescuecar-style{
+    font-size:33rpx;
+    color:#393f4f;
+    line-height:52rpx;
+}
+.rescuecar-style:nth-child(2){
+    margin-top:13rpx;
+}
+.rescuecar-style .name{
+    font-weight: bold;
+    color:#393f4f;
+}
+.clearbox{
+    clear:both;
+}
+/*派案box*/
+.my-style{
+    color:#fff;
+    font-size:33rpx;
+    margin-top:33rpx;
+    margin-left:90rpx;
+}
+.my-style .bold{
+    font-weight: bold;
+}
+.tel-box{
+    width:100%;
+    height:183rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/tel-box.png);
+    background-size:cover;
+    margin-top:7.5rpx;
+}
+.tel-box{
+    width:100%;
+    height:183rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/tel-box.png);
+    background-size:cover;
+    margin-top:7.5rpx;
+}
+.tel-box .tell{
+     height:183rpx;
+     width:136rpx;
+     margin:0 auto;
+}
+.tel-box .mytell{
+    width:136rpx;
+    height:136rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/tel.png);
+    background-size:cover;
+}
+.tel-box .disbtel{
+    width:136rpx;
+    height:136rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/disbtel.png);
+    background-size:cover;
+}
+.touch-our{
+    color:#fff;
+    text-align: center;
+    font-size:33rpx;
+    white-space:nowrap;
+    font-weight: bold;
+    margin-top:6rpx;
+}
+.tishi{
+    margin-left:90rpx;
+    margin-top:7.5rpx;
+    color:#fff;
+    font-size:25rpx;
+}
+.tishi-box{
+    width:600rpx;
+    padding:18.75rpx;
+    background:#fff;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size:33rpx;
+    color:#21242e;
+    margin-top:20rpx;
+}
+/*底部*/
+.flex-footer{
+    position: fixed;
+    display: flex;
+    height:90rpx;
+    width:100%;
+    font-size:33rpx;
+    background: #42517d;
+    color:#a1a8be;
+    left:0;
+    bottom:0;
+    font-weight: bold;
+}
+.flex-item{
+    flex: 1;
+    border-left:2px #21242e solid;
+    height:90rpx;
+    text-align: center;
+    line-height:90rpx;
+}
+.flex-item:nth-child(1){
+    border:0;
+}
+.flex-item.active{
+    color:#fff;
+    background:#627ecc;
+}

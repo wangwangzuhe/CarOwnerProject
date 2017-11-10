@@ -1,0 +1,11 @@
+<template name="loading">
+    <view class="fixbox" wx:if="{{isloading}}">
+        <view class="loading">
+            <text class="loadingtext"></text>
+            <text class="loadingtext"></text>
+            <text class="loadingtext"></text>
+            <text class="loadingtext"></text>
+            <text class="loadingtext"></text>
+        </view>
+    </view>
+</template>

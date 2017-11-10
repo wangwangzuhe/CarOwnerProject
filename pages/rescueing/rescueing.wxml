@@ -1,0 +1,97 @@
+<import src="../../templates/loading.wxml"/>
+<template is="loading" data="{{isloading}}"></template>
+
+<!--<view class="logo">
+    <image src="https://rescue.gacfcasales.com/carOwner/images/logo2.png" />
+</view>
+ <view>
+    <view class="start clear">
+        <view class="time">{{times.caseTime}}
+            <image wx:if="{{!times.caseTime}}" src='https://rescue.gacfcasales.com/carOwner/images/nostart.png'/>
+        </view>
+        <view class="rescustatus"><image src="https://rescue.gacfcasales.com/carOwner/images/circle_fff.png" /></view>
+        <view class="txt">开案</view>
+    </view>
+    <view class="paianing clear">
+    
+    <view class="time">{{times.sendTime}}<image wx:if="{{!times.sendTime}}" src="https://rescue.gacfcasales.com/carOwner/images/nostart.png"/></view>
+        <view class="rescustatus"><image src="{{status=='send'?'https://rescue.gacfcasales.com/carOwner/images/circle-grey.png':'https://rescue.gacfcasales.com/carOwner/images/circle_fff.png'}}"/></view>
+        <view class="txt">派案</view>
+    </view>
+    <view class="arraved clear">
+    
+        <view class="time">{{times.arrivalTime}}<image wx:if="{{!times.arrivalTime}}" src="https://rescue.gacfcasales.com/carOwner/images/nostart.png"/></view>
+        <view class="rescustatus"><image src="{{status=='arrival'?'https://rescue.gacfcasales.com/carOwner/images/circle-grey.png':'https://rescue.gacfcasales.com/carOwner/images/circle_fff.png'}}"/></view>
+        <view class="txt">到达</view>
+    </view>
+    <view class="helping clear">
+    <view class="time">{{times.rescueTime}}<image wx:if="{{!times.rescueTime}}" src="https://rescue.gacfcasales.com/carOwner/images/nostart.png"/></view>
+        <view class="rescustatus"><image src="{{status=='rescue'?'https://rescue.gacfcasales.com/carOwner/images/circle-grey.png':'https://rescue.gacfcasales.com/carOwner/images/circle_fff.png'}}" /></view>
+        <view class="txt">救援中</view>
+    </view>
+    <view class="company clear">
+    <view class="time">{{times.finishTime}}<image wx:if="{{!times.finishTime}}" src="https://rescue.gacfcasales.com/carOwner/images/nostart.png"/></view>
+        <view class="rescustatus"><image src="{{status=='finish'?'https://rescue.gacfcasales.com/carOwner/images/circle-grey.png':'https://rescue.gacfcasales.com/carOwner/images/circle_fff.png'}}"/></view>
+        <view class="txt">完成</view>
+    </view>
+</view> -->
+<view class="header">
+ <view class="logo"></view>
+  <view class="rescue-style">
+      <view class="defstyle">
+        <view class="time" wx:if="{{times.caseTime}}">{{times.caseTime}}</view>
+        <view class="time gang" wx:else></view>
+        <view class="circle-blue" wx:if="{{times.caseTime&&!times.sendTime}}"></view>
+        <view class="circle" wx:else></view>
+        <view class="style-name">开案</view>
+      </view>
+       <view class="defstyle">
+        <view class="time" wx:if="{{times.sendTime}}">{{times.sendTime}}</view>
+        <view class="time gang" wx:else></view>
+       <view class="circle-blue" wx:if="{{times.sendTime&&!times.arrivalTime}}"></view>
+        <view class="circle" wx:else></view>
+        <view class="style-name">派案</view>
+      </view>
+       <view class="defstyle">
+        <view class="time" wx:if="{{times.arrivalTime}}">{{times.arrivalTime}}</view>
+        <view class="time gang" wx:else></view>
+        <view class="circle-blue" wx:if="{{times.arrivalTime&&!times.rescueTime}}"></view>
+        <view class="circle" wx:else></view>
+        <view class="style-name">到达</view>
+      </view>
+       <view class="defstyle">
+        <view class="time" wx:if="{{times.rescueTime}}">{{times.rescueTime}}</view>
+        <view class="time gang" wx:else></view>
+        <view class="circle-blue" wx:if="{{times.rescueTime&&!times.finishTime}}"></view>
+        <view class="circle" wx:else></view>
+        <view class="style-name">救援中</view>
+      </view>
+       <view class="defstyle">
+         <view class="time" wx:if="{{times.finishTime}}">{{times.finishTime}}</view>
+        <view class="time gang" wx:else></view>
+        <view class="circle-blue" wx:if="{{times.finishTime}}"></view>
+        <view class="circle" wx:else></view>
+        <view class="style-name">完成</view>
+      </view>
+  </view>
+  </view>
+<view class="oper clear">
+    <view class="operstatus">
+        <image src="https://rescue.gacfcasales.com/carOwner/images/loaction.png" style="vertical-align: middle;width:15px;height:18px;"/>
+        救援状态：{{statustxt}}
+    </view>
+    <view class="operdistace">
+        <view class="dista">救援车辆距离：<label class="distlabel">{{distace}}</label>km</view>
+        <view class="pretime">预计到达时间：<label class="distlabel">{{remainmin}}</label>min</view>
+    </view>
+</view>
+<view class="mapcontent">
+    <view class="map">
+        <map id="myMap" longitude="{{longitude}}"  include-points="{{includepoints}}" latitude="{{latitude}}" show-location   markers="{{markers}}" style="width:100%;height:640rpx;" ></map>
+
+    </view>
+</view>
+<view class="fixed">
+    <view class="cancel" bindtap="bindcancel">取消服务</view>
+    <view class="cui" bindtap="hastenHandel">催办</view>
+</view>

@@ -1,0 +1,36 @@
+<import src="../../templates/loading.wxml"/>
+<template is="loading" data="{{isloading}}"></template>
+<import src="../exit.wxml"/>
+<template is="exit" />
+<view class="logo">
+    <image src="https://rescue.gacfcasales.com/carOwner/images/logo2.png" />
+</view>
+<view>
+    <view class="start clear">
+        <view class="time">{{casetime||"0:00"}}</view>
+        <view class="rescustatus"><image src="https://rescue.gacfcasales.com/carOwner/images/circle-grey.png"/></view>
+        <view class="txt">开案</view>
+    </view>
+    <view class="paianing clear">
+    <view class="time"><image src="https://rescue.gacfcasales.com/carOwner/images/nostart.png"/></view>
+        <view class="rescustatus"><image src="https://rescue.gacfcasales.com/carOwner/images/circle_fff.png"/></view>
+        <view class="txt">派案</view>
+    </view>
+    <view class="arraved clear">
+        <view class="time"><image src="https://rescue.gacfcasales.com/carOwner/images/nostart.png"/></view>
+        <view class="rescustatus"><image src="https://rescue.gacfcasales.com/carOwner/images/circle_fff.png"/></view>
+        <view class="txt">到达</view>
+    </view>
+    <view class="helping clear">
+    <view class="time"><image src="https://rescue.gacfcasales.com/carOwner/images/nostart.png"/></view>
+        <view class="rescustatus"><image src="https://rescue.gacfcasales.com/carOwner/images/circle_fff.png"/></view>
+        <view class="txt">救援中</view>
+    </view>
+    <view class="company clear">
+    <view class="time"><image src="https://rescue.gacfcasales.com/carOwner/images/nostart.png"/></view>
+        <view class="rescustatus"><image src="https://rescue.gacfcasales.com/carOwner/images/circle_fff.png"/></view>
+        <view class="txt">完成</view>
+    </view>
+</view>
+<view class="fixtxt">您的案件正在处理中...</view>
+<view class="fixcancel" bindtap="tapcancelservice">取消服务</view>

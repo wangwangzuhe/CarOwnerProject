@@ -1,0 +1,28 @@
+<import src="../../templates/loading.wxml"/>
+<template is="loading" data="{{isloading}}"></template>
+<view class="login-top">
+    <view class="login-logo"></view>
+    <view class="login-wx" bindtap="tapwxlogo"></view>
+    <view class="login-wx-txt" style="" bindtap="tapwxlogo">一键发起救援</view>
+    <view class="login-wx-text">
+        <view>提醒：</view>
+        <view>通过电话渠道发起救援的车主，请手动输入手机号和验证码查看救援进度。</view>
+    </view>
+</view>
+<view class="login-box">
+    <view class="loginbox">
+        <view class="inputicon login-tel"></view>
+        <input type='number' bindinput="bindphone" maxlength="11"  placeholder='电话'/>
+    </view>
+    <view class="loginbox">
+        <view class="inputicon login-pwd"></view>
+        <input type='number' placeholder='验证码' maxlength="4" bindinput="bindvcode" class="yanzm"/>
+        <button class="btn-yzm" bindtap="tapsendvcode" disabled="{{vaildisabled}}">{{vaildtxt}}</button>
+    </view>
+    <view class="zhuyi">(仅需电话发起救援的车主填写）</view>
+</view>
+<view style="width:100%;height:120rpx"></view>
+<view class="flex-footer">
+    <view class="flex-item" bindtap="carlogin">车主身份登录</view>
+    <!--<view class="flex-item" bindtap="workerlogin">救援人员登录</view>-->
+</view>

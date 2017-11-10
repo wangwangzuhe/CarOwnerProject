@@ -1,0 +1,158 @@
+page{
+    background: #cccccc;
+    font-size:14px;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/header_bg.jpg);
+background-size:cover;
+
+}
+
+.login-top{
+    width:750rpx;
+    height:533rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/header_bg.jpg);
+    background-size: cover;
+    box-sizing: content-box;
+    padding:58rpx 0;
+    position: relative;
+}
+.login-logo{
+    width:126rpx;
+    height:44rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/logo.png);
+    background-size:cover;
+    margin-left:80%;
+}
+.login-wx{
+    width:100%;
+    height:277rpx;
+    background:url(https://rescue.gacfcasales.com/carOwner/images/wxloginbg.png);
+    background-size:cover;
+    
+}
+.login-wx-txt{
+    height:60rpx;
+    line-height:60rpx;
+    text-align: center;
+    font-size:32rpx;
+    color:#003366;
+    /* font-weight: bold; */
+    border-radius: 10rpx;
+    width:40%;
+     /* border:1rpx solid rgb(213, 213, 213);  */
+    margin:0rpx auto;
+      /* background-color:rgba(255,255,255,0.5);  */
+}
+.login-wx-text{
+    width:100%;
+     /* background:url(https://rescue.gacfcasales.com/carOwner/images/title.png) repeat;  */
+     background:#fff;
+    opacity: 0.7; 
+    position: absolute;
+    z-index:1;
+    bottom:-65rpx;
+    left:0;
+    box-sizing:border-box;
+    border-top:1px #eeeeee solid;
+    border-bottom:1px #eeeeee solid;
+    padding:20rpx 0 20rpx 84rpx;
+    font-size:30rpx;
+    line-height:50rpx;
+    color:#003366;
+}
+.login-box{
+    width:500rpx;
+    margin:0 auto;
+    margin-top:100rpx;
+}
+.login-box .loginbox{
+    background:none;
+    border:1px solid #003366;
+    height:75rpx;
+    position: relative;
+    width:500rpx;
+    border-radius: 10rpx;
+}
+.loginbox:nth-child(2){
+    margin-top:40rpx;
+}
+.login-box .loginbox input{
+    width:360rpx;
+    height:75rpx;
+    float: left;
+    background:none;
+}
+.login-box .loginbox input.yanzm{
+    width:220rpx;
+}
+.login-box .loginbox .inputicon{
+    width:85rpx;
+    height:75rpx;
+    float: left;
+}
+.login-box .loginbox .inputicon.login-tel{
+    background:url(https://rescue.gacfcasales.com/carOwner/images/login-tel.png);
+    background-size:cover;
+}
+.login-box .loginbox .inputicon.login-pwd{
+    background:url(https://rescue.gacfcasales.com/carOwner/images/login-pwd.png);
+    background-size:cover;
+}
+.btn-yzm{
+    background:#003366;
+    color:#fff;
+    width:190rpx;
+    height:75rpx;
+    line-height:75rpx;
+    float: right;
+    border-top-right-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+    text-align: center;
+    font-size:30rpx;
+    border-radius: 0px;
+}
+.btn-yzm-grey{
+    background:#969696;
+    color:#cecece;
+    width:190rpx;
+    height:75rpx;
+    line-height:75rpx;
+    float: right;
+    border-top-right-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+    text-align: center;
+    font-size:30rpx;
+}
+.zhuyi{
+    color:#003366;
+    font-size:30rpx;
+    text-align: center;
+    margin-top:33rpx;
+}
+
+/*底部*/
+.flex-footer{
+    position: fixed;
+    display: flex;
+    height:90rpx;
+    width:100%;
+    font-size:33rpx;
+    background: #003366;
+    color:#fff;
+    left:0;
+    bottom:0;
+    font-weight: bold;
+}
+.flex-item{
+    flex: 1;
+    border-left:2px #21242e solid;
+    height:90rpx;
+    text-align: center;
+    line-height:90rpx;
+}
+.flex-item:nth-child(1){
+    border:0;
+}
+.flex-item.active{
+    color:#fff;
+    background:#627ecc;
+}
