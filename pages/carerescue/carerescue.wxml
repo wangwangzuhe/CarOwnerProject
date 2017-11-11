@@ -19,24 +19,24 @@
 <view class="recuopr">
     <view class="recuopr_item">
         <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_name.png" class="itemimg" /></view>
-        <view class="recuopr_itemtxt" ><input bindinput="bindName" maxlength="8" class="txt"/></view>
+        <view class="recuopr_itemtxt" ><input placeholder-class="phcolor" placeholder="姓名" bindinput="bindName" maxlength="8" class="txt"/></view>
     </view>
     <view class="recuopr_item">
         <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_tel.png" class="itemimg" /></view>
-        <view class="recuopr_itemtxt"><input bindinput="bindPhone" type="number" maxlength="11" class="txt"/></view>
+        <view class="recuopr_itemtxt"><input placeholder-class="phcolor" placeholder="电话" bindinput="bindPhone" type="number" maxlength="11" class="txt"/></view>
     </view>
         <view class="recuopr_item">
         <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_vcode.png" class="itemimg" /></view>
-        <view class="recuopr_itemtxt"><input type="number" bindinput="bindVaildcode" style="width:40px;" maxlength="4"  class="txt"/></view>
+        <view class="recuopr_itemtxt"><input placeholder-class="phcolor" placeholder="验证码" type="number" bindinput="bindVaildcode"  maxlength="4"  class="txt"/></view>
         <button class="vaildcode" disabled="{{vaildisabled}}" bindtap="sendvaild">{{vaildtxt}}</button>
     </view>
         <view class="recuopr_item">
             <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_car.png" class="itemimg" /></view>
-            <view class="recuopr_itemtxt"><input maxlength="7" bindinput="bindCarno" placeholder-class="phcolor" placeholder="如：沪A12345" class="txt" value="{{carno}}"/></view>
+            <view class="recuopr_itemtxt"><input maxlength="7" bindinput="bindCarno" placeholder-class="phcolor" placeholder="车牌号  如：沪A12345" class="txt" value="{{carno}}"/></view>
         </view>
         <view class="recuopr_item">
             <view class="recuopr_itemicon"><image src="/images/chejiahao.jpg" class="itemimg" /></view>
-            <view class="recuopr_itemtxt"><input maxlength="17" bindinput="bindCarmodelno" placeholder-class="phcolor" placeholder="完整的17位车架号"  class="txt" value="{{carmodel}}"/></view>
+            <view class="recuopr_itemtxt"><input maxlength="17" bindinput="bindCarmodelno" placeholder-class="phcolor" placeholder="车架号   完整的17位车架号"  class="txt" value="{{carmodel}}"/></view>
         </view>
         <view class="recuopr_item" wx:if="{{rescuetype=='1'}}">
             <view class="recuopr_itemicon"><image style="width:90px" src="https://rescue.gacfcasales.com/carOwner/images/rescus_pretime.png" class="itemimg" /></view>
