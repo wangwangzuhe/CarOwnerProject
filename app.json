@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/login/loginnew",
     "pages/rescuecar/rescuecar",
     "pages/launchaid/launchaid",
     "pages/casestart/casestart",
@@ -22,5 +23,3 @@
     "downloadFile": 10000
   }
 }
- 
-//
