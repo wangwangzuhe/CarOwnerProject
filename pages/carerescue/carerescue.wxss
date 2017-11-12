@@ -59,14 +59,16 @@ page{
 }
 .recuopr_itemicon,.recuopr_itemtxt{
     float: left;
-    width: 40%;
+    width: 18%;
+    overflow:hidden;
 }
 .recuopr_itemtxt{
     /*margin-left: 10px;*/
     width: 55%;
+    margin-left:1%;
 }
 .txt,.addsel{
-    min-width: 120px;
+    min-width: 100%;
     line-height: 40px;
     height: 40px;
     width: 100%;

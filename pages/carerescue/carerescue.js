@@ -42,7 +42,7 @@ app.vaildPage({
         }],
         name: '',
         phone: '',
-        addr: '请选择救援地点',
+        addr: '救援地址  请选择救援地点',
         carno: '',
         carmodel: '',
         vcode: '',
