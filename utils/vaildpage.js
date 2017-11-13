@@ -22,7 +22,7 @@ var page = function (args) {
                 
                 //登录
                 wx.redirectTo({
-                    url: '../login/login'
+                    url: '../loginnew/loginnew'
                 })
             }
 
@@ -30,7 +30,7 @@ var page = function (args) {
             
             //登录
             wx.redirectTo({
-                url: '../login/login'
+                url: '../loginnew/loginnew'
             })
         }
         if (tmponload) {
@@ -44,7 +44,7 @@ var page = function (args) {
             exit.call(_this);
         }
         wx.redirectTo({
-            url: '../login/login'
+            url: '../loginnew/loginnew'
         });
          
     }

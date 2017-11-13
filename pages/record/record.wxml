@@ -1,8 +1,10 @@
 <view class="header-parent">
     <view class="header">
-        <view class="one">
+        <!-- <view class="one">
             <view class="back" bindtap="navtourl"></view>
-        </view>
+        </view> -->
+        <import src="../exit.wxml"/>
+        <template is="exit" />
         <view class="logo"></view>
         <view class="three">累计救援：{{count}}</view>
     </view>

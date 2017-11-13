@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/loginnew/loginnew",
     "pages/login/login",
     "pages/rescuecar/rescuecar",
     "pages/launchaid/launchaid",
