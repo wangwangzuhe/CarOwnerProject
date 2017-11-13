@@ -1,5 +1,5 @@
 page{
-    background: #21242e;
+    /* background: #21242e; */
 }
 .header-parent{
     height:185rpx;

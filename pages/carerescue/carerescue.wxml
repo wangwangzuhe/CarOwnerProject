@@ -35,7 +35,7 @@
             <view class="recuopr_itemtxt"><input maxlength="7" bindinput="bindCarno" placeholder-class="phcolor" placeholder="车牌号  如：沪A12345" class="txt" value="{{carno}}"/></view>
         </view>
         <view class="recuopr_item">
-            <view class="recuopr_itemicon"><image src="/images/chejiahao.jpg" class="itemimg" /></view>
+            <view class="recuopr_itemicon" style="width:16%"><image src="/images/chejiahao.jpg" class="itemimg" /></view>
             <view class="recuopr_itemtxt"><input maxlength="17" bindinput="bindCarmodelno" placeholder-class="phcolor" placeholder="车架号   完整的17位车架号"  class="txt" value="{{carmodel}}"/></view>
         </view>
         <view class="recuopr_item" wx:if="{{rescuetype=='1'}}">

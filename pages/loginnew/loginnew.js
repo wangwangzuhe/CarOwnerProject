@@ -18,6 +18,9 @@ Page({
         vaildcode_err:'*请输入正确的手机验证码',
         isvaildcode_err:false
     },
+    onLoad(options) {
+     this.topage()
+    },
     bindphone(e) {
         this.setData({
             phone: e.detail.value

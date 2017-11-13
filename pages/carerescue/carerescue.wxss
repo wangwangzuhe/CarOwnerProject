@@ -59,7 +59,7 @@ page{
 }
 .recuopr_itemicon,.recuopr_itemtxt{
     float: left;
-    width: 18%;
+    width: 17%;
     overflow:hidden;
 }
 .recuopr_itemtxt{
