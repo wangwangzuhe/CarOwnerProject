@@ -19,7 +19,7 @@ Page({
         isvaildcode_err:false
     },
     onLoad(options) {
-     this.topage()
+        this.topage(1)
     },
     bindphone(e) {
         this.setData({
@@ -96,6 +96,9 @@ Page({
 
     },
     topage() {
+
+        const args = [].slice.call(arguments);
+
         httpreq.request({
             url: wbs.owner,
             data: {
@@ -112,9 +115,11 @@ Page({
             }
 
             if (res.code == "owner_inexistence_order" || res.code == 'owner_null_apply') {
-                wx.redirectTo({
-                    url: '../launchaid/launchaid'
-                });
+                if(!args.length){
+                    wx.redirectTo({
+                        url: '../launchaid/launchaid'
+                    });
+                }
             }
             else if (res.code == "owner_exist_order" && res.data.status == 'finish') {
 
@@ -127,9 +132,11 @@ Page({
                     url: '../rescueing/rescueing'
                 });
             } else {
-                wx.redirectTo({
-                    url: '../rescueing/rescueing'
-                });
+                 if(!args.length){
+                    wx.redirectTo({
+                        url: '../rescueing/rescueing'
+                    });
+                }
             }
 
             // }
