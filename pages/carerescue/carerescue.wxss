@@ -64,7 +64,7 @@ page{
 }
 .recuopr_itemtxt{
     /*margin-left: 10px;*/
-    width: 55%;
+    width: 75%;
     margin-left:1%;
 }
 .txt,.addsel{
@@ -207,4 +207,8 @@ display:inline-block;
 .phcolor{
   font-size:12px;
   color:#BFC1C5;
+}
+.in{
+  color:#000;
+  font-size:14px
 }

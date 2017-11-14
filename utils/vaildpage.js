@@ -44,7 +44,7 @@ var page = function (args) {
             exit.call(_this);
         }
         wx.redirectTo({
-            url: '../loginnew/loginnew'
+            url: '../login/login'
         });
          
     }

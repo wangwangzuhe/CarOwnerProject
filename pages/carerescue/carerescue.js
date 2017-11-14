@@ -202,7 +202,7 @@ app.vaildPage({
             return;
         }
 
-        if (this.data.addr == '请选择救援地点') {
+        if (this.data.addr == '救援地址  请选择救援地点') {
             wx.showModal({
                 title: '',
                 content: '请输入正确的救援地址',

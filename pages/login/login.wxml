@@ -1,28 +1,62 @@
-<import src="../../templates/loading.wxml"/>
-<template is="loading" data="{{isloading}}"></template>
-<view class="login-top">
-    <view class="login-logo"></view>
-    <view class="login-wx" bindtap="tapwxlogo"></view>
-    <view class="login-wx-txt" style="" bindtap="tapwxlogo">一键发起救援</view>
-    <view class="login-wx-text">
-        <view>提醒：</view>
-        <view>通过电话渠道发起救援的车主，请手动输入手机号和验证码查看救援进度。</view>
-    </view>
+<view class="logo">
+   <image src="../../images/logo_new.png" style="width:126rpx;height:44rpx"/>
 </view>
-<view class="login-box">
-    <view class="loginbox">
-        <view class="inputicon login-tel"></view>
-        <input type='number' bindinput="bindphone" maxlength="11"  placeholder='电话'/>
+<view class="toxinlogo" bindtap="hidecarlogin" style="{{isshow?'display:block':'display:none'}}">
+    <image src="../../images/wxlogo.png" style="width:64rpx;height:52rpx" />
+    <view >
+        改用微信登录
     </view>
-    <view class="loginbox">
-        <view class="inputicon login-pwd"></view>
-        <input type='number' placeholder='验证码' maxlength="4" bindinput="bindvcode" class="yanzm"/>
-        <button class="btn-yzm" bindtap="tapsendvcode" disabled="{{vaildisabled}}">{{vaildtxt}}</button>
-    </view>
-    <view class="zhuyi">(仅需电话发起救援的车主填写）</view>
+
 </view>
-<view style="width:100%;height:120rpx"></view>
-<view class="flex-footer">
-    <view class="flex-item" bindtap="carlogin">车主身份登录</view>
-    <!--<view class="flex-item" bindtap="workerlogin">救援人员登录</view>-->
+<view class="oval" style="{{isshow?'display:block':'display:none'}}">
+    <image src="../../images/oval.png" style="width:100%;" />
+    <image src="../../images/daosj.png" class="oval_daojiao" bindtap="hidecarlogin"/>
+</view>
+<view class="wxbody" style="{{!isshow?'display:block':'display:none'}}">
+    <view class="wxdot"></view>
+    <view style="text-align:center;">
+        <image bindtap="tapwxlogo" src="../../images/rescueicon.png" class="rescueicon"  />
+    </view>
+    <text class="txt-center">一键开启救援</text>
+</view>
+<view style="{{isshow?'display:block':'display:none'}}">
+     <view class="logocontainer">
+        <image src="../../images/phone.png" style="width:59rpx;height:61rpx;margin-top:20rpx;margin-bottom:20rpx"/>
+         <view class="splitline"></view>
+        <view class="txttips">
+            (仅需电话发起救援的车主填写）
+        </view>
+        <view class="logoonfos">
+                <view class="login-box">
+                    <view class="loginbox">
+                        <view class="inputicon login-tel"></view>
+                        <input type='number' bindinput="bindphone" maxlength="11"  placeholder='电话'/>
+                    </view>
+                    <view class="errortips">
+                        {{isphone_err?phone_err:""}}
+                    </view>
+                    <view class="loginbox">
+                        <view class="inputicon login-pwd"></view>
+                        <input type='number' placeholder='验证码' maxlength="4" bindinput="bindvcode" class="yanzm"/>
+                        <button class="btn_yzm" bindtap="tapsendvcode" disabled="{{vaildisabled}}">{{vaildtxt}}</button>
+                    </view>
+                    <view class="errortips">{{isvaildcode_err?vaildcode_err:''}}</view>
+                    <button bindtap="carlogin">登录</button>
+            </view>
+            <view class="bottom_txt">
+                通过电话渠道发起救援的车主，请使用手机号登陆，查看案件最新状态。
+            </view>
+        </view>
+       
+         
+    </view>
+   
+</view>
+<view class="oval ovalreserv" bindtap="hidecarloginresrve" style="{{!isshow?'display:block':'display:none'}}">
+    <image src="../../images/oval.png" style="width:100%;" />
+    <image src="../../images/daosj.png" class="oval_daojiao rotate"/>
+     <image src="../../images/phone.png" style="width:59rpx;height:61rpx;position:absolute;z-index:100;top:110rpx;left:50%;margin-left:-30rpx"/>
+     <view class="bottom_txt" style="color:#fff;bottom:10rpx">
+                通过电话渠道发起救援的车主，请使用手机号登陆，查看案件最新状态。
+            </view>
 </view>

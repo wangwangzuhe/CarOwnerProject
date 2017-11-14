@@ -1,6 +1,8 @@
 <import src="../../templates/loading.wxml"/>
 <template is="loading" data="{{isloading}}"></template>
 <scroll-view style="height:{{windowHeight}}px" scroll-y="true">
+<import src="../exit.wxml"/>
+<template is="exit" />
 <view class="recubg">
     <image bindtap="tapcalltel" src="https://rescue.gacfcasales.com/carOwner/images/rescusbg.png" mode="widthFix" style="width:100%"/>
     <view class="recu_switch">
@@ -27,7 +29,7 @@
     </view>
         <view class="recuopr_item">
         <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_vcode.png" class="itemimg" /></view>
-        <view class="recuopr_itemtxt"><input placeholder-class="phcolor" placeholder="验证码" type="number" bindinput="bindVaildcode"  maxlength="4"  class="txt"/></view>
+        <view class="recuopr_itemtxt"><input placeholder-class="phcolor" placeholder="验证码" type="number" bindinput="bindVaildcode"  maxlength="4"  class="txt" style="width:55%"/></view>
         <button class="vaildcode" disabled="{{vaildisabled}}" bindtap="sendvaild">{{vaildtxt}}</button>
     </view>
         <view class="recuopr_item">
@@ -35,7 +37,7 @@
             <view class="recuopr_itemtxt"><input maxlength="7" bindinput="bindCarno" placeholder-class="phcolor" placeholder="车牌号  如：沪A12345" class="txt" value="{{carno}}"/></view>
         </view>
         <view class="recuopr_item">
-            <view class="recuopr_itemicon" style="width:16%"><image src="/images/chejiahao.jpg" class="itemimg" /></view>
+            <view class="recuopr_itemicon"><image src="/images/chejiahao.jpg" class="itemimg" /></view>
             <view class="recuopr_itemtxt"><input maxlength="17" bindinput="bindCarmodelno" placeholder-class="phcolor" placeholder="车架号   完整的17位车架号"  class="txt" value="{{carmodel}}"/></view>
         </view>
         <view class="recuopr_item" wx:if="{{rescuetype=='1'}}">
@@ -52,8 +54,8 @@
         </view>
          
         <view class="recuopr_item">
-            <view class="recuopr_itemicon"><image style="width:90px" src="https://rescue.gacfcasales.com/carOwner/images/rescus_addr.png" class="itemimg" /></view>
-            <view class="recuopr_itemtxt"><view   bindtap="bindaddtap" class="addsel">{{addr}}</view></view>
+            <view class="recuopr_itemicon"><image style="width:90px" src="/images/rescus_addr.png" class="itemimg" /></view>
+            <view class="recuopr_itemtxt"><view   bindtap="bindaddtap" class="addsel {{addr!='救援地址  请选择救援地点'?'in':''}}">{{addr}}</view></view>
         </view>
         <!--<view class="recuopr_item">
             <view class="recuopr_itemicon"><image style="width:90px" src="/images/jxs.jpeg" class="itemimg" /></view>

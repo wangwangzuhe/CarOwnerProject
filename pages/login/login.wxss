@@ -1,76 +1,83 @@
 page{
     background: #cccccc;
     font-size:14px;
-    background:url(https://rescue.gacfcasales.com/carOwner/images/header_bg.jpg);
-background-size:cover;
+    /* background:url(../../images/map.png); */
+    background:url(https://rescue.gacfcasales.com/carOwner/images/map.png);
+    background-size:cover;
 
 }
-
-.login-top{
-    width:750rpx;
-    height:533rpx;
-    background:url(https://rescue.gacfcasales.com/carOwner/images/header_bg.jpg);
-    background-size: cover;
-    box-sizing: content-box;
-    padding:58rpx 0;
+.logo{
+    margin: auto;
+    margin-top: 60rpx;
+    text-align: center;
+}
+.toxinlogo{
+    margin: auto;
+    text-align: center;
+    margin-top: 40rpx;
+    font-size: 12px;
+    color: #333;
+}
+.oval{
     position: relative;
 }
-.login-logo{
-    width:126rpx;
-    height:44rpx;
-    background:url(https://rescue.gacfcasales.com/carOwner/images/logo.png);
-    background-size:cover;
-    margin-left:80%;
+.ovalreserv{
+    display:block;
+    position:fixed;
+    bottom:-260rpx;
+    left:0px;
+    right:0px;
 }
-.login-wx{
-    width:100%;
-    height:277rpx;
-    background:url(https://rescue.gacfcasales.com/carOwner/images/wxloginbg.png);
-    background-size:cover;
+.oval_daojiao{
+    width:48rpx;
+    height:29rpx;
+    position:absolute;
+    top:40rpx;
+    z-index:1;
+    left:0px;
+    right:0px;
+    display:block;
+    margin:auto;
     
 }
-.login-wx-txt{
-    height:60rpx;
-    line-height:60rpx;
+.logocontainer{
     text-align: center;
-    font-size:32rpx;
-    color:#003366;
-    /* font-weight: bold; */
-    border-radius: 10rpx;
-    width:40%;
-     /* border:1rpx solid rgb(213, 213, 213);  */
-    margin:0rpx auto;
-      /* background-color:rgba(255,255,255,0.5);  */
-}
-.login-wx-text{
-    width:100%;
-     /* background:url(https://rescue.gacfcasales.com/carOwner/images/title.png) repeat;  */
-     background:#fff;
-    opacity: 0.7; 
     position: absolute;
-    z-index:1;
-    bottom:-65rpx;
-    left:0;
-    box-sizing:border-box;
-    border-top:1px #eeeeee solid;
-    border-bottom:1px #eeeeee solid;
-    padding:20rpx 0 20rpx 84rpx;
-    font-size:30rpx;
-    line-height:50rpx;
-    color:#003366;
+    left:0px;
+    right:0px;
+    bottom: 0px;
+    top:360rpx;
+    background: transparent;
 }
+.logoonfos{
+    background-image:linear-gradient(#003265 40%,#C2CEDA);
+    height: 100%;
+}
+.splitline{
+    background-color: #315A83;
+    width:100%;
+    margin-top: 30rpx;
+}
+.txttips{
+    color:#fff;
+    font-size:12px;
+    margin-top:20rpx;
+    
+}
+
 .login-box{
     width:500rpx;
     margin:0 auto;
-    margin-top:100rpx;
+    margin-top:20rpx;
 }
 .login-box .loginbox{
-    background:none;
-    border:1px solid #003366;
+    background:#fff;
     height:75rpx;
-    position: relative;
+    position:relative;
     width:500rpx;
-    border-radius: 10rpx;
+    border-radius:10rpx;
+    font-size:12px;
+    
 }
 .loginbox:nth-child(2){
     margin-top:40rpx;
@@ -80,6 +87,7 @@ background-size:cover;
     height:75rpx;
     float: left;
     background:none;
+    text-align: left;
 }
 .login-box .loginbox input.yanzm{
     width:220rpx;
@@ -97,62 +105,79 @@ background-size:cover;
     background:url(https://rescue.gacfcasales.com/carOwner/images/login-pwd.png);
     background-size:cover;
 }
-.btn-yzm{
-    background:#003366;
-    color:#fff;
-    width:190rpx;
-    height:75rpx;
-    line-height:75rpx;
-    float: right;
-    border-top-right-radius: 10rpx;
-    border-bottom-right-radius: 10rpx;
-    text-align: center;
-    font-size:30rpx;
-    border-radius: 0px;
+.login-box  .errortips{
+    line-height: 80rpx;
+    height: 80rpx;
+    color: #fff;
+    text-align: left;
+    font-size: 12px;
+    font-weight: normal;
+    color: #DA6543;
+    padding-left: 20rpx;
 }
-.btn-yzm-grey{
-    background:#969696;
-    color:#cecece;
-    width:190rpx;
-    height:75rpx;
-    line-height:75rpx;
-    float: right;
-    border-top-right-radius: 10rpx;
-    border-bottom-right-radius: 10rpx;
-    text-align: center;
-    font-size:30rpx;
-}
-.zhuyi{
-    color:#003366;
-    font-size:30rpx;
-    text-align: center;
-    margin-top:33rpx;
-}
-
-/*底部*/
-.flex-footer{
+.bottom_txt{
+    font-size: 10px;
     position: fixed;
-    display: flex;
-    height:90rpx;
-    width:100%;
-    font-size:33rpx;
-    background: #003366;
-    color:#fff;
-    left:0;
-    bottom:0;
-    font-weight: bold;
-}
-.flex-item{
-    flex: 1;
-    border-left:2px #21242e solid;
-    height:90rpx;
+    bottom: 1px;
     text-align: center;
-    line-height:90rpx;
+    width: 100%;
 }
-.flex-item:nth-child(1){
-    border:0;
-}
-.flex-item.active{
+.btn_yzm{
+    font-size:12px;
+    line-height:75rpx;
+    height: 75rpx;
+    border:none;
+    background:#437DB8;
+    border-radius:0px 10rpx 10rpx 0px;
     color:#fff;
-    background:#627ecc;
+    
+}
+.wxbody{
+    position: absolute;
+    margin: auto;
+    top: 40%;
+    width: 100%;
+}
+.wxdot{
+    height: 1px;
+    border-bottom:1px #424342 dashed;
+    width: 100%;
+    
+}
+.rescueicon{
+    width:171rpx;
+    height:171rpx;
+    
+    margin-top:-80rpx;
+}
+.rotate{
+    transform-origin:center center; 
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transition: transform 0.2s; 
+    -moz-transition: -moz-transform 0.2s; 
+    -moz-transition: -moz-transform 0.2s; 
+    -o-transition: -o-transform 0.2s; 
+    -ms-transition: -ms-transform 0.2s; 
+}
+.rotate1{
+    transform-origin:center center;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transition: transform 0.2s; 
+    -moz-transition: -moz-transform 0.2s; 
+    -moz-transition: -moz-transform 0.2s; 
+    -o-transition: -o-transform 0.2s; 
+    -ms-transition: -ms-transform 0.2s; 
+}
+.txt-center{
+  text-align: center;
+  display: block;
+  width:100%;
 }
