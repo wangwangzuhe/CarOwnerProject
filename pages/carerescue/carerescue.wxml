@@ -29,7 +29,7 @@
     </view>
         <view class="recuopr_item">
         <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_vcode.png" class="itemimg" /></view>
-        <view class="recuopr_itemtxt"><input placeholder-class="phcolor" placeholder="验证码" type="number" bindinput="bindVaildcode"  maxlength="4"  class="txt" style="width:55%"/></view>
+        <view class="recuopr_itemtxt"><input placeholder-class="phcolor" placeholder="验证码" type="number" bindinput="bindVaildcode"  maxlength="4"  class="txt" style="width:45%"/></view>
         <button class="vaildcode" disabled="{{vaildisabled}}" bindtap="sendvaild">{{vaildtxt}}</button>
     </view>
         <view class="recuopr_item">
