@@ -24,7 +24,7 @@ page{
 .ovalreserv{
     display:block;
     position:fixed;
-    bottom:-260rpx;
+    bottom:-250rpx;
     left:0px;
     right:0px;
 }
