@@ -1,15 +1,15 @@
-//const URL = 'https://rescue.gacfcasales.com/carOwner/';
-const URL = 'https://dcctraining.jeepsupport.com.cn/carOwner/';
+const URL = 'https://rescue.gacfcasales.com/carOwner/';
+// const URL = 'https://dcctraining.jeepsupport.com.cn/carOwner/';
 
-const appInfo= {
-    appId:'wx734cf64670c67342',
-    secret:'7855c56933761f4cc4d47d4e2a864f62'
-}
-
-// const appInfo = {
-//   appId: 'wxc7da24927fc41c85',
-//   secret: '16859f5c7b652b8e4084abc1fb824644'
+// const appInfo= {
+//     appId:'wx734cf64670c67342',
+//     secret:'7855c56933761f4cc4d47d4e2a864f62'
 // }
+
+const appInfo = {
+  appId: 'wxc7da24927fc41c85',
+  secret: '16859f5c7b652b8e4084abc1fb824644'
+}
 
 module.exports = {
   appInfo,
