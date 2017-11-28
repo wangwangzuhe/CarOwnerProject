@@ -33,6 +33,7 @@ app.vaildPage({
     },
     onLoad(options) {
         this.initlocation();
+        wx.setNavigationBarTitle({ title: '广汽菲克道路救援' })
     }, getcasestatus(callback) {
         var _this = this;
         httpreq.request({

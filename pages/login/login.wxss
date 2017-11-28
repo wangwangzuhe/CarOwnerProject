@@ -145,10 +145,10 @@ page{
     
 }
 .rescueicon{
-    width:171rpx;
-    height:171rpx;
+    width:220rpx;
+    height:220rpx;
     
-    margin-top:-80rpx;
+    margin-top:-120rpx;
 }
 .rotate{
     transform-origin:center center; 

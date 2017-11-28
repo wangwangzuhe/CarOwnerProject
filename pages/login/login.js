@@ -20,6 +20,7 @@ Page({
     },
     onLoad(options) {
         this.topage(1)
+        
     },
     bindphone(e) {
         this.setData({
