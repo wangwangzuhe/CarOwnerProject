@@ -16,7 +16,37 @@
 </view>
 <scroll-view class="scroll-list" scroll-y='true' lower-threshold='100' bindscrolltolower='scrolltolower'>
 
-    <view class="list clearfix" wx:for="{{comments}}">
+<!--我的  -->
+ <view class="list clearfix" wx:if="{{tabflag}}" wx:for="{{comments}}">
+        <view class="list-l">
+            <image src="https://rescue.gacfcasales.com/carOwner/images/tuocheing.png" class="img-tag" wx:if="{{item.reliefType==1}}"></image>
+            <image src="https://rescue.gacfcasales.com/carOwner/images/tuodiaoing.png" class="img-tag" wx:if="{{item.reliefType==2}}"></image>
+            <image src="https://rescue.gacfcasales.com/carOwner/images/huantaiing.png" class="img-tag" wx:if="{{item.reliefType==3}}"></image>
+            <image src="https://rescue.gacfcasales.com/carOwner/images/songyouing.png" class="img-tag" wx:if="{{item.reliefType==4}}"></image>
+            <image src="https://rescue.gacfcasales.com/carOwner/images/kunjingjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==5}}"></image>
+            <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==6}}"></image>
+        </view>
+        <view class="list-r">
+            <view class="list-one">
+                <view class="list-one-one" style="width:250rpx">订单号：<text class="list-one-one-o" style=" white-space:nowrap;">{{item.fileNo}}</text></view>
+                <view class="list-one-one" style="margin-left:10rpx;"></view>
+            </view>
+             <view class="list-two">
+                <view class="list-two-two">服务类型：<text style="color:#21242e" wx:if="{{item.reliefType==1}}">拖车</text><text style="color:#21242e" wx:if="{{item.reliefType==2}}">拖吊</text><text style="color:#21242e" wx:if="{{item.reliefType==3}}">换胎</text><text style="color:#21242e" wx:if="{{item.reliefType==4}}">送油</text><text style="color:#21242e" wx:if="{{item.reliefType==5}}">现场救援</text></view>
+                <view class="list-two-two" style="margin-left:20rpx;">救援日期：<text style="color:#21242e">{{item.orderTime}}</text></view>
+                
+            </view>
+            <view class="list-two clearfix">
+            <view class="list-two-two">救援状态：<text style="color:#21242e" wx:if="{{item.status==5||item.status==6}}">救援完成</text><text style="color:#21242e" wx:if="{{item.status==7}}">救援完取消</text></view>
+            </view>
+            <view class="list-two" style="width:100%">
+            <view class="list-two-two"><view class="fffffl">故障地：</view><view class="ffffffl"><text style="color:#21242e">{{item.address}}</text></view></view>
+            </view>
+            
+        </view>
+    </view>
+<!--全部  -->
+    <view class="list clearfix" wx:if="{{!tabflag}}" wx:for="{{comments}}">
         <view class="list-l">
             <image src="https://rescue.gacfcasales.com/carOwner/images/tuocheing.png" class="img-tag" wx:if="{{item.reliefType==1}}"></image>
             <image src="https://rescue.gacfcasales.com/carOwner/images/dadianing.png" class="img-tag" wx:if="{{item.reliefType==2}}"></image>

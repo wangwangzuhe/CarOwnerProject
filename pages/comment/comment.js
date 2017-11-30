@@ -191,7 +191,15 @@ app.vaildPage({
                     }
                 })
             }else{
-              wx.redirectTo({ url: '../launchaid/launchaid' })
+              wx.showModal({
+                title: '操作失败',
+                content: '操作失败请重新提交',
+                showCancel: false,
+                complete(res) {
+                  // orderid删掉了 
+                  // session.userinfo.getuser().exitOrderId();
+                }
+              })
             }
         });
     }

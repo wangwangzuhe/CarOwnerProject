@@ -299,7 +299,7 @@ app.vaildPage({
                     })
                     return
                 }
-                wx.navigateTo({
+                wx.redirectTo({
                     url: '../rescueing/rescueing'
                 })
             } else {
