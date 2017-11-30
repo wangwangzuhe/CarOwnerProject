@@ -36,7 +36,7 @@ app.vaildPage({
         });
     },
     tapgo:function(){
-        wx.redirectTo({
+      wx.navigateTo({
             url: '../record/record'
         });
     }   
