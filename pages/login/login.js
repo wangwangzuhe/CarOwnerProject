@@ -129,15 +129,15 @@ Page({
                 });
 
             } else if (res.code == "owner_exist_apply") {
+              if (!args.length) {
                 wx.redirectTo({
-                    url: '../rescueing/rescueing'
+                  url: '../launchaid/launchaid'
                 });
+              }
             } else {
-                 if(!args.length){
-                    wx.redirectTo({
-                        url: '../rescueing/rescueing'
-                    });
-                }
+                  wx.redirectTo({
+                      url: '../rescueing/rescueing'
+                  });
             }
 
             // }

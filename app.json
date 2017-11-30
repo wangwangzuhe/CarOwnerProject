@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/cancel/cancel",
     "pages/login/login",
     "pages/rescuecar/rescuecar",
     "pages/launchaid/launchaid",
@@ -8,7 +7,8 @@
     "pages/comment/comment",
     "pages/rescueing/rescueing",
     "pages/record/record",
-    "pages/carerescue/carerescue"
+    "pages/carerescue/carerescue",
+    "pages/cancel/cancel"
   ],
   "window": {
     "backgroundTextStyle": "light",

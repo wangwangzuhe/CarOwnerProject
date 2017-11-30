@@ -26,7 +26,6 @@ app.vaildPage({
 
         },function(res){
             var res = res.data;
-            
             if (res.code == "finishNoComment") {
                
                 wx.redirectTo({
@@ -40,6 +39,5 @@ app.vaildPage({
         wx.redirectTo({
             url: '../record/record'
         });
-    },
-    
+    }   
 });
