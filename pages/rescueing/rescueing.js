@@ -182,7 +182,7 @@ app.vaildPage({
                         //     content: '请拨打客服电话：4006500118',
                         //     showCancel: false,
                         //     success: function () {
-                                wx.navigateTo({
+                      wx.redirectTo({
                                     url: '../launchaid/launchaid'
                                 });
                         //     }

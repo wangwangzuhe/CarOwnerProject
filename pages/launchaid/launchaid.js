@@ -34,13 +34,13 @@ app.vaildPage({
 
   },
   bindfaqi() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../carerescue/carerescue'
     });
   }
   ,
   bindchakan() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../record/record'
     });
   }

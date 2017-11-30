@@ -108,7 +108,7 @@ var option = {
   onReady: function () {
 
   }, navtourl() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../launchaid/launchaid'
     })
   }

@@ -96,6 +96,7 @@ page{
 .list-l{
     float:left;
     width:138rpx; 
+    margin-top:50rpx;
 }
 .list-r{
     float:left;
@@ -167,4 +168,13 @@ page{
     height:50rpx;line-height:50rpx;
     text-align: center;
     font-size:26rpx;
+}
+.fffffl{
+  float: left;
+  width:110rpx;
+}
+.ffffffl{
+  float: left;
+  width:460rpx;
+  white-space:normal
 }
