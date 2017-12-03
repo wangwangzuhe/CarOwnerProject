@@ -55,7 +55,7 @@
     <image src="../../images/oval.png" style="width:100%;" />
     <image src="../../images/daosj.png" class="oval_daojiao rotate"/>
      <image src="../../images/phone.png" style="width:59rpx;height:61rpx;position:absolute;z-index:100;top:110rpx;left:50%;margin-left:-30rpx"/>
-     <view class="bottom_txt" style="color:#fff;bottom:10rpx">
-                通过电话渠道发起救援的车主，请使用手机号登陆，查看案件最新状态。
+     <view class="bottom_txt" style="color:#fff;bottom:10rpx;font-size:22rpx">
+                如您已通过电话渠道发起了救援，请点此使用手机号登录，查看案件最新状态。
             </view>
 </view>

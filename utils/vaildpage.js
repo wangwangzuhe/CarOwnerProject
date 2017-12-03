@@ -6,7 +6,7 @@ var page = function (args) {
     var _this = this;
     //合并onLoad方法
     args.onLoad = function (options) {
-
+      wx.setNavigationBarTitle({ title: '广汽菲克道路救援' })
         var info = session.userinfo.getuser();
 
         if (info) {

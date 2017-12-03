@@ -20,7 +20,7 @@ Page({
     },
     onLoad(options) {
         this.topage(1)
-        
+        wx.setNavigationBarTitle({ title: '广汽菲克道路救援' })
     },
     bindphone(e) {
         this.setData({
