@@ -11,12 +11,12 @@
     <image src="../../images/oval.png" style="width:100%;" />
     <image src="../../images/daosj.png" class="oval_daojiao" bindtap="hidecarlogin"/>
 </view>
-<view class="wxbody" style="{{!isshow?'display:block':'display:none'}}">
+<view class="wxbody" style="{{!isshow?'display:block':'display:none'}} 'position':'relative'">
     <view class="wxdot"></view>
     <view style="text-align:center;">
         <image bindtap="tapwxlogo" src="../../images/rescueicon.png" class="rescueicon"  />
     </view>
-    <text class="txt-center">一键登录</text>
+    <text class="txt-center" style="width:100%;text-align:center;color:#fff;position:absolute;top:56rpx;left:0;height:40rpx;font-size">一键登录</text>
 </view>
 <view style="{{isshow?'display:block':'display:none'}}">
      <view class="logocontainer">
