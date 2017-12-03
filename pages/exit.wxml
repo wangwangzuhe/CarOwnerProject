@@ -1,3 +1,3 @@
 <template name="exit">
- <view class="userexit" style="position:absolute;z-index:1;top:20rpx;left:20rpx;" bindtap="exit"><image style="width:25px;height:25px;" src="https://rescue.gacfcasales.com/carOwner/images/exit.png"/></view>
+ <view class="userexit" style="position:absolute;z-index:1;top:20rpx;left:20rpx;" bindtap="exit"><image style="width:25px;height:25px;" src="../../images/exit.png"/></view>
 </template>
