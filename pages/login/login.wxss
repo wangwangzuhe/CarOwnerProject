@@ -46,7 +46,7 @@ page{
     left:0px;
     right:0px;
     bottom: 0px;
-    top:360rpx;
+    top:370rpx;
     background: transparent;
 }
 .logoonfos{

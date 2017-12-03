@@ -16,11 +16,11 @@
     <view style="text-align:center;">
         <image bindtap="tapwxlogo" src="../../images/rescueicon.png" class="rescueicon"  />
     </view>
-    <text class="txt-center">一键开启救援</text>
+    <text class="txt-center">一键登录</text>
 </view>
 <view style="{{isshow?'display:block':'display:none'}}">
      <view class="logocontainer">
-        <image src="../../images/phone.png" style="width:59rpx;height:61rpx;margin-top:20rpx;margin-bottom:20rpx"/>
+        <image src="../../images/phone.png" style="width:59rpx;height:61rpx;margin-top:36rpx;margin-bottom:20rpx"/>
          <view class="splitline"></view>
         <view class="txttips">
             (仅需电话发起救援的车主填写）
@@ -43,7 +43,7 @@
                     <button bindtap="carlogin">登录</button>
             </view>
             <view class="bottom_txt">
-                电话渠道发起救援的车主，请点此登陆，查看救援最新状态
+                如您已拨打电话发起了救援，请使用手机号登录，查看案件最新状态
             </view>
         </view>
        
@@ -56,6 +56,6 @@
     <image src="../../images/daosj.png" class="oval_daojiao rotate"/>
      <image src="../../images/phone.png" style="width:59rpx;height:61rpx;position:absolute;z-index:100;top:110rpx;left:50%;margin-left:-30rpx"/>
      <view class="bottom_txt" style="color:#fff;bottom:10rpx;font-size:22rpx">
-                如您已通过电话渠道发起了救援，请点此使用手机号登录，查看案件最新状态。
+                如您已拨打电话发起了救援，请使用手机号登录，查看案件最新状态
             </view>
 </view>
