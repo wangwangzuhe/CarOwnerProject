@@ -21,7 +21,7 @@
 <view class="recuopr">
     <view class="recuopr_item">
         <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_name.png" class="itemimg" /></view>
-        <view class="recuopr_itemtxt" ><input placeholder-class="phcolor" placeholder="姓名“必填”" bindinput="bindName" maxlength="8" class="txt"/></view>
+        <view class="recuopr_itemtxt" ><input placeholder-class="phcolor" placeholder="姓名“必填”" bindinput="bindName" class="txt"/></view>
     </view>
     <view class="recuopr_item">
         <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_tel.png" class="itemimg" /></view>

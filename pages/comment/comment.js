@@ -187,7 +187,7 @@ app.vaildPage({
                     complete(res){
                        // orderid删掉了 
                        // session.userinfo.getuser().exitOrderId();
-                        wx.redirectTo({url:'../launchaid/launchaid'})
+                      wx.redirectTo({ url:'../cancel/cancel'})
                     }
                 })
             }else{

@@ -141,14 +141,13 @@ page{
 .wxdot{
     height: 1px;
     border-bottom:1px #424342 dashed;
-    width: 100%;
-    
+    width: 100%;    
 }
 .rescueicon{
-    width:220rpx;
-    height:220rpx;
+    width:300rpx;
+    height:300rpx;
     
-    margin-top:-120rpx;
+    margin-top:-160rpx;
 }
 .rotate{
     transform-origin:center center; 

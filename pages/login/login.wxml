@@ -1,5 +1,5 @@
 <view class="logo">
-   <image src="https://rescue.gacfcasales.com/carOwner/images/logo.png" style="width:126rpx;height:44rpx"/>
+   <image src="https://rescue.gacfcasales.com/carOwner/images/logo.png" style="width:252rpx;height:88rpx"/>
 </view>
 <view class="toxinlogo" bindtap="hidecarlogin" style="{{isshow?'display:block':'display:none'}}">
     <image src="../../images/wxlogo.png" style="width:64rpx;height:52rpx" />
