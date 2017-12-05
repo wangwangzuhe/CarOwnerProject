@@ -146,15 +146,18 @@ page{
     font-size:30rpx;
     color:#21242e;
     margin-top:20rpx;
+    width:100%;
 }
 .list-two .list-two-two{
     white-space:nowrap;
     text-align: center;
    float:left;
     color:#535353;
+    
 }
 .list-two .list-two-two:nth-child(1){
     text-align: left;
+    
 }
 .list-three{
     border:solid 1px #eee;
