@@ -25,8 +25,8 @@ app.vaildPage({
             }
 
         },function(res){
-            var res = res.data;
-            if (res.code == "finishNoComment") {
+            var ress = res.data;
+            if (ress.code == "finishNoComment") {
                
                 wx.redirectTo({
                     url: '../comment/comment'

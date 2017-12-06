@@ -19,7 +19,7 @@ Page({
         isvaildcode_err:false
     },
     onLoad(options) {
-        this.topage(1)
+        this.topage(1, options.fileNo);
         wx.setNavigationBarTitle({ title: '广汽菲克道路救援' })
     },
     bindphone(e) {
@@ -117,6 +117,28 @@ Page({
 
             if (res.code == "owner_inexistence_order" || res.code == 'owner_null_apply') {
                 if(!args.length){
+                  if (args[1]){
+                    httpreq.request({
+                      url: wbs.fileStatus,
+                      data: {
+                        fileNo: args[1]
+                      }
+                    }, function (ress) {
+                      var resss = typeof (ress.data.data) == 'number' ? ress.data.data : parseInt(ress.data.data);
+                      switch (resss) {
+                          case 6:
+                            wx.redirectTo({
+                              url: '../cancel/cancel'
+                            });
+                            break;
+                          case 7:
+                            wx.redirectTo({
+                              url: '../cancel/cancel?t=0'
+                            });
+                            break;
+                        }
+                    });
+                  }
                     wx.redirectTo({
                         url: '../launchaid/launchaid'
                     });
@@ -128,7 +150,7 @@ Page({
                     url: '../comment/comment'
                 });
 
-            } else if (res.code == "owner_exist_apply") {
+            } else if (res.code == "owner_exist_apply") { //有一个预约申请
               if (!args.length) {
                 wx.redirectTo({
                   url: '../launchaid/launchaid'

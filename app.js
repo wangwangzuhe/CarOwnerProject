@@ -40,7 +40,7 @@ App({
                   method: 'POST',
                   success: function (res) {
                     res = res.data;
-                    console.log(res.data)
+                    //console.log(res.data)
                     if (res.success) {
                       //openId 存入Storage
                       wx.setStorageSync('openId', res.data.openId);

@@ -35,5 +35,6 @@ module.exports = {
   syncCancelAssistance:`${URL}ws/assistance/syncCancelAssistance`,//取消
   confimApply:`${URL}ws/cust/confimApply`,
   location:`${URL}ws/cust/location`,
-   complement:`${URL}ws/cust/complement` //调取车架及车牌
+   complement:`${URL}ws/cust/complement`, //调取车架及车牌
+   fileStatus: `${URL}ws/cust/fileStatus`
 }
