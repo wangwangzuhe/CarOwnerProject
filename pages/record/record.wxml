@@ -11,7 +11,7 @@
     <view class="top_banner {{!tabflag?'top_banner2':''}}">
         <view class="top_banner_item {{tabflag?'active':''}}" data-type='1' bindtap='tapTab'>我的救援记录</view>
        
-        <view class="top_banner_item {{!tabflag?'active':''}}" data-type='2' bindtap='tapTab'>所有救援记录</view>
+        <view class="top_banner_item {{!tabflag?'active':''}}" data-type='2' bindtap='tapTab'>救援评价</view>
     </view>
 </view>
 <scroll-view class="scroll-list" scroll-y='true' lower-threshold='100' bindscrolltolower='scrolltolower'>

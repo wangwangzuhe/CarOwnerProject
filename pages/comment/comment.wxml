@@ -4,11 +4,11 @@
 <template is="exit" />
 <view class="recubg">
     <image src="https://rescue.gacfcasales.com/carOwner/images/comment/commonttop.png" mode="widthFix" style="width:100%"/>
-    <view class="recu_switch">
-    <view class="recu_flex">
+    <!--<view class="recu_switch">
+     <view class="recu_flex">
         救援评价：
-    </view>
-    </view>
+    </view> 
+    </view>-->
 </view>
 <view class="cbody">
     <view class="carerinfo clear">
@@ -22,7 +22,7 @@
         </view>
     </view>
     <view class="hx">
-        [请您对此次服务做出评价]
+        [您的评价会让我们做得更好]
     </view>
     <view class="review">
         <view class="vitem clear">

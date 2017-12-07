@@ -19,7 +19,7 @@ Page({
         isvaildcode_err:false
     },
     onLoad(options) {
-        this.topage(1, options.fileNo);
+      this.tapwxlogo(1, options.fileNo);
         wx.setNavigationBarTitle({ title: '广汽菲克道路救援' })
     },
     bindphone(e) {
@@ -82,6 +82,7 @@ Page({
     },
     tapwxlogo() {
         var _this = this;
+        const args = [].slice.call(arguments);
         //微信登录
         httpreq.request({
             url: wbs.login,
@@ -91,15 +92,51 @@ Page({
             }
         }, function (res) {
             session.userinfo.login(session.enum_identity.owner, res.data.data);
-
-            _this.topage();
+            if (typeof(args[0])=='object'){
+              _this.topage();
+              return
+            }
+            _this.topage(...args);
         });
 
     },
     topage() {
-
         const args = [].slice.call(arguments);
 
+      //从模板跳转过来走这个跳转逻辑
+        if (args[1]) {
+          httpreq.request({
+            url: wbs.fileStatus,
+            data: {
+              fileNo: args[1]
+            }
+          }, function (ress) {
+            var resss = typeof (ress.data.data) == 'number' ? ress.data.data : parseInt(ress.data.data);
+            switch (resss) {
+              case 5:
+                wx.redirectTo({
+                  url: '../comment/comment'
+                });
+                break;
+              case 6:
+                wx.redirectTo({
+                  url: '../cancel/cancel'
+                });
+                break;
+              case 7:
+                wx.redirectTo({
+                  url: '../cancel/cancel?t=0'
+                });
+                break;
+              default:
+                wx.redirectTo({
+                  url: '../rescueing/rescueing'
+                });
+            }
+          });
+         
+        }else{
+    // 正常打开走以下跳转逻辑
         httpreq.request({
             url: wbs.owner,
             data: {
@@ -117,28 +154,6 @@ Page({
 
             if (res.code == "owner_inexistence_order" || res.code == 'owner_null_apply') {
                 if(!args.length){
-                  if (args[1]){
-                    httpreq.request({
-                      url: wbs.fileStatus,
-                      data: {
-                        fileNo: args[1]
-                      }
-                    }, function (ress) {
-                      var resss = typeof (ress.data.data) == 'number' ? ress.data.data : parseInt(ress.data.data);
-                      switch (resss) {
-                          case 6:
-                            wx.redirectTo({
-                              url: '../cancel/cancel'
-                            });
-                            break;
-                          case 7:
-                            wx.redirectTo({
-                              url: '../cancel/cancel?t=0'
-                            });
-                            break;
-                        }
-                    });
-                  }
                     wx.redirectTo({
                         url: '../launchaid/launchaid'
                     });
@@ -164,6 +179,7 @@ Page({
 
             // }
         });
+      }
     },
     setlogin(identityType, cb) {
         httpreq.request({
