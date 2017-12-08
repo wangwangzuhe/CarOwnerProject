@@ -112,6 +112,14 @@ Page({
               openId: wx.getStorageSync('openId')
             }
           }, function (ress) {
+            if(!ress.data.success){
+              wx.showModal({
+                title: '',
+                content: ress.data.msg,
+                showCancel: false
+              })
+              return ;
+            }
             var resss = typeof (ress.data.data) == 'number' ? ress.data.data : parseInt(ress.data.data);
             switch (resss) {
               case 5:
