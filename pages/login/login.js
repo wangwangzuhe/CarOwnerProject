@@ -108,7 +108,8 @@ Page({
           httpreq.request({
             url: wbs.fileStatus,
             data: {
-              fileNo: args[1]
+              fileNo: args[1],
+              openId: wx.getStorageSync('openId')
             }
           }, function (ress) {
             var resss = typeof (ress.data.data) == 'number' ? ress.data.data : parseInt(ress.data.data);
