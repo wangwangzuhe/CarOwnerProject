@@ -23,7 +23,7 @@
             <image src="https://rescue.gacfcasales.com/carOwner/images/tuodiaoing.png" class="img-tag" wx:if="{{item.reliefType==2}}"></image>
             <image src="https://rescue.gacfcasales.com/carOwner/images/huantaiing.png" class="img-tag" wx:if="{{item.reliefType==3}}"></image>
             <image src="https://rescue.gacfcasales.com/carOwner/images/songyouing.png" class="img-tag" wx:if="{{item.reliefType==4}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/kunjingjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==5}}"></image>
+            <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==5}}"></image>
             <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==6}}"></image>
         </view>
         <view class="list-r">
@@ -49,10 +49,10 @@
     <view class="list clearfix" wx:if="{{!tabflag}}" wx:for="{{comments}}">
         <view class="list-l">
             <image src="https://rescue.gacfcasales.com/carOwner/images/tuocheing.png" class="img-tag" wx:if="{{item.reliefType==1}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/dadianing.png" class="img-tag" wx:if="{{item.reliefType==2}}"></image>
+            <image src="https://rescue.gacfcasales.com/carOwner/images/tuodiaoing.png" class="img-tag" wx:if="{{item.reliefType==2}}"></image>
             <image src="https://rescue.gacfcasales.com/carOwner/images/huantaiing.png" class="img-tag" wx:if="{{item.reliefType==3}}"></image>
             <image src="https://rescue.gacfcasales.com/carOwner/images/songyouing.png" class="img-tag" wx:if="{{item.reliefType==4}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/kunjingjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==5}}"></image>
+            <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==5}}"></image>
             <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==6}}"></image>
         </view>
         <view class="list-r">
