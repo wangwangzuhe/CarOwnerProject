@@ -2,6 +2,7 @@ var app = getApp()
 var wbs = require('../../utils/wbs.js');
 var appEnum = require('../../utils/enum.js');
 const OPENID = wx.getStorageSync('openId');
+var util = require("../../utils/util");
 
 var option = {
   data: {
@@ -26,9 +27,10 @@ var option = {
         return
       }
     }
+    util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
     wx.request({
       url: url,
-      data: { openId: OPENID, pageIndex: _this.data.pageIndex + '' },
+      data: { openId: resolve, pageIndex: _this.data.pageIndex + '' },
       method: 'POST',
       success: function (res) {
         // success
@@ -60,6 +62,7 @@ var option = {
         }
       }
     })
+    });
   },
   scrolltolower() {
     if (this.data.tabflag) {

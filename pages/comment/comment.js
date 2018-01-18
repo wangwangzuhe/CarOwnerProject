@@ -120,10 +120,11 @@ app.vaildPage({
 
         var _this = this;
         //订单编号
+        util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
         httpreq.request({
           url: wbs.owner,
           data: {
-            openId: wx.getStorageSync('openId')
+            openId: resolve
           }
 
         }, function (res) {
@@ -153,13 +154,14 @@ app.vaildPage({
             });
           }
         })
-        
+        })
     },
     submit() {
         var _this = this;
         this.setData({
               isloading:true
         });
+        util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
         httpreq.request({
             url: wbs.addcomment,
             data: {
@@ -201,6 +203,7 @@ app.vaildPage({
                 }
               })
             }
+        });
         });
     }
 });

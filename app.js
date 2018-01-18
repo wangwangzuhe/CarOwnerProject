@@ -1,8 +1,6 @@
 //app.js
 var wbs = require('/utils/wbs.js');
 var pageHX = require('/utils/vaildpage.js');
-var httpreq = require("/utils/httpreq");
-var wbs = require('/utils/wbs.js');
 
 App({
   onLaunch: function () {
@@ -35,7 +33,6 @@ App({
                 }
                 wx.request({
                   url: wbs.saveInfo,
-                  //url:'https://rescue.gacfcasales.com/carOwner/ws/cust/getSessionKey',
                   data: dataArg,
                   method: 'POST',
                   success: function (res) {

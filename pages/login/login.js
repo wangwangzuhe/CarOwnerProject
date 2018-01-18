@@ -84,11 +84,12 @@ Page({
         var _this = this;
         const args = [].slice.call(arguments);
         //微信登录
+        util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
         httpreq.request({
             url: wbs.login,
             data: {
                 identityType: session.enum_identity.owner,
-                openId: wx.getStorageSync('openId')
+                openId: resolve
             }
         }, function (res) {
             session.userinfo.login(session.enum_identity.owner, res.data.data);
@@ -98,13 +99,14 @@ Page({
             }
             _this.topage(...args);
         });
-
+        });
     },
     topage() {
         const args = [].slice.call(arguments);
 
       //从模板跳转过来走这个跳转逻辑
         if (args[1]) {
+          util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
           httpreq.request({
             url: wbs.fileStatus,
             data: {
@@ -143,9 +145,10 @@ Page({
                 });
             }
           });
-         
+          });
         }else{
     // 正常打开走以下跳转逻辑
+    util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
         httpreq.request({
             url: wbs.owner,
             data: {
@@ -188,20 +191,24 @@ Page({
 
             // }
         });
+      })
       }
     },
     setlogin(identityType, cb) {
+      var _this = this;
+      util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
         httpreq.request({
             url: wbs.login,
             data: {
                 identityType: identityType,
-                openId: wx.getStorageSync('openId'),
-                phone: this.data.phone,
-                code: this.data.vcode
+                openId: resolve,
+                phone: _this.data.phone,
+                code: _this.data.vcode
             }
         }, function (res) {
             cb(res);
         });
+      })
     },
     carlogin() {
         var _this = this;
@@ -243,6 +250,7 @@ Page({
                         success: function (res1) {
                             var latitude = res1.latitude;
                             var longitude = res1.longitude;
+                            util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
                             httpreq.request({
                                 url: wbs.location,
                                 data: {
@@ -263,6 +271,7 @@ Page({
                                     })
                                 }
                             });
+                            })
                         }
                     });
                 } else {

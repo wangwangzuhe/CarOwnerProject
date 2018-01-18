@@ -1,3 +1,5 @@
+var wbs = require('./wbs.js');
+
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -116,6 +118,53 @@ function getFlatternDistance(lat1, lng1, lat2, lng2) {
   return d * (1 + fl * (h1 * sf * (1 - sg) - h2 * (1 - sf) * sg));
 }
 
+/**
+ * 拦截openid为空的情况
+ * @return Promise
+ */
+function httpIntercept(openid){
+  var httpInterceptPromise = new Promise(function (resolve, reject) {
+    if (!openid){
+      setOpenId(resolve);
+    }else{
+      resolve(openid);
+    }
+  });
+  return httpInterceptPromise;
+}
+function setOpenId(cb) {
+  wx.login({
+    success: function (ress) {
+      if (ress.code) {
+        wx.getUserInfo({
+          success: function (res) {
+            var dataArg = {
+              "appId": wbs.appInfo.appId, //---小程序唯一标识
+              "secret": wbs.appInfo.secret, //--小程序的 app secret
+              "jsCode": ress.code, //--登录时获取的 code
+              "iv": res.iv,// ---加密算法的初始向量
+              "encryptedData": res.encryptedData //--包括敏感数据在内的完整用户信息的加密数据
+            }
+            wx.request({
+              url: wbs.saveInfo,
+              data: dataArg,
+              method: 'POST',
+              success: function (res) {
+                res = res.data;
+                //console.log(res.data)
+                if (res.success) {
+                  //openId 存入Storage
+                  wx.setStorageSync('openId', res.data.openId);
+                  typeof cb == "function" && cb(res.data.openId)
+                }
+              }
+            })
+          }
+        });
+      }
+    }
+  });
+}
 module.exports = {
   formatTime: formatTime,
   trim: trim,
@@ -123,5 +172,6 @@ module.exports = {
   checksum: checksum,
   numberWithCommas,
   subString,
-  getFlatternDistance: getFlatternDistance
+  getFlatternDistance: getFlatternDistance,
+  httpIntercept: httpIntercept
 }

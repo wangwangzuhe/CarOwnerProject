@@ -20,39 +20,41 @@ app.vaildPage({
 
     }, getcasestatus() {
         var _this = this;
-        
-        httpreq.request({
-            url: wbs.owner,
-            data: {
-                openId: wx.getStorageSync('openId')
-            }
-
-        }, function (res) {
-            var res = res.data;
-
-            if (res.success) {
-                _this.setData({
-                    fileNo: res.data.fileNo
-                });
-                if (res.code == "owner_inexistence_order") {
-                    wx.redirectTo({
-                        url: '../launchaid/launchaid'
-                    });
+        util.httpIntercept(wx.getStorageSync('openId')).then((resolve)=>{
+              httpreq.request({
+                url: wbs.owner,
+                data: {
+                  openId: resolve
                 }
-                else if (res.code == "owner_exist_order" && res.data.status == 'case') {
+
+              }, function (res) {
+                var res = res.data;
+
+                if (res.success) {
+                  _this.setData({
+                    fileNo: res.data.fileNo
+                  });
+                  if (res.code == "owner_inexistence_order") {
+                    wx.redirectTo({
+                      url: '../launchaid/launchaid'
+                    });
+                  }
+                  else if (res.code == "owner_exist_order" && res.data.status == 'case') {
                     _this.whilestatus();
                     _this.setData({
-                        casetime: res.data.timeStep.caseTime
+                      casetime: res.data.timeStep.caseTime
                     });
 
-                } else {
+                  } else {
                     wx.navigateTo({
-                        url: '../rescueing/rescueing'
+                      url: '../rescueing/rescueing'
                     });
-                }
+                  }
 
-            }
-        });
+                }
+              });
+        })
+        
     },
     whilestatus() {
         var _this = this;
@@ -65,10 +67,11 @@ app.vaildPage({
         this.setData({
               isloading:true
             });
+        util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
         httpreq.request({
             url: wbs.confimApply,
             data: {
-                openId: wx.getStorageSync('openId')
+              openId: resolve
             }
 
         }, function (res) {
@@ -84,6 +87,7 @@ app.vaildPage({
                 _this.getcasestatus();
             }
 
+        })
         })
     },
     tapcancelservice() {

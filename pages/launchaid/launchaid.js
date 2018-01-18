@@ -3,6 +3,7 @@ var wbs = require('../../utils/wbs.js');
 var httpreq = require("../../utils/httpreq");
 var emumstatus = require("../../utils/enum");
 var session = require("../../utils/session");
+var util = require("../../utils/util");
 
 app.vaildPage({
   data: {
@@ -11,7 +12,7 @@ app.vaildPage({
   onLoad: function (option) {
 
     var _this = this;
-
+    util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
     httpreq.request({
       url: wbs.owner,
       data: {
@@ -31,7 +32,7 @@ app.vaildPage({
       }
 
     });
-
+    });
   },
   bindfaqi() {
     wx.navigateTo({
@@ -44,43 +45,4 @@ app.vaildPage({
       url: '../record/record'
     });
   }
-  //   formSubmit: function(e) {
-  //       var _this = this;
-  //     console.log('form发生了submit事件，携带数据为：', e.detail);
-  //      wx.login({
-  //         success: function (ress) {
-
-  //           if(ress.code) {
-  //               console.log(ress.code,'==code');
-  //                wx.setStorageSync('jscode', ress.code);
-  //            }
-  //            var data = {
-  //                 "formId":e.detail.formId,
-  //                 "jsCode":ress.code,
-  //                 "iv":wx.getStorageSync('userArg')['iv'],
-  //                 "encryptedData":wx.getStorageSync('userArg')['encryptedData']
-  //             }
-  //         wx.request({
-  //             url: 'https://dcctraining.jeepsupport.com.cn/carOwner/ws/template/info',
-  //             data:data,
-  //             method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-  //             // header: {}, // 设置请求的 header
-  //             success: function(res){
-  //                 // success
-  //                 _this.setData({test:JSON.stringify(res.data)})
-  //             },
-  //             fail: function() {
-  //                 // fail
-  //             },
-  //             complete: function() {
-  //             // complete
-  //             }
-  //         })
-  //         }
-  //       });
-
-  //   },
-  //   formReset: function() {
-  //     console.log('form发生了reset事件')
-  //   }
 })

@@ -40,9 +40,10 @@ var homeData={
       success: function (res) {
         var latitude = res.latitude+'';
         var longitude = res.longitude+'';
+        util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
         var data = {
             "orderId": _this.data.orderId+'', 
-            "openId": OPENID, 
+            "openId": resolve, 
             "latitude": latitude,
             "longitude": longitude
           } 
@@ -55,6 +56,7 @@ var homeData={
              time = setTimeout(getCarPosition,30000);
             console.log(res,'.......')
           }
+        })
         })
       }
     })
@@ -190,20 +192,7 @@ var homeData={
   exit:function(){
     clearTimeout(time);
   }
-  // onShareAppMessage: function () {
-  //   return {
-  //     title: 'Jeep车型询价',
-  //     path: '/pages/home/home'
-  //   }
-  // },
-  //  toDealerPage: function( e ) {
-  //   var id = e.currentTarget.dataset.id;
-  //   var pname=e.currentTarget.dataset.pname;
-  //   console.log(pname);
-  //   wx.navigateTo( {
-  //     url: '../dealer/dealer?id=' + id+"&pname="+pname
-  //   });
-  // }
+ 
 };
 // Page(homeData)
 app.vaildPage(homeData);

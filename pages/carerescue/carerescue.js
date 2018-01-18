@@ -263,6 +263,7 @@ app.vaildPage({
             disabledHelp: true,
             isloading: true
         })
+        util.httpIntercept(wx.getStorageSync('openId')).then((resolve) => {
         httpreq.request({
             url: wbs.custapply,
             //data:aa
@@ -310,6 +311,7 @@ app.vaildPage({
                 })
             }
 
+        });
         })
     },
     bindrescue(e) {
