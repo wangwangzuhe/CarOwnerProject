@@ -17,7 +17,7 @@
         </view>
          <view class="careinfoitem">
             <view class="item"><label>车主姓名：</label>{{username}}</view>
-            <view class="item"><label>救援日起：</label>{{createTime}}</view>
+            <view class="item"><label>救援日期：</label>{{createTime}}</view>
             <view class="item"><label>救援类型：</label>{{reliefTypetxt}}</view>
         </view>
     </view>
