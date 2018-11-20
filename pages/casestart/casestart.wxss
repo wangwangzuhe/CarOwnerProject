@@ -1,76 +1,79 @@
-page{
-    background:url('https://rescue.gacfcasales.com/carOwner/images/statusbg.png');
-    background-size:100% 100%;
+page {
+  background: url('https://rescue.gacfcasales.com/carOwner/images/statusbg.png');
+  background-size: 100% 100%;
 }
-.logo{
-    text-align:right;
-    padding:20px;
+.logo {
+  text-align: right;
+  padding: 20px;
 }
-.logo image{
-     width: 90px;
-    height: 30px;
+.logo image {
+  width: 90px;
+  height: 30px;
 }
-.time{
-    float:left;
-font-size:16px;
-line-height:120rpx;
-width:210rpx;
-text-align:right;
-font-weight: bold;
-box-sizing: border-box;
-padding-right: 20rpx;
+.time {
+  float: left;
+  font-size: 16px;
+  line-height: 120rpx;
+  width: 210rpx;
+  text-align: right;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding-right: 20rpx;
 }
-.rescustatus{
-    float: left;
-    line-height: 120rpx;
-    width: 120rpx;
-    
+.rescustatus {
+  float: left;
+  line-height: 120rpx;
+  width: 120rpx;
 }
-.rescustatus image{
-    width: 108rpx;
-    height: 108rpx;
-        vertical-align: middle;
-        border-radius: 50%;
+.rescustatus image {
+  width: 108rpx;
+  height: 108rpx;
+  vertical-align: middle;
+  border-radius: 50%;
 }
-.txt{
-    line-height: 120rpx;
-    float: left;
-    font-weight: bold;
+.txt {
+  line-height: 120rpx;
+  float: left;
+  font-weight: bold;
 }
-.clear:after{
-    clear: both;
-    content: "";
-    display: block;
+.clear:after {
+  clear: both;
+  content: '';
+  display: block;
 }
-.start{
-    margin-top: 60px;
+.start {
+  margin-top: 60px;
 }
-.paianing,.arraved,.helping,.company{
-    margin-top: 10px;
+.paianing,
+.arraved,
+.helping,
+.company {
+  margin-top: 10px;
 }
-.time image{
-    width: 45px;
-    height: 15px;
+.time image {
+  width: 45px;
+  height: 15px;
 }
-.fixtxt,.fixcancel{
-    position: fixed;
-    bottom: 0px;
-    width: 70%;
-    line-height: 40px;
-    background-color: rgba(98, 126, 204,.9);
-    text-align: center;
-    font-size: 14px;
-    color: #fff;
+.fixtxt,
+.fixcancel {
+  position: fixed;
+  bottom: 0px;
+  width: 70%;
+  line-height: 40px;
+  background-color: rgba(98, 126, 204, 0.9);
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
 }
-.fixtxt{
-background-color:rgb(98, 126, 204);
+.fixtxt {
+  background-color: rgb(98, 126, 204);
 }
-.fixcancel{
-    width:30%;
-    line-height:40px;
-    background-color:rgba(33, 43, 46,.9);
-    position:fixed;
-    z-index:2;
-    height:40px;
-    right:0px;
+.fixcancel {
+  width: 30%;
+  line-height: 40px;
+  background-color: rgba(33, 43, 46, 0.9);
+  position: fixed;
+  z-index: 2;
+  height: 40px;
+  right: 0px;
 }

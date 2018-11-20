@@ -1,183 +1,180 @@
-page{
-    /* background: #21242e; */
+page {
+  /* background: #21242e; */
 }
-.header-parent{
-    height:185rpx;
-    width:100%;
-    background:url(https://rescue.gacfcasales.com/carOwner/images/header_bg.jpg);
-    background-size: cover;
-    position:relative;
+.header-parent {
+  height: 185rpx;
+  width: 100%;
+  background: url(https://rescue.gacfcasales.com/carOwner/images/header_bg.jpg);
+  background-size: cover;
+  position: relative;
 }
 
-.header{
-    height:100rpx;
-    width:100%;
-    position:relative;
+.header {
+  height: 100rpx;
+  width: 100%;
+  position: relative;
 }
-.header .one{
-   float:left;
-   height:100rpx;
-   width:70rpx;
+.header .one {
+  float: left;
+  height: 100rpx;
+  width: 70rpx;
 }
-.header .back{
-    width:35rpx;
-    height:23rpx;
-    background:url(https://rescue.gacfcasales.com/carOwner/images/back.png);
-    background-size:cover;
-    float:right;
-    margin-top:40rpx;  
+.header .back {
+  width: 35rpx;
+  height: 23rpx;
+  background: url(https://rescue.gacfcasales.com/carOwner/images/back.png);
+  background-size: cover;
+  float: right;
+  margin-top: 40rpx;
 }
-.logo{
-    width:126rpx;
-    height:44rpx;
-    background:url('https://rescue.gacfcasales.com/carOwner/images/logo.png');
-    background-size:cover;
-    position:absolute;
-    z-index:1;
-    top:50%;
-    left:50%;
-    margin-left:-63rpx;
-    margin-top:-22rpx;
+.logo {
+  width: 126rpx;
+  height: 44rpx;
+  background: url('https://rescue.gacfcasales.com/carOwner/images/logo.png');
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin-left: -63rpx;
+  margin-top: -22rpx;
 }
-.three{
-    float: right;
-    margin-top:40rpx;
-    margin-right:30rpx;
-    color:#535353;
-    font-size:24rpx;
+.three {
+  float: right;
+  margin-top: 40rpx;
+  margin-right: 30rpx;
+  color: #535353;
+  font-size: 24rpx;
 }
-.top_banner{
-    height:88rpx;
-    width:100%;
-    background:url('https://rescue.gacfcasales.com/carOwner/images/tab1.png');
-    background-size: cover;
-    display: flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items: center;
+.top_banner {
+  height: 88rpx;
+  width: 100%;
+  background: url('https://rescue.gacfcasales.com/carOwner/images/tab1.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-.top_banner2{
-   background:url('https://rescue.gacfcasales.com/carOwner/images/tab2.png');
-   background-size:cover;
+.top_banner2 {
+  background: url('https://rescue.gacfcasales.com/carOwner/images/tab2.png');
+  background-size: cover;
 }
-.top_banner_item{
-    flex:1;
-    text-align: center;
-    color:#2f4871;
-    font-size:28rpx;
+.top_banner_item {
+  flex: 1;
+  text-align: center;
+  color: #2f4871;
+  font-size: 28rpx;
 }
-.top_banner_item.active{
-    flex:1;
-    text-align: center;
-    color:#fff;
+.top_banner_item.active {
+  flex: 1;
+  text-align: center;
+  color: #fff;
 }
-.fenge{
-    width:17rpx;
-    height:85rpx;
-    background:url(https://rescue.gacfcasales.com/carOwner/images/fenge.png);
-    background-size:cover;
-    margin:0 auto;
+.fenge {
+  width: 17rpx;
+  height: 85rpx;
+  background: url(https://rescue.gacfcasales.com/carOwner/images/fenge.png);
+  background-size: cover;
+  margin: 0 auto;
 }
-.scroll-list{
-    position: fixed;
-    top:200rpx;
-    bottom:15rpx;
-    z-index:1;
-    width:100%;
-    background:#fff;
-    border-radius: 10rpx;
-    box-sizing:  border-box;
-    padding:0;
+.scroll-list {
+  position: fixed;
+  top: 200rpx;
+  bottom: 15rpx;
+  z-index: 1;
+  width: 100%;
+  background: #fff;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding: 0;
 }
-.scroll-list .list{
-    border-bottom:1px solid #7a7c82;
-    padding:12rpx 10rpx;
+.scroll-list .list {
+  border-bottom: 1px solid #7a7c82;
+  padding: 12rpx 10rpx;
 }
-.list-l{
-    float:left;
-    width:138rpx; 
-    margin-top:50rpx;
+.list-l {
+  float: left;
+  width: 138rpx;
+  margin-top: 50rpx;
 }
-.list-r{
-    float:left;
-    width:592rpx;
-    margin-top:10rpx;
+.list-r {
+  float: left;
+  width: 592rpx;
+  margin-top: 10rpx;
 }
-.clearfix:after{
-  content: " ";
+.clearfix:after {
+  content: ' ';
   display: block;
   clear: both;
   height: 0;
 }
-.clearfix{
+.clearfix {
   zoom: 1;
 }
-.list-l .img-tag{
-    width:121rpx;
-    height:121rpx;
+.list-l .img-tag {
+  width: 121rpx;
+  height: 121rpx;
 }
-.list-one{
-  padding-top:20rpx;
+.list-one {
+  padding-top: 20rpx;
   float: left;
-  
+
   color: #535353;
-  font-size:30rpx;
-  width:592rpx;
+  font-size: 30rpx;
+  width: 592rpx;
 }
-.list-one .list-one-one{
-    text-align: left;
-    white-space:nowrap;
-    float: left;
+.list-one .list-one-one {
+  text-align: left;
+  white-space: nowrap;
+  float: left;
 }
-.list-one .list-one-one:nth-child(2){
-     text-align: left;
-     white-space:nowrap;
+.list-one .list-one-one:nth-child(2) {
+  text-align: left;
+  white-space: nowrap;
 }
-.list-one .list-one-one .list-one-one-o{
-   
-    color:#21242e;
-     
+.list-one .list-one-one .list-one-one-o {
+  color: #21242e;
 }
-.list-two{
-    float: left;
-    /*flex-direction:row;*/
-    /*justify-content:center;
+.list-two {
+  float: left;
+  /*flex-direction:row;*/
+  /*justify-content:center;
     align-items: center;*/
-    font-size:30rpx;
-    color:#21242e;
-    margin-top:20rpx;
-    width:100%;
+  font-size: 30rpx;
+  color: #21242e;
+  margin-top: 20rpx;
+  width: 100%;
 }
-.list-two .list-two-two{
-    white-space:nowrap;
-    text-align: center;
-   float:left;
-    color:#535353;
-    
-}
-.list-two .list-two-two:nth-child(1){
-    text-align: left;
-    
-}
-.list-three{
-    border:solid 1px #eee;
-    box-sizing:border-box;
-    padding:10px;
-    border-radius:5px;
-    font-size: 12px;
-}
-.null-data{
-    width:100%;
-    height:50rpx;line-height:50rpx;
-    text-align: center;
-    font-size:26rpx;
-}
-.fffffl{
+.list-two .list-two-two {
+  white-space: nowrap;
+  text-align: center;
   float: left;
-  width:110rpx;
+  color: #535353;
 }
-.ffffffl{
+.list-two .list-two-two:nth-child(1) {
+  text-align: left;
+}
+.list-three {
+  border: solid 1px #eee;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.null-data {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 26rpx;
+}
+.fffffl {
   float: left;
-  width:460rpx;
-  white-space:normal
+  width: 110rpx;
+}
+.ffffffl {
+  float: left;
+  width: 460rpx;
+  white-space: normal;
 }

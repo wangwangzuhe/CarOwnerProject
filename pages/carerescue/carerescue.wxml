@@ -10,7 +10,7 @@
         <view class="flexitem" bindtap="bindrescuepub" style="flex:2;{{rescuetype=='0'?'font-weight:bold;':'color:#2f4871'}}">
             <view class="flexitem" style="">申请救援</view>
         </view>
-      
+
         <view class="flexitem " bindtap="bindrescuemegent" style="flex:2;{{rescuetype=='1'?'font-weight:bold;':'color:#2f4871'}}">
         <veiw class="flexitem">预约救援</veiw>
         </view>
@@ -52,7 +52,7 @@
                 </picker>
             </view>
         </view>
-         
+
         <view class="recuopr_item">
             <view class="recuopr_itemicon"><image style="width:90px" src="/images/rescus_addr.png" class="itemimg" /></view>
             <view class="recuopr_itemtxt"><view   bindtap="bindaddtap" class="addsel {{addr!='救援地址  请选择救援地点'?'in':''}}">{{addr}}</view></view>
@@ -69,12 +69,12 @@
         <view class="item1">
             <view  bindtap="bindrescue" data-id="{{rescue[1].id}}"><image style="width:60px;height:60px;" src="https://rescue.gacfcasales.com/carOwner/images/tuodiao{{rescue[1].issel?'ing':''}}.png"/></view>
             <veiw class="item1txt {{rescue[1].issel?'blue':''}}" >{{rescue[1].str}}</veiw>
-            
+
         </view>
         <view class="item2">
             <view bindtap="bindrescue" data-id="{{rescue[2].id}}"><image style="width:60px;height:60px;" src="https://rescue.gacfcasales.com/carOwner/images/huantai{{rescue[2].issel?'ing':''}}.png"/></view>
             <veiw class="item2txt {{rescue[2].issel?'blue':''}}">换胎</veiw>
-            
+
         </view>
     </view>
     <view class="rescuesel" >
@@ -85,7 +85,7 @@
         <!-- <view class="item1">
             <view bindtap="bindrescue" data-id="{{rescue[4].id}}"><image style="width:60px;height:60px;" src="/images/kuijingjiuyuan{{rescue[4].issel?'ing':''}}.png"/></view>
             <veiw class="item1txt">困境救援</veiw>
-            
+
         </view> -->
         <view class="item1">
             <view bindtap="bindrescue" data-id="{{rescue[5].id}}"><image style="width:60px;height:60px" src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuan{{rescue[5].issel?'ing':''}}.png"/></view>

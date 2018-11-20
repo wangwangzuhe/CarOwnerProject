@@ -51,7 +51,7 @@
       <view class="title-name"></view>
   </view>
 </view>
-<view class="rescuebox"> 
+<view class="rescuebox">
     <view class="box-content">
       <view class="rescuecar-style"><text class="name">救援类型：</text>{{rescueStyle[apply.reliefType]}}</view>
       <view class="rescuecar-style"><text class="name">救援位置：</text>{{apply.address}}</view>

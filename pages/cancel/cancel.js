@@ -1,43 +1,43 @@
-var app = getApp();
-var util = require("../../utils/util");
-var httpreq = require("../../utils/httpreq");
-var wbs = require('../../utils/wbs.js');
-var session = require("../../utils/session");
+var app = getApp()
+var util = require('../../utils/util')
+var httpreq = require('../../utils/httpreq')
+var wbs = require('../../utils/wbs.js')
+var session = require('../../utils/session')
 
 app.vaildPage({
-    data: {
-        showtxt:"您的订单已完成！"
-    },
-    onLoad(options) {
-        if(options.t==0){
-            this.setData({
-                showtxt:"您的订单已取消！"
-            });
-        }else{
-            this.checkowner();
+  data: {
+    showtxt: '您的订单已完成！'
+  },
+  onLoad(options) {
+    if (options.t == 0) {
+      this.setData({
+        showtxt: '您的订单已取消！'
+      })
+    } else {
+      this.checkowner()
+    }
+  },
+  checkowner() {
+    httpreq.request(
+      {
+        url: wbs.owner,
+        data: {
+          openId: wx.getStorageSync('openId')
         }
-    },
-    checkowner(){
-        httpreq.request({
-            url: wbs.owner,
-            data: {
-                openId: wx.getStorageSync('openId')
-            }
-
-        },function(res){
-            var ress = res.data;
-            if (ress.code == "finishNoComment") {
-               
-                wx.redirectTo({
-                    url: '../comment/comment'
-                });
-                
-            }
-        });
-    },
-    tapgo:function(){
-      wx.navigateTo({
-            url: '../record/record'
-        });
-    }   
-});
+      },
+      function(res) {
+        var ress = res.data
+        if (ress.code == 'finishNoComment') {
+          wx.redirectTo({
+            url: '../comment/comment'
+          })
+        }
+      }
+    )
+  },
+  tapgo: function() {
+    wx.navigateTo({
+      url: '../record/record'
+    })
+  }
+})

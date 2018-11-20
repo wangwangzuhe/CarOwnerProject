@@ -10,7 +10,7 @@
     </view>
     <view class="top_banner {{!tabflag?'top_banner2':''}}">
         <view class="top_banner_item {{tabflag?'active':''}}" data-type='1' bindtap='tapTab'>我的救援记录</view>
-       
+
         <view class="top_banner_item {{!tabflag?'active':''}}" data-type='2' bindtap='tapTab'>救援评价</view>
     </view>
 </view>
@@ -34,7 +34,7 @@
              <view class="list-two">
                 <view class="list-two-two" style="width:40%;">服务类型：<text style="color:#21242e" wx:if="{{item.reliefType==1}}">拖车</text><text style="color:#21242e" wx:if="{{item.reliefType==2}}">拖吊</text><text style="color:#21242e" wx:if="{{item.reliefType==3}}">换胎</text><text style="color:#21242e" wx:if="{{item.reliefType==4}}">送油</text><text style="color:#21242e" wx:if="{{item.reliefType==5}}">现场救援</text></view>
                 <view class="list-two-two" style="width:60%;padding-left:20rpx;box-sizing: border-box;">救援日期：<text style="color:#21242e">{{item.orderTime}}</text></view>
-                
+
             </view>
             <view class="list-two clearfix">
             <view class="list-two-two" style="width:100%">救援状态：<text style="color:#21242e" wx:if="{{item.status==5||item.status==6}}">救援完成</text><text style="color:#21242e" wx:if="{{item.status==7}}">救援取消</text></view>
@@ -42,7 +42,7 @@
             <view class="list-two" style="width:100%">
             <view class="list-two-two"  style="width:100%"><view class="fffffl">故障地：</view><view class="ffffffl"><text style="color:#21242e">{{item.address}}</text></view></view>
             </view>
-            
+
         </view>
     </view>
 <!--全部  -->

@@ -1,129 +1,124 @@
-page{
-    background-color: #21242e;
-    font-size: 33rpx;
-    
+page {
+  background-color: #21242e;
+  font-size: 33rpx;
 }
-.recubg{
-    position:relative;
-    height:90rpx;
+.recubg {
+  position: relative;
+  height: 90rpx;
 }
-.recubg .recu_switch{
-    position:absolute;
-    line-height:86rpx;
-    background-color:rgba(87, 96, 116, .5);
-    bottom:-1rpx;
-    width:100%;
-    height:86rpx;
-    color:#fff;
-
+.recubg .recu_switch {
+  position: absolute;
+  line-height: 86rpx;
+  background-color: rgba(87, 96, 116, 0.5);
+  bottom: -1rpx;
+  width: 100%;
+  height: 86rpx;
+  color: #fff;
 }
-.recu_flex{
-    padding-left: 20px;
-    font-size: 30rpx;
-    font-weight: bold;
+.recu_flex {
+  padding-left: 20px;
+  font-size: 30rpx;
+  font-weight: bold;
 }
-.cbody{
-    margin-top: 16rpx;
-    /* background-color: #fff; */
-    width: 100%;
-    position: relative;
-    background:url(https://rescue.gacfcasales.com/carOwner/images/botttombg.jpg); 
+.cbody {
+  margin-top: 16rpx;
+  /* background-color: #fff; */
+  width: 100%;
+  position: relative;
+  background: url(https://rescue.gacfcasales.com/carOwner/images/botttombg.jpg);
 }
-.carepic{
-    float: left;
-    width:183rpx;
-    height:183rpx;
-    box-sizing: border-box;
-    margin-left:45rpx;
-    margin-top:31rpx;
-    background:url(https://rescue.gacfcasales.com/carOwner/images/user_bg.png);
-    background-size:cover;
+.carepic {
+  float: left;
+  width: 183rpx;
+  height: 183rpx;
+  box-sizing: border-box;
+  margin-left: 45rpx;
+  margin-top: 31rpx;
+  background: url(https://rescue.gacfcasales.com/carOwner/images/user_bg.png);
+  background-size: cover;
 }
-.carepic image{
-    width: 132rpx;
-    height: 132rpx;
-    border-radius: 50%;
-    vertical-align:middle;
-    margin:26rpx 26rpx;
+.carepic image {
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 26rpx 26rpx;
 }
-.careinfoitem{
-    float: left;
-    padding: 18rpx 18rpx 36rpx 18rpx;
+.careinfoitem {
+  float: left;
+  padding: 18rpx 18rpx 36rpx 18rpx;
 }
-.careinfoitem .item{
-    line-height: 30rpx;
-    height: 30rpx;
-    color: #000;
-    margin-top:33rpx;
+.careinfoitem .item {
+  line-height: 30rpx;
+  height: 30rpx;
+  color: #000;
+  margin-top: 33rpx;
 }
-.careinfoitem .item label{
-    color: #535353;
-    font-weight:normal;
-    
+.careinfoitem .item label {
+  color: #535353;
+  font-weight: normal;
 }
-.clear:after{
-    display: block;
-    content: "";
-    clear: both;
+.clear:after {
+  display: block;
+  content: '';
+  clear: both;
 }
-.hx{
-    width: 90%;
-    margin:auto;
-    height: 50px;
-    border-top:1px dashed #2C4B7A;
-    line-height: 50px;
-    color: #535353;
-    text-align: center;
-   
+.hx {
+  width: 90%;
+  margin: auto;
+  height: 50px;
+  border-top: 1px dashed #2c4b7a;
+  line-height: 50px;
+  color: #535353;
+  text-align: center;
 }
-.review{
-    width: 80%;
-    margin: auto;
+.review {
+  width: 80%;
+  margin: auto;
 }
-.review .vitem{
-    margin-top: 15rpx;
-    margin-bottom: 40rpx;
+.review .vitem {
+  margin-top: 15rpx;
+  margin-bottom: 40rpx;
 }
-.vitemleft{
-    
-    float: left;
-    color:#535353;
+.vitemleft {
+  float: left;
+  color: #535353;
 }
-.vitemxing{
-    float: left;
+.vitemxing {
+  float: left;
 }
-.vitemxing image{
-    width:43rpx;
-    height:43rpx;
-    margin-left:40rpx;
+.vitemxing image {
+  width: 43rpx;
+  height: 43rpx;
+  margin-left: 40rpx;
 }
-.revcontent{
-    width: 80%;
-    margin: auto;
+.revcontent {
+  width: 80%;
+  margin: auto;
 }
 
-.textarea{
-    height:206rpx;
-    background-color:#fff;
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 6rpx;
-    margin-top: 25rpx;
-    padding: 10rpx;
-    line-height:40rpx;
-    color: #000;
-    border:#2C4B7A 1px solid;
+.textarea {
+  height: 206rpx;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 6rpx;
+  margin-top: 25rpx;
+  padding: 10rpx;
+  line-height: 40rpx;
+  color: #000;
+  border: #2c4b7a 1px solid;
 }
-.submit{
-    width: 100%;
-    background-color: #003366;
-    color: #fff;
-    text-align: center;
-    font-size:33rpx;
-    font-weight:bold;
-    height:90rpx;
-    line-height:90rpx;
-    position:fixed;
-    bottom:0;
-    left:0;
+.submit {
+  width: 100%;
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
+  font-size: 33rpx;
+  font-weight: bold;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

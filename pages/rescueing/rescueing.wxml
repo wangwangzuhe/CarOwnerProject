@@ -13,13 +13,13 @@
         <view class="txt">开案</view>
     </view>
     <view class="paianing clear">
-    
+
     <view class="time">{{times.sendTime}}<image wx:if="{{!times.sendTime}}" src="https://rescue.gacfcasales.com/carOwner/images/nostart.png"/></view>
         <view class="rescustatus"><image src="{{status=='send'?'https://rescue.gacfcasales.com/carOwner/images/circle-grey.png':'https://rescue.gacfcasales.com/carOwner/images/circle_fff.png'}}"/></view>
         <view class="txt">派案</view>
     </view>
     <view class="arraved clear">
-    
+
         <view class="time">{{times.arrivalTime}}<image wx:if="{{!times.arrivalTime}}" src="https://rescue.gacfcasales.com/carOwner/images/nostart.png"/></view>
         <view class="rescustatus"><image src="{{status=='arrival'?'https://rescue.gacfcasales.com/carOwner/images/circle-grey.png':'https://rescue.gacfcasales.com/carOwner/images/circle_fff.png'}}"/></view>
         <view class="txt">到达</view>

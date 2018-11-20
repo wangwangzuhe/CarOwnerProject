@@ -16,7 +16,7 @@
 <import src="../exit.wxml"/>
 <template is="exit" />
 <view class='launchaid-top'>
-    
+
        <view class="header">
  <view class="logo"></view>
   <view class="rescue-style">
@@ -55,20 +55,20 @@
         <view class="circle" wx:else></view>
         <view class="style-name">完成</view>
       </view>
-      
+
   </view>
   </view>
        <view style='clear:both'></view>
        <view class="launchaid-title">
             <view class='faqi' bindtap="bindfaqi">发起紧急救援...</view>
-            
+
             <view class='chakan'  bindtap="bindchakan">查看救援记录...</view>
        </view>
 </view>
 <view class="sever-des">
-    
+
     <view class="sever-des-flex">
-        
+
             <view class="sever-des-item2">
                 <view class="server-des-item2-t">·最广救援范围</view>
                 <view class="server-des-item2-c">铺装路面、非铺装路面、越野地形，所有救援车辆能够到达的地点。
@@ -86,6 +86,6 @@
                 <view class="server-des-item2-c">○ 维修完毕后车辆交付服务</view>
                 <view style="margin-top:20px;">      </view>
             </view>
-            
+
         </view>
      </view>

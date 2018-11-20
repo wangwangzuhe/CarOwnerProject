@@ -46,10 +46,10 @@
                 如您已拨打电话发起了救援，请使用手机号登录，查看案件最新状态
             </view>
         </view>
-       
-         
+
+
     </view>
-   
+
 </view>
 <view class="oval ovalreserv" bindtap="hidecarloginresrve" style="{{!isshow?'display:block':'display:none'}}">
     <image src="../../images/oval.png" style="width:100%;" />

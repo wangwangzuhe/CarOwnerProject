@@ -1,8 +1,8 @@
 <view class="logo">
-    <image src="../../images/newlogo.png" style="width:227rpx;height:127rpx"/>    
+    <image src="../../images/newlogo.png" style="width:227rpx;height:127rpx"/>
 </view>
 <view class="cancel">
-    <image src="../../images/car_cancel.png" style="width:107rpx;height:55rpx"/>    
+    <image src="../../images/car_cancel.png" style="width:107rpx;height:55rpx"/>
     <view class="xian"></view>
     <view>
         <view style="color:#003265;font-size:24px;margin-top:40rpx">{{showtxt}}</view>
@@ -11,5 +11,5 @@
 </view>
 <view class="fixedbottom">
     <button class="btngo" bindtap="tapgo">查看我的订单</button>
-    
+
 </view>
