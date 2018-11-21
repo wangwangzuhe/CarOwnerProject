@@ -1,61 +1,55 @@
-<view class="logo">
-   <image src="https://rescue.gacfcasales.com/carOwner/images/logo.png" style="width:252rpx;height:88rpx"/>
-</view>
-<view class="toxinlogo" bindtap="hidecarlogin" style="{{isshow?'display:block':'display:none'}}">
-    <image src="../../images/wxlogo.png" style="width:64rpx;height:52rpx" />
-    <view >
-        改用微信登录
+<view class="login-container">
+  <block wx:if="{{isWechatLogin}}">
+    <view class="vehicle-wrapper">
+      <image src="../../images/jhmei/rescue_vehicle_img.png"/>
     </view>
-</view>
-<view class="oval" style="{{isshow?'display:block':'display:none'}}">
-    <image src="../../images/oval.png" style="width:100%;" />
-    <image src="../../images/daosj.png" class="oval_daojiao" bindtap="hidecarlogin"/>
-</view>
-<view class="wxbody" style="{{!isshow?'display:block position:relative':'display:none'}} ">
-    <view class="wxdot"></view>
-    <view style="text-align:center;">
-        <image bindtap="tapwxlogo" src="../../images/rescueicon.png" class="rescueicon"  />
+    <view class="rescue-slogan">广汽菲克道路救援</view>
+    <view class="rescue-tip">
+      <view>如您已拨打电话发起了救援，请使用手机号登录，</view>
+      <view>查看案件最新状态</view>
     </view>
-    <text class="txt-center" style="width:100%;text-align:center;color:#fff;position:absolute;top:40rpx;left:0;height:40rpx;font-size">一键登录</text>
-</view>
-<view style="{{isshow?'display:block':'display:none'}}">
-     <view class="logocontainer">
-        <image src="../../images/phone.png" style="width:59rpx;height:61rpx;margin-top:36rpx;margin-bottom:20rpx"/>
-         <view class="splitline"></view>
-        <view class="txttips">
-            (仅需电话发起救援的车主填写）
+  </block>
+  <block wx:else>
+    <view class="phone-wrapper yellow-circle">
+      <image src="../../images/jhmei/login_phone_img.png"/>
+    </view>
+    <view class="login-tip1">(仅需电话发起救援的车主填写)</view>
+    <view class="login-box-wrapper">
+      <view class="weui-cells">
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <image class="weui-label" src="../../images/jhmei/login_phone_icon.png"/>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="number" maxlength='11' placeholder="电话" bindinput="bindInputphoneNo" placeholder-style="color: #fff"/>
+          </view>
         </view>
-        <view class="logoonfos">
-                <view class="login-box">
-                    <view class="loginbox">
-                        <view class="inputicon login-tel"></view>
-                        <input type='number' bindinput="bindphone" maxlength="11"  placeholder='电话'/>
-                    </view>
-                    <view class="errortips">
-                        {{isphone_err?phone_err:""}}
-                    </view>
-                    <view class="loginbox">
-                        <view class="inputicon login-pwd"></view>
-                        <input type='number' placeholder='验证码' maxlength="4" bindinput="bindvcode" class="yanzm"/>
-                        <button class="btn_yzm" bindtap="tapsendvcode" disabled="{{vaildisabled}}">{{vaildtxt}}</button>
-                    </view>
-                    <view class="errortips">{{isvaildcode_err?vaildcode_err:''}}</view>
-                    <button bindtap="carlogin">登录</button>
-            </view>
-            <view class="bottom_txt">
-                如您已拨打电话发起了救援，请使用手机号登录，查看案件最新状态
-            </view>
+        <view class="weui-cell weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <image class="weui-label" src="../../images/jhmei/login_code_icon.png"/>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="number" maxlength='4' placeholder="验证码" bindinput="bindInputSmsCode" placeholder-style="color: #fff"/>
+          </view>
+          <view class="weui-cell__ft" >
+            <button class="weui-vcode-btn" bindtap="sendSmsCode" disabled="{{isSendSmsBtnDisabled}}">{{sendSmsBtnContent}}</button>
+          </view>
         </view>
-
-
+      </view>
+      <view class="login-tip2">如您已拨打电话发起了救援，请使用手机号登录，查看案件最新状态</view>
     </view>
-
-</view>
-<view class="oval ovalreserv" bindtap="hidecarloginresrve" style="{{!isshow?'display:block':'display:none'}}">
-    <image src="../../images/oval.png" style="width:100%;" />
-    <image src="../../images/daosj.png" class="oval_daojiao rotate"/>
-     <image src="../../images/phone.png" style="width:59rpx;height:61rpx;position:absolute;z-index:100;top:110rpx;left:50%;margin-left:-30rpx"/>
-     <view class="bottom_txt" style="color:#fff;bottom:10rpx;font-size:22rpx">
-                如您已拨打电话发起了救援，请使用手机号登录，查看案件最新状态
-            </view>
+  </block>
+  <view class="login-mode-wrapper arrow-right" bindtap="switchLoginMode">
+    <block wx:if="{{isWechatLogin}}">
+      <text>手机号登录</text><text>（仅需电话发起救援的车主）</text>
+    </block>
+    <block wx:else>
+      <text class="wx-icon">改用微信登录</text>
+    </block>
+  </view>
+  <view class="login-btn-wrapper">
+    <!-- 需要使用 button 来授权登录 -->
+    <button wx:if="{{canIUse}}" class="login-btn {{isWechatLogin ? 'wx-icon' : ''}}" open-type="getUserInfo" bindgetuserinfo="wechatLogin">{{loginBtnContent}}</button>
+    <text wx:else>请升级微信版本</text>
+  </view>
 </view>

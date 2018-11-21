@@ -1,0 +1,74 @@
+@import (css) './weui.wxss';
+@import (css) './templates/loading.wxss';
+
+page {
+  background-color: #000;
+}
+
+view,
+input,
+text,
+button,
+textarea,
+navigator,
+label,
+picker {
+  font: 32rpx PingFang, PingFang-SC-Regular, -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  color: #fff;
+}
+.weui-cells {
+  background-color: unset;
+  .weui-cell {
+    padding: 0;
+    border-bottom: 1rpx #ccc solid;
+    .weui-cell__hd {
+      height: 100rpx;
+      line-height: 112rpx;
+      width: 60rpx;
+    }
+    .weui-cell__bd {
+      margin-left: 20rpx;
+      text-align: left;
+    }
+    // &:last-child {
+    //   border-bottom: 0;
+    // }
+  }
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.arrow-right {
+  position: relative;
+  &:after {
+    content: '';
+    display: inline-block;
+    height: 16rpx;
+    width: 16rpx;
+    border-width: 4rpx 4rpx 0 0;
+    border-color: #fff;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 50%;
+    margin-top: -8rpx;
+    right: 30rpx;
+  }
+}
+
+.yellow-circle {
+  border-radius: 50%;
+  border: 2rpx solid rgb(245, 179, 2);
+  width: 110rpx;
+  height: 110rpx;
+  line-height: 100rpx;
+  display: inline-block;
+  font-size: 0;
+}

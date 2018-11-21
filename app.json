@@ -13,7 +13,8 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarTitleText": "道路救援小程序",
-    "navigationBarTextStyle": "#fff"
+    "navigationBarTextStyle": "#fff",
+    "navigationBarBackgroundColor": "#1b1c20"
   },
   "networkTimeout": {
     "request": 10000,

@@ -1,6 +1,35 @@
-/**app.wxss**/
-@import './templates/loading.wxss';
-
+@import 'weui.wxss';
+@import 'templates/loading.wxss';
+page {
+  background-color: #000;
+}
+view,
+input,
+text,
+button,
+textarea,
+navigator,
+label,
+picker {
+  font: 32rpx PingFang, PingFang-SC-Regular, -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  color: #fff;
+}
+.weui-cells {
+  background-color: unset;
+}
+.weui-cells .weui-cell {
+  padding: 0;
+  border-bottom: 1rpx #ccc solid;
+}
+.weui-cells .weui-cell .weui-cell__hd {
+  height: 100rpx;
+  line-height: 112rpx;
+  width: 60rpx;
+}
+.weui-cells .weui-cell .weui-cell__bd {
+  margin-left: 20rpx;
+  text-align: left;
+}
 .container {
   height: 100%;
   display: flex;
@@ -9,4 +38,30 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
+}
+.arrow-right {
+  position: relative;
+}
+.arrow-right:after {
+  content: '';
+  display: inline-block;
+  height: 16rpx;
+  width: 16rpx;
+  border-width: 4rpx 4rpx 0 0;
+  border-color: #fff;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  right: 30rpx;
+}
+.yellow-circle {
+  border-radius: 50%;
+  border: 2rpx solid #f5b302;
+  width: 110rpx;
+  height: 110rpx;
+  line-height: 100rpx;
+  display: inline-block;
+  font-size: 0;
 }

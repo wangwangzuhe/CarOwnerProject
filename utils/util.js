@@ -131,6 +131,7 @@ function httpIntercept(openid) {
   })
   return httpInterceptPromise
 }
+//调用登录接口 获取openId
 function setOpenId(cb) {
   wx.login({
     success: function(ress) {
@@ -164,6 +165,18 @@ function setOpenId(cb) {
     }
   })
 }
+
+const toast = (title, image, icon = 'none', duration = 1500) => {
+  if (title && title.trim()) {
+    wx.showToast({
+      title,
+      image,
+      icon,
+      duration
+    })
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   trim: trim,
@@ -172,5 +185,7 @@ module.exports = {
   numberWithCommas,
   subString,
   getFlatternDistance: getFlatternDistance,
-  httpIntercept: httpIntercept
+  httpIntercept: httpIntercept,
+  setOpenId,
+  toast
 }

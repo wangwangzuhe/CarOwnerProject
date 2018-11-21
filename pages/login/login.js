@@ -6,52 +6,60 @@ var app = getApp()
 
 Page({
   data: {
-    isshow: false,
-    vaildisabled: false,
-    vaildtxt: '发送验证码',
+    isSendSmsBtnDisabled: false,
+    sendSmsBtnContent: '发送验证码',
     vcode: '',
     phone: '',
-    isloading: false,
-    phone_err: '*请输入正确的手机号',
-    isphone_err: false,
-    vaildcode_err: '*请输入正确的手机验证码',
-    isvaildcode_err: false
+    isWechatLogin: true,
+    loginBtnContent: '微信一键登录',
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  switchLoginMode() {
+    const isWechatLogin = !this.data.isWechatLogin
+    this.setData({
+      isWechatLogin,
+      loginBtnContent: isWechatLogin ? '微信一键登录' : '登录'
+    })
+  },
+  wechatLogin() {
+    // 获取到用户信息
+    console.log(e.detail)
   },
   onLoad(options) {
-    this.tapwxlogo(1, options.fileNo)
-    wx.setNavigationBarTitle({ title: '广汽菲克道路救援' })
+    // this.tapwxlogo(1, options.fileNo)
+    // 查看是否授权
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function(res) {
+              console.log(res.userInfo)
+            }
+          })
+        }
+      }
+    })
   },
-  bindphone(e) {
+  bindInputphoneNo(e) {
     this.setData({
       phone: e.detail.value
     })
   },
-  bindvcode(e) {
+  bindInputSmsCode(e) {
     this.setData({
       vcode: e.detail.value
     })
   },
-  hidecarlogin() {
-    this.setData({
-      isshow: false
-    })
-  },
-  hidecarloginresrve() {
-    this.setData({
-      isshow: true
-    })
-  },
-  tapsendvcode() {
+  sendSmsCode() {
     if (!util.phoneNumReg(this.data.phone)) {
-      this.setData({
-        isphone_err: true
-      })
+      util.toast('请输入正确的手机号')
       return
     }
 
     //发送验证码
     this.setData({
-      vaildisabled: true
+      isSendSmsBtnDisabled: true
     })
     httpreq.request(
       {
@@ -69,12 +77,12 @@ Page({
     var _this = this
     second--
     _this.setData({
-      vaildtxt: second + 's后重试'
+      sendSmsBtnContent: second + 's后重试'
     })
     if (second == 0) {
       this.setData({
-        vaildisabled: false,
-        vaildtxt: '发送验证码'
+        isSendSmsBtnDisabled: false,
+        sendSmsBtnContent: '发送验证码'
       })
     } else {
       setTimeout(function() {
@@ -195,8 +203,6 @@ Page({
                 url: '../rescueing/rescueing'
               })
             }
-
-            // }
           }
         )
       })
@@ -224,33 +230,19 @@ Page({
   carlogin() {
     var _this = this
     if (!util.phoneNumReg(this.data.phone)) {
-      this.setData({
-        isphone_err: true
-      })
+      util.toast('请输入正确的手机号')
       return
-    } else {
-      this.setData({
-        isphone_err: false
-      })
     }
 
     if (this.data.vcode.length != 4) {
-      this.setData({
-        isvaildcode_err: true
-      })
+      util.toast('请输入正确的手机验证码')
       return
-    } else {
-      this.setData({
-        isvaildcode_err: false
-      })
     }
-    this.setData({ isloading: true })
     //车主登录
     this.setlogin(session.enum_identity.owner, function(res) {
       session.userinfo.login(session.enum_identity.owner, res.data.data) //设置登录
 
       if (res.data.success) {
-        _this.setData({ isloading: false })
         wx.redirectTo({
           url: '../launchaid/launchaid'
         })
@@ -273,7 +265,6 @@ Page({
                     }
                   },
                   function(res2) {
-                    _this.setData({ isloading: false })
                     if (res2.data.success) {
                       _this.topage()
                     } else {
@@ -289,7 +280,6 @@ Page({
             }
           })
         } else {
-          _this.setData({ isloading: false })
           wx.showModal({
             title: '',
             content: res.data.msg,
