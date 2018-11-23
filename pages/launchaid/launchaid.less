@@ -22,7 +22,7 @@
   font-size: 14px;
   line-height: 30px;
   color: #000;
-  background-color: #f5b302;
+  background-color: rgb(245, 179, 2);
 }
 .gang {
   flex: 1;
@@ -34,7 +34,7 @@
   font-size: 14px;
   line-height: 28px;
   color: #fff;
-  border: 1rpx solid #f5b302;
+  border: 1rpx solid rgb(245, 179, 2);
   margin-left: 10rpx;
 }
 .status-box {
@@ -84,6 +84,7 @@
   font-weight: bold;
   color: #8a8b90;
 }
+
 .clearfix:after {
   content: ' ';
   display: block;
@@ -102,6 +103,7 @@
   margin-top: 76rpx;
   margin-right: 39rpx;
 }
+
 .sever-des {
   margin-top: 50rpx;
   color: #fff;
@@ -123,7 +125,7 @@
   font-size: 28rpx;
 }
 .back-btn {
-  background-color: #f5b302;
+  background-color: rgb(245, 179, 2);
   color: #000;
   text-align: center;
   line-height: 90rpx;
@@ -137,20 +139,20 @@
   font-size: 12px;
   line-height: 18px;
   margin-top: 4px;
-}
-.server-des-item2-c .service-content {
-  margin-right: 30rpx;
-  font-size: 12px;
-}
-.server-des-item2-c .service-content:before {
-  content: '';
-  display: inline-block;
-  width: 10rpx;
-  height: 10rpx;
-  background-color: #fff;
-  border-radius: 50%;
-  margin-right: 10rpx;
-  vertical-align: middle;
+  .service-content {
+    margin-right: 30rpx;
+    font-size: 12px;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 10rpx;
+      height: 10rpx;
+      background-color: #fff;
+      border-radius: 50%;
+      margin-right: 10rpx;
+      vertical-align: middle;
+    }
+  }
 }
 .font {
   font-size: 33rpx;
@@ -162,6 +164,7 @@
   vertical-align: middle;
   border-radius: 50%;
 }
+
 .time {
   float: left;
   font-size: 16px;
@@ -193,19 +196,21 @@
   content: '';
   display: block;
 }
+
 .paianing,
 .arraved,
 .helping,
 .company {
   margin-top: 0px;
 }
+
 .time image {
   width: 45px;
   height: 15px;
 }
 .oper {
   line-height: 50px;
-  background-color: #565f73;
+  background-color: rgba(86, 95, 115, 1);
 }
 .operstatus {
   margin-left: 20rpx;
@@ -266,15 +271,15 @@
   padding-bottom: 50rpx;
   background-color: #212121;
   border-radius: 10rpx;
-}
-.header .dashed-line {
-  width: 85%;
-  height: 0;
-  border: 1rpx dashed #fff;
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  .dashed-line {
+    width: 85%;
+    height: 0;
+    border: 1rpx dashed #fff;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 .header .title {
   width: 100%;
@@ -299,6 +304,7 @@
   height: 186rpx;
   margin: 0 10rpx;
 }
+
 .header .rescue-style .defstyle .time {
   color: #21242e;
   font-size: 30rpx;
@@ -314,6 +320,8 @@
 .header .rescue-style .defstyle .time.gang {
   width: 90rpx;
   height: 30rpx;
+  // background: url(https://rescue.gacfcasales.com/carOwner/images/nostart.png);
+  // background-size: cover;
 }
 .header .rescue-style .defstyle .circle {
   width: 90rpx;
@@ -323,11 +331,11 @@
   border-radius: 50%;
   border: 2rpx solid #ccc;
   font-size: 0;
-}
-.header .rescue-style .defstyle .circle image {
-  width: 60rpx;
-  height: 50rpx;
-  vertical-align: middle;
+  image {
+    width: 60rpx;
+    height: 50rpx;
+    vertical-align: middle;
+  }
 }
 .header .rescue-style .defstyle .circle-blue {
   width: 90rpx;
@@ -347,6 +355,7 @@
 .header .rescue-style .defstyle .style-name.active {
   color: #21242e;
 }
+
 .header .logo {
   width: 126rpx;
   height: 44rpx;
@@ -355,6 +364,7 @@
   margin: 0 auto;
   /* margin-bottom:36.75rpx; */
 }
+
 .rescuebox {
   width: 100%;
   margin-top: 18.75rpx;

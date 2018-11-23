@@ -41,5 +41,8 @@ app.vaildPage({
     wx.navigateTo({
       url: '../record/record'
     })
+  },
+  returnBack() {
+    wx.navigateBack()
   }
 })

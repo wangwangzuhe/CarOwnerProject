@@ -179,7 +179,7 @@ app.vaildPage({
       )
     })
   },
-  submit() {
+  submitComment() {
     var _this = this
     this.setData({
       isloading: true

@@ -1,12 +1,11 @@
-page {
-  background: #cccccc;
-  font-size: 14px;
-  background: url(https://rescue.gacfcasales.com/carOwner/images/map.png);
-  background-size: cover;
-}
-.logo {
-  margin: auto;
-  margin-top: 80rpx;
+.cancel-container {
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+  bottom: 30rpx;
+  right: 30rpx;
+  padding: 60rpx;
+  background-color: #212121;
   text-align: center;
 }
 .cancel {
@@ -16,7 +15,7 @@ page {
 }
 .xian {
   border: none;
-  border-bottom: 1rpx dotted #414241;
+  border-bottom: 1rpx dotted #666;
   margin: auto;
   margin-top: 70rpx;
   width: 360rpx;
@@ -34,7 +33,7 @@ page {
   border: none;
   border-radius: 8rpx;
   color: #fff;
-  background-color: #003265;
+  background-color: rgb(245, 179, 2);
   width: 420rpx;
   line-height: 50px;
 }

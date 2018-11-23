@@ -1,7 +1,7 @@
 <view class="login-container">
   <block wx:if="{{isWechatLogin}}">
     <view class="vehicle-wrapper">
-      <image src="../../images/jhmei/rescue_vehicle_img.png"/>
+      <image src="../../images/jhmei/rescue_vehicle_img.png" />
     </view>
     <view class="rescue-slogan">广汽菲克道路救援</view>
     <view class="rescue-tip">
@@ -11,32 +11,34 @@
   </block>
   <block wx:else>
     <view class="phone-wrapper yellow-circle">
-      <image src="../../images/jhmei/login_phone_img.png"/>
+      <image src="../../images/jhmei/login_phone_img.png" />
     </view>
     <view class="login-tip1">(仅需电话发起救援的车主填写)</view>
     <view class="login-box-wrapper">
       <view class="weui-cells">
         <view class="weui-cell">
           <view class="weui-cell__hd">
-            <image class="weui-label" src="../../images/jhmei/login_phone_icon.png"/>
+            <image class="weui-label" src="../../images/jhmei/login_phone_icon.png" />
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" type="number" maxlength='11' placeholder="电话" bindinput="bindInputphoneNo" placeholder-style="color: #fff"/>
+            <input class="weui-input" type="number" maxlength='11' placeholder="电话" bindinput="bindInputphoneNo"
+              placeholder-class="placeholder-cls" />
           </view>
         </view>
         <view class="weui-cell weui-cell_vcode">
           <view class="weui-cell__hd">
-            <image class="weui-label" src="../../images/jhmei/login_code_icon.png"/>
+            <image class="weui-label" src="../../images/jhmei/login_code_icon.png" />
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" type="number" maxlength='4' placeholder="验证码" bindinput="bindInputSmsCode" placeholder-style="color: #fff"/>
+            <input class="weui-input" type="number" maxlength='4' placeholder="验证码" bindinput="bindInputSmsCode"
+              placeholder-class="placeholder-cls" />
           </view>
-          <view class="weui-cell__ft" >
+          <view class="weui-cell__ft">
             <button class="weui-vcode-btn" bindtap="sendSmsCode" disabled="{{isSendSmsBtnDisabled}}">{{sendSmsBtnContent}}</button>
           </view>
         </view>
       </view>
-      <view class="login-tip2">如您已拨打电话发起了救援，请使用手机号登录，查看案件最新状态</view>
+      <view class="login-tip2">*如您已拨打电话发起了救援，请使用手机号登录，查看案件最新状态</view>
     </view>
   </block>
   <view class="login-mode-wrapper arrow-right" bindtap="switchLoginMode">
@@ -48,8 +50,8 @@
     </block>
   </view>
   <view class="login-btn-wrapper">
-    <!-- 需要使用 button 来授权登录 -->
-    <button wx:if="{{canIUse}}" class="login-btn {{isWechatLogin ? 'wx-icon' : ''}}" open-type="getUserInfo" bindgetuserinfo="wechatLogin">{{loginBtnContent}}</button>
-    <text wx:else>请升级微信版本</text>
+    <!-- 需要使用 button 来授权登录 wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="wechatLogin"-->
+    <button class="login-btn {{isWechatLogin ? 'wx-icon' : ''}}" bindtap="goToLogin">{{loginBtnContent}}</button>
+    <!-- <text wx:else>请升级微信版本</text> -->
   </view>
 </view>

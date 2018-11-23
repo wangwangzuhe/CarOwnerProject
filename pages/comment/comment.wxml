@@ -1,67 +1,68 @@
-<import src="../../templates/loading.wxml"/>
+<import src="../../templates/loading.wxml" />
 <template is="loading" data="{{isloading}}"></template>
-<import src="../exit.wxml"/>
-<template is="exit" />
-<view class="recubg">
-    <image src="https://rescue.gacfcasales.com/carOwner/images/comment/commonttop.png" mode="widthFix" style="width:100%"/>
-    <!--<view class="recu_switch">
-     <view class="recu_flex">
-        救援评价：
-    </view>
-    </view>-->
-</view>
 <view class="cbody">
-    <view class="carerinfo clear">
-        <view class="carepic">
-            <image src="{{avitor}}"/>
-        </view>
-         <view class="careinfoitem">
-            <view class="item"><label>车主姓名：</label>{{username}}</view>
-            <view class="item"><label>救援日期：</label>{{createTime}}</view>
-            <view class="item"><label>救援类型：</label>{{reliefTypetxt}}</view>
-        </view>
+  <view class="carerinfo clear">
+    <view class="carepic"><image src="{{avitor}}"/></view>
+    <view class="careinfoitem">
+      <view class="item"><label>车主姓名：</label>{{username}}</view>
+      <view class="item"><label>救援日期：</label>{{createTime}}</view>
+      <view class="item"><label>救援类型：</label>{{reliefTypetxt}}</view>
     </view>
+  </view>
+  <view class="comment-detail">
     <view class="hx">
-        [您的评价会让我们做得更好]
+      [您的点评会让我们做得更好]
     </view>
     <view class="review">
-        <view class="vitem clear">
-            <view class="vitemleft">响应速度：</view>
-            <view class="vitemxing">
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[0].issel?'ed':''}}.png" data-id="1" bindtap="bindrespeed"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[1].issel?'ed':''}}.png" data-id="2" bindtap="bindrespeed"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[2].issel?'ed':''}}.png" data-id="3" bindtap="bindrespeed"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[3].issel?'ed':''}}.png" data-id="4" bindtap="bindrespeed"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[4].issel?'ed':''}}.png" data-id="5" bindtap="bindrespeed"/>
-            </view>
-        </view>
-        <view class="vitem clear">
-            <view class="vitemleft">服务态度：</view>
-            <view class="vitemxing">
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[0].issel?'ed':''}}.png" data-id="1" bindtap="bindservattr"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[1].issel?'ed':''}}.png" data-id="2" bindtap="bindservattr"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[2].issel?'ed':''}}.png" data-id="3" bindtap="bindservattr"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[3].issel?'ed':''}}.png" data-id="4" bindtap="bindservattr"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[4].issel?'ed':''}}.png" data-id="5" bindtap="bindservattr"/>
-            </view>
-        </view>
-        <view class="vitem clear">
-            <view class="vitemleft">实用功能：</view>
-            <view class="vitemxing">
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[0].issel?'ed':''}}.png" data-id="1" bindtap="bindrealfun"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[1].issel?'ed':''}}.png" data-id="2" bindtap="bindrealfun"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[2].issel?'ed':''}}.png" data-id="3" bindtap="bindrealfun"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[3].issel?'ed':''}}.png" data-id="4" bindtap="bindrealfun"/>
-                <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[4].issel?'ed':''}}.png" data-id="5" bindtap="bindrealfun"/>
-            </view>
-        </view>
+      <view class="vitem clear">
+        <text class="vitemleft">响应速度：</text>
+        <text class="vitemxing">{{respeedxing}}</text>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[0].issel?'ed':''}}.png"
+          data-id="1" bindtap="bindrespeed" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[1].issel?'ed':''}}.png"
+          data-id="2" bindtap="bindrespeed" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[2].issel?'ed':''}}.png"
+          data-id="3" bindtap="bindrespeed" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[3].issel?'ed':''}}.png"
+          data-id="4" bindtap="bindrespeed" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[4].issel?'ed':''}}.png"
+          data-id="5" bindtap="bindrespeed" />
+      </view>
+      <view class="vitem clear">
+        <text class="vitemleft">服务态度：</text>
+        <text class="vitemxing">{{servattrixing}}</text>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[0].issel?'ed':''}}.png"
+          data-id="1" bindtap="bindservattr" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[1].issel?'ed':''}}.png"
+          data-id="2" bindtap="bindservattr" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[2].issel?'ed':''}}.png"
+          data-id="3" bindtap="bindservattr" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[3].issel?'ed':''}}.png"
+          data-id="4" bindtap="bindservattr" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[4].issel?'ed':''}}.png"
+          data-id="5" bindtap="bindservattr" />
+      </view>
+      <view class="vitem clear">
+        <text class="vitemleft">实用功能：</text>
+        <text class="vitemxing">{{realfunxing}}</text>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[0].issel?'ed':''}}.png"
+          data-id="1" bindtap="bindrealfun" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[1].issel?'ed':''}}.png"
+          data-id="2" bindtap="bindrealfun" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[2].issel?'ed':''}}.png"
+          data-id="3" bindtap="bindrealfun" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[3].issel?'ed':''}}.png"
+          data-id="4" bindtap="bindrealfun" />
+        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[4].issel?'ed':''}}.png"
+          data-id="5" bindtap="bindrealfun" />
+      </view>
     </view>
     <view class="revcontent">
-        <view class="revcontentle" style='color:#535353'>评价内容：</view>
-        <view>
-            <textarea class="textarea" bindconfirm="bindTextAreaBlur" bindblur="bindTextAreaBlur" maxlength="40" placeholder="您最多可输入40个字" name="textarea"/>
-        </view>
+      <view>
+        <textarea class="textarea" bindconfirm="bindTextAreaBlur" bindblur="bindTextAreaBlur" maxlength="40"
+          placeholder="您最多可输入40个字" name="textarea"/>
+      </view>
     </view>
-    <view class="submit" bindtap="submit">提交</view>
-    <view style="width:100%;height:120rpx;"></view>
+    <view class="submit" bindtap="submitComment">提交</view>
+  </view>
 </view>

@@ -29,12 +29,14 @@
   content: '';
   display: block;
 }
+
 .paianing,
 .arraved,
 .helping,
 .company {
   margin-top: 0px;
 }
+
 .time image {
   width: 45px;
   height: 15px;
@@ -47,35 +49,37 @@
   display: flex;
   justify-content: space-between;
   border-radius: 10rpx;
-}
-.oper .item image {
-  width: 30rpx;
-  height: 30rpx;
-  vertical-align: -2rpx;
-  margin-right: 10rpx;
-}
-.oper .item text {
-  font-size: 26rpx;
+  .item {
+    image {
+      width: 30rpx;
+      height: 30rpx;
+      vertical-align: -2rpx;
+      margin-right: 10rpx;
+    }
+    text {
+      font-size: 26rpx;
+    }
+  }
 }
 .map-wrapper {
   padding: 50rpx;
   background-color: #212121;
   margin-top: 20rpx;
   border-radius: 10rpx;
-}
-.map-wrapper .opt-btns {
-  display: flex;
-  margin-top: 50rpx;
-  justify-content: space-between;
-}
-.map-wrapper .opt-btns .cancel,
-.map-wrapper .opt-btns .cui {
-  width: 48%;
-  line-height: 40px;
-  color: #000;
-  text-align: center;
-  background-color: #f5b302;
-  border-radius: 10rpx;
+  .opt-btns {
+    display: flex;
+    margin-top: 50rpx;
+    justify-content: space-between;
+    .cancel,
+    .cui {
+      width: 48%;
+      line-height: 40px;
+      color: #000;
+      text-align: center;
+      background-color: rgb(245, 179, 2);
+      border-radius: 10rpx;
+    }
+  }
 }
 .header {
   box-sizing: content-box;
@@ -84,15 +88,15 @@
   background-color: #212121;
   text-align: center;
   border-radius: 10rpx;
-}
-.header .dashed-line {
-  width: 85%;
-  height: 0;
-  border: 1rpx dashed #fff;
-  position: absolute;
-  top: 54%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  .dashed-line {
+    width: 85%;
+    height: 0;
+    border: 1rpx dashed #fff;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 .header .title {
   width: 100%;
@@ -140,11 +144,11 @@
   border-radius: 50%;
   border: 2rpx solid #ccc;
   font-size: 0;
-}
-.header .rescue-style .defstyle .circle image {
-  width: 60rpx;
-  height: 50rpx;
-  vertical-align: middle;
+  image {
+    width: 60rpx;
+    height: 50rpx;
+    vertical-align: middle;
+  }
 }
 .header .rescue-style .defstyle .circle-blue {
   width: 90rpx;
@@ -163,6 +167,7 @@
 .header .rescue-style .defstyle .style-name.active {
   color: #21242e;
 }
+
 .rescuebox {
   width: 100%;
   margin-top: 18.75rpx;

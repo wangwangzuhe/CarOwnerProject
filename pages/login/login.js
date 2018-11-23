@@ -11,8 +11,8 @@ Page({
     vcode: '',
     phone: '',
     isWechatLogin: true,
-    loginBtnContent: '微信一键登录',
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    loginBtnContent: '微信一键登录'
+    // canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   switchLoginMode() {
     const isWechatLogin = !this.data.isWechatLogin
@@ -21,25 +21,25 @@ Page({
       loginBtnContent: isWechatLogin ? '微信一键登录' : '登录'
     })
   },
-  wechatLogin() {
-    // 获取到用户信息
-    console.log(e.detail)
-  },
+  // wechatLogin(e) {
+  //   // 获取到用户信息
+  //   console.log(e.detail)
+  // },
   onLoad(options) {
-    // this.tapwxlogo(1, options.fileNo)
+    this.tapwxlogo(1, options.fileNo)
     // 查看是否授权
-    wx.getSetting({
-      success(res) {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function(res) {
-              console.log(res.userInfo)
-            }
-          })
-        }
-      }
-    })
+    // wx.getSetting({
+    //   success(res) {
+    //     if (res.authSetting['scope.userInfo']) {
+    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+    //       wx.getUserInfo({
+    //         success: function(res) {
+    //           console.log(res.userInfo)
+    //         }
+    //       })
+    //     }
+    //   }
+    // })
   },
   bindInputphoneNo(e) {
     this.setData({
@@ -206,6 +206,13 @@ Page({
           }
         )
       })
+    }
+  },
+  goToLogin() {
+    if (this.data.isWechatLogin) {
+      this.tapwxlogo()
+    } else {
+      this.carlogin()
     }
   },
   setlogin(identityType, cb) {

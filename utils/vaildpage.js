@@ -17,15 +17,15 @@ var page = function(args) {
         })
       } else if (info.identity == session.enum_identity.owner && this.__route__ == 'pages/rescuecar/rescuecar') {
         //登录
-        wx.redirectTo({
-          url: '../loginnew/loginnew'
-        })
+        // wx.redirectTo({
+        //   url: '../loginnew/loginnew'
+        // })
       }
     } else {
       //登录
-      wx.redirectTo({
-        url: '../loginnew/loginnew'
-      })
+      // wx.redirectTo({
+      //   url: '../loginnew/loginnew'
+      // })
     }
     if (tmponload) {
       tmponload.call(this, options)

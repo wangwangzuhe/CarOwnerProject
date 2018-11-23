@@ -1,83 +1,101 @@
-<view class="header-parent">
-    <view class="header">
-        <!-- <view class="one">
-            <view class="back" bindtap="navtourl"></view>
-        </view> -->
-        <import src="../exit.wxml"/>
-        <template is="exit" />
-        <view class="logo"></view>
-        <view class="three">累计救援：{{count}}</view>
+<view style="padding: 30rpx">
+  <view class="header-wrapper">
+    <view class="rescue-count">累计救援：{{ count }}</view>
+    <view class="rescue-switches">
+      <view class="switch-item {{tabflag?'active':''}}" data-type="1" bindtap="tapTab">我的救援记录</view>
+      <view class="switch-item {{!tabflag?'active':''}}" data-type="2" bindtap="tapTab">救援评价</view>
     </view>
-    <view class="top_banner {{!tabflag?'top_banner2':''}}">
-        <view class="top_banner_item {{tabflag?'active':''}}" data-type='1' bindtap='tapTab'>我的救援记录</view>
-
-        <view class="top_banner_item {{!tabflag?'active':''}}" data-type='2' bindtap='tapTab'>救援评价</view>
+  </view>
+  <scroll-view class="scroll-list" scroll-y="true" lower-threshold="100" bindscrolltolower="scrolltolower">
+    <!-- 我的 -->
+    <view class="list clearfix" wx:if="{{tabflag}}" wx:for="{{comments}}" wx:key="{{item.fileNo}}">
+      <view class="list-l">
+        <image src="https://rescue.gacfcasales.com/carOwner/images/tuocheing.png" class="img-tag" wx:if="{{item.reliefType==1}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/tuodiaoing.png" class="img-tag" wx:if="{{item.reliefType==2}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/huantaiing.png" class="img-tag" wx:if="{{item.reliefType==3}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/songyouing.png" class="img-tag" wx:if="{{item.reliefType==4}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==5}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==6}}"></image>
+      </view>
+      <view class="list-r">
+        <view class="list-one">
+          <view class="list-one-one" style="width:250rpx"
+            >订单号：<text class="list-one-one-o" style=" white-space:nowrap;">{{ item.fileNo }}</text></view
+          >
+          <view class="list-one-one" style="margin-left:10rpx;"></view>
+        </view>
+        <view class="list-two">
+          <view class="list-two-two" style="width:40%;"
+            >服务类型：<text style="color:#21242e" wx:if="{{item.reliefType==1}}">拖车</text><text style="color:#21242e" wx:if="{{item.reliefType==2}}">拖吊</text
+            ><text style="color:#21242e" wx:if="{{item.reliefType==3}}">换胎</text><text style="color:#21242e" wx:if="{{item.reliefType==4}}">送油</text
+            ><text style="color:#21242e" wx:if="{{item.reliefType==5}}">现场救援</text></view
+          >
+          <view class="list-two-two" style="width:60%;padding-left:20rpx;box-sizing: border-box;"
+            >救援日期：<text style="color:#21242e">{{ item.orderTime }}</text></view
+          >
+        </view>
+        <view class="list-two clearfix">
+          <view class="list-two-two" style="width:100%"
+            >救援状态：<text style="color:#21242e" wx:if="{{item.status==5||item.status==6}}">救援完成</text
+            ><text style="color:#21242e" wx:if="{{item.status==7}}">救援取消</text></view
+          >
+        </view>
+        <view class="list-two" style="width:100%">
+          <view class="list-two-two" style="width:100%">
+            <view class="fffffl">故障地：</view>
+            <view class="ffffffl"
+              ><text style="color:#21242e">{{ item.address }}</text></view
+            >
+          </view>
+        </view>
+      </view>
     </view>
+    <!-- 全部 -->
+    <view class="list clearfix" wx:if="{{!tabflag}}" wx:for="{{comments}}" wx:key="{{item.fileNo}}">
+      <view class="list-l">
+        <image src="https://rescue.gacfcasales.com/carOwner/images/tuocheing.png" class="img-tag" wx:if="{{item.reliefType==1}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/tuodiaoing.png" class="img-tag" wx:if="{{item.reliefType==2}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/huantaiing.png" class="img-tag" wx:if="{{item.reliefType==3}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/songyouing.png" class="img-tag" wx:if="{{item.reliefType==4}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==5}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==6}}"></image>
+      </view>
+      <view class="list-r">
+        <view class="list-one">
+          <view class="list-one-one" style="width:250rpx"
+            >车主姓名：<text class="list-one-one-o" style=" white-space:nowrap;">{{ item.carOwnerName }}</text></view
+          >
+          <view class="list-one-one" style="margin-left:10rpx;"
+            >救援日期：<text class="list-one-one-o">{{ item.orderTime }}</text></view
+          >
+        </view>
+        <view class="list-two">
+          <view class="list-two-two"
+            >响应速度：<text style="color:#21242e">{{ item.responseSpeed }}</text></view
+          >
+          <view class="list-two-two" style="margin-left:20rpx;"
+            >现场服务：<text style="color:#21242e">{{ item.serviceAttitude }}</text></view
+          >
+          <view class="list-two-two" style="margin-left:20rpx;"
+            >功能使用：<text style="color:#21242e">{{ item.practicability }}</text></view
+          >
+        </view>
+        <view class="list-two" wx:if="{{item.comment}}" style="width:100%">
+          <view class="list-two-two" style="width:100%">车主评价：</view>
+          <view class="list-two-two" style="text-align:left;word-wrap:break-word;white-space:normal"
+            ><text style="line-height:35rpx;color:#21242e">{{ item.comment }}</text></view
+          >
+        </view>
+        <view class="list-two" wx:if="{{item.feedback}}" style="width:100%">
+          <view class="list-two-two" style="width:100%">反馈：</view>
+          <view class="list-two-two" style="text-align:left;word-wrap:break-word;white-space:normal"
+            ><text style="line-height:35rpx;color:#21242e">{{ item.feedback }}</text></view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="null-data">{{ tipText }}</view>
+  </scroll-view>
 </view>
-<scroll-view class="scroll-list" scroll-y='true' lower-threshold='100' bindscrolltolower='scrolltolower'>
-
-<!--我的  -->
- <view class="list clearfix" wx:if="{{tabflag}}" wx:for="{{comments}}">
-        <view class="list-l">
-            <image src="https://rescue.gacfcasales.com/carOwner/images/tuocheing.png" class="img-tag" wx:if="{{item.reliefType==1}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/tuodiaoing.png" class="img-tag" wx:if="{{item.reliefType==2}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/huantaiing.png" class="img-tag" wx:if="{{item.reliefType==3}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/songyouing.png" class="img-tag" wx:if="{{item.reliefType==4}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==5}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==6}}"></image>
-        </view>
-        <view class="list-r">
-            <view class="list-one">
-                <view class="list-one-one" style="width:250rpx">订单号：<text class="list-one-one-o" style=" white-space:nowrap;">{{item.fileNo}}</text></view>
-                <view class="list-one-one" style="margin-left:10rpx;"></view>
-            </view>
-             <view class="list-two">
-                <view class="list-two-two" style="width:40%;">服务类型：<text style="color:#21242e" wx:if="{{item.reliefType==1}}">拖车</text><text style="color:#21242e" wx:if="{{item.reliefType==2}}">拖吊</text><text style="color:#21242e" wx:if="{{item.reliefType==3}}">换胎</text><text style="color:#21242e" wx:if="{{item.reliefType==4}}">送油</text><text style="color:#21242e" wx:if="{{item.reliefType==5}}">现场救援</text></view>
-                <view class="list-two-two" style="width:60%;padding-left:20rpx;box-sizing: border-box;">救援日期：<text style="color:#21242e">{{item.orderTime}}</text></view>
-
-            </view>
-            <view class="list-two clearfix">
-            <view class="list-two-two" style="width:100%">救援状态：<text style="color:#21242e" wx:if="{{item.status==5||item.status==6}}">救援完成</text><text style="color:#21242e" wx:if="{{item.status==7}}">救援取消</text></view>
-            </view>
-            <view class="list-two" style="width:100%">
-            <view class="list-two-two"  style="width:100%"><view class="fffffl">故障地：</view><view class="ffffffl"><text style="color:#21242e">{{item.address}}</text></view></view>
-            </view>
-
-        </view>
-    </view>
-<!--全部  -->
-    <view class="list clearfix" wx:if="{{!tabflag}}" wx:for="{{comments}}">
-        <view class="list-l">
-            <image src="https://rescue.gacfcasales.com/carOwner/images/tuocheing.png" class="img-tag" wx:if="{{item.reliefType==1}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/tuodiaoing.png" class="img-tag" wx:if="{{item.reliefType==2}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/huantaiing.png" class="img-tag" wx:if="{{item.reliefType==3}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/songyouing.png" class="img-tag" wx:if="{{item.reliefType==4}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==5}}"></image>
-            <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==6}}"></image>
-        </view>
-        <view class="list-r">
-            <view class="list-one">
-                <view class="list-one-one" style="width:250rpx">车主姓名：<text class="list-one-one-o" style=" white-space:nowrap;">{{item.carOwnerName}}</text></view>
-                <view class="list-one-one" style="margin-left:10rpx;">救援日期：<text class="list-one-one-o">{{item.orderTime}}</text></view>
-            </view>
-             <view class="list-two">
-                <view class="list-two-two">响应速度：<text style="color:#21242e">{{item.responseSpeed}}</text></view>
-                <view class="list-two-two" style="margin-left:20rpx;">现场服务：<text style="color:#21242e">{{item.serviceAttitude}}</text></view>
-                <view class="list-two-two" style="margin-left:20rpx;">功能使用：<text style="color:#21242e">{{item.practicability}}</text></view>
-            </view>
-            <view class="list-two" wx:if="{{item.comment}}"  style="width:100%">
-              <view class="list-two-two" style="width:100%">车主评价：</view>
-              <view class="list-two-two" style="text-align:left;word-wrap:break-word;white-space:normal"><text style="line-height:35rpx;color:#21242e">{{item.comment}}</text></view>
-            </view>
-            <view class="list-two" wx:if="{{item.feedback}}"  style="width:100%">
-              <view class="list-two-two" style="width:100%" >反馈：</view>
-              <view class="list-two-two" style="text-align:left;word-wrap:break-word;white-space:normal"><text style="line-height:35rpx;color:#21242e">{{item.feedback}}</text></view>
-            </view>
-        </view>
-    </view>
-    <view class="null-data">{{tipText}}</view>
-</scroll-view>
-<!--加载器-->
-<loading hidden="{{!loading}}">
-    {{loadingMsg}}
-</loading>
+<!-- 加载器 -->
+<loading hidden="{{!loading}}">{{ loadingMsg }}</loading>

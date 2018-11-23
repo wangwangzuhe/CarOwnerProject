@@ -1,126 +1,153 @@
-<import src="../../templates/loading.wxml"/>
+<import src="../../templates/loading.wxml" />
 <template is="loading" data="{{isloading}}"></template>
 <scroll-view style="height:{{windowHeight}}px" scroll-y="true">
-<import src="../exit.wxml"/>
-<template is="exit" />
-<view class="recubg">
-    <image bindtap="tapcalltel" src="https://rescue.gacfcasales.com/carOwner/images/rescusbg.png" mode="widthFix" style="width:100%"/>
-    <view class="recu_switch">
-    <view class="recu_flex {{rescuetype=='1'?'recu_flex2':''}}" >
-        <view class="flexitem" bindtap="bindrescuepub" style="flex:2;{{rescuetype=='0'?'font-weight:bold;':'color:#2f4871'}}">
-            <view class="flexitem" style="">申请救援</view>
+  <view style="padding: 30rpx;">
+    <view class="rescue-hotline-wrapper">
+      <view class="yellow-circle">
+        <!-- <image src="../../images/jhmei/rescue_hotline_icon.png"/> -->
+      </view>
+      <view style="font-size: 40rpx;">400-650-0118</view>
+      <view style="font-size: 24rpx;color: #666;margin-top:20rpx;">电话预约救援热线</view>
+    </view>
+    <view class="recubg">
+      <view class="recu_flex">
+        <view class="flexitem {{rescuetype=='0'?'active':''}}" bindtap="bindrescuepub">
+          申请救援
         </view>
+        <view class="flexitem {{rescuetype=='1'?'active':''}}" bindtap="bindrescuemegent">
+          预约救援
+        </view>
+      </view>
+    </view>
+    <form bindsubmit="submitRescue" report-submit='true'>
+      <view class="rescue-info-wrapper weui-cells">
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <image class="weui-label" src="../../images/jhmei/name_icon.png" />
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="姓名“必填”" bindinput="bindInputName" placeholder-class="placeholder-cls" />
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <image class="weui-label" src="../../images/jhmei/login_phone_icon.png" />
+          </view>
+          <view class="weui-cell__bd">
+            <input type="number" maxlength="11" class="weui-input" placeholder="电话“必填”" bindinput="bindInputPhone"
+              placeholder-class="placeholder-cls" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <image class="weui-label" src="../../images/jhmei/login_code_icon.png" />
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="number" maxlength='4' placeholder="验证码" bindinput="bindInputSmsCode"
+              placeholder-class="placeholder-cls" />
+          </view>
+          <view class="weui-cell__ft">
+            <button class="weui-vcode-btn" bindtap="sendSmsCode" disabled="{{isSendSmsBtnDisabled}}">{{sendSmsBtnContent}}</button>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <image class="weui-label" src="../../images/jhmei/bb.png" />
+          </view>
+          <view class="weui-cell__bd">
+            <input maxlength="7" class="weui-input" placeholder="车牌号  如：沪A12345" bindinput="bindInputLicenseNo"
+              placeholder-class="placeholder-cls" value="{{licenseNo}}" />
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <image class="weui-label" src="../../images/jhmei/bb.png" />
+          </view>
+          <view class="weui-cell__bd">
+            <input maxlength="17" class="weui-input" placeholder="车架号   完整的17位车架号" bindinput="bindInputChassisNo"
+              placeholder-class="placeholder-cls" value="{{chassisNo}}" />
+          </view>
+        </view>
+        <view class="weui-cell select-time-wrapper" wx:if="{{rescuetype=='1'}}">
+          <view class="weui-cell__bd arrow-down" style="margin-right: 20rpx">
+            <image src="../../images/jhmei/clock_icon_grey.png" />
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+              <view class="picker" style='{{isseldate?"":"color: #bfc1c5"}}'>{{isseldate?date:"选择日期"}}</view>
+            </picker>
+          </view>
+          <view class="weui-cell__bd arrow-down">
+            <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+              <view class="picker" style='{{isseltime?"":"color: #bfc1c5"}}'>{{isseltime?time:"选择时间"}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell select-address-wrapper arrow-down" bindtap="selectRescueAddress">
+          <view class="weui-cell__bd">
+            <image src="../../images/jhmei/position_grey_icon.png" /><text style="color: #bfc1c5;">{{addr}}</text>
+          </view>
+        </view>
+      </view>
 
-        <view class="flexitem " bindtap="bindrescuemegent" style="flex:2;{{rescuetype=='1'?'font-weight:bold;':'color:#2f4871'}}">
-        <veiw class="flexitem">预约救援</veiw>
-        </view>
-    </view>
-    </view>
-</view>
-<form bindsubmit="bindHelp" report-submit='true'>
-<view class="recuopr">
-    <view class="recuopr_item">
-        <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_name.png" class="itemimg" /></view>
-        <view class="recuopr_itemtxt" ><input placeholder-class="phcolor" placeholder="姓名“必填”" bindinput="bindName" class="txt"/></view>
-    </view>
-    <view class="recuopr_item">
-        <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_tel.png" class="itemimg" /></view>
-        <view class="recuopr_itemtxt"><input placeholder-class="phcolor" placeholder="电话“必填”" bindinput="bindPhone" type="number" maxlength="11" class="txt"/></view>
-    </view>
-        <view class="recuopr_item">
-        <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_vcode.png" class="itemimg" /></view>
-        <view class="recuopr_itemtxt"><input placeholder-class="phcolor" placeholder="验证码" type="number" bindinput="bindVaildcode"  maxlength="4"  class="txt" style="width:45%"/></view>
-        <button class="vaildcode" disabled="{{vaildisabled}}" bindtap="sendvaild">{{vaildtxt}}</button>
-    </view>
-        <view class="recuopr_item">
-            <view class="recuopr_itemicon"><image src="https://rescue.gacfcasales.com/carOwner/images/rescus_car.png" class="itemimg" /></view>
-            <view class="recuopr_itemtxt"><input maxlength="7" bindinput="bindCarno" placeholder-class="phcolor" placeholder="车牌号  如：沪A12345" class="txt" value="{{carno}}"/></view>
-        </view>
-        <view class="recuopr_item">
-            <view class="recuopr_itemicon"><image src="/images/chejiahao.jpg" class="itemimg" /></view>
-            <view class="recuopr_itemtxt"><input maxlength="17" bindinput="bindCarmodelno" placeholder-class="phcolor" placeholder="车架号   完整的17位车架号"  class="txt" value="{{carmodel}}"/></view>
-        </view>
-        <view class="recuopr_item" wx:if="{{rescuetype=='1'}}">
-            <view class="recuopr_itemicon"><image style="width:90px" src="https://rescue.gacfcasales.com/carOwner/images/rescus_pretime.png" class="itemimg" /></view>
-            <view class="recuopr_itemtxt recuopr_itemtxtflex">
-                <picker class="recuopr_itemtxtflexitem" mode="date" value="{{date}}"  bindchange="bindDateChange">
-                    <view class="picker" style='{{!isseldate?"":"color:#000"}}'>{{isseldate?date:"选择日期"}}</view>
-                </picker>
-                <view class="recuopr_itemtxtflexitem1">|</view>
-                <picker class="recuopr_itemtxtflexitem" mode="time"  value="{{time}}" bindchange="bindTimeChange">
-                    <view class="picker" style='{{!isseltime?"":"color:#000"}}'>{{isseltime?time:"选择时间"}}</view>
-                </picker>
+      <view class="rescue-type-wrapper">
+        <view class="rescue-type-list">
+          <view class="rescue-item arrow-right">
+            <view bindtap="bindrescue" data-id="{{rescue[0].id}}">
+              <image src="../../images/jhmei/trail_vehicle_{{rescue[0].issel?'yellow':'white'}}.png" />
             </view>
+            <view class="item-type-text {{rescue[0].issel?'yellow':''}}">拖车</view>
+          </view>
+          <view class="rescue-item arrow-right">
+            <view bindtap="bindrescue" data-id="{{rescue[1].id}}">
+              <image src="../../images/jhmei/tow_vehicle_{{rescue[1].issel?'yellow':'white'}}.png" />
+            </view>
+            <view class="item-type-text {{rescue[1].issel?'yellow':''}}">{{rescue[1].str}}</view>
+          </view>
+          <view class="rescue-item arrow-right">
+            <view bindtap="bindrescue" data-id="{{rescue[2].id}}">
+              <image src="../../images/jhmei/change_tire_{{rescue[2].issel?'yellow':'white'}}.png" />
+            </view>
+            <view class="item-type-text {{rescue[2].issel?'yellow':''}}">换胎</view>
+          </view>
+          <view class="rescue-item arrow-right">
+            <view bindtap="bindrescue" data-id="{{rescue[3].id}}">
+              <image src="../../images/jhmei/send_oil_{{rescue[3].issel?'yellow':'white'}}.png" />
+            </view>
+            <view class="item-type-text {{rescue[3].issel?'yellow':''}}">送油</view>
+          </view>
+          <view class="rescue-item arrow-right">
+            <view bindtap="bindrescue" data-id="{{rescue[5].id}}">
+              <image src="../../images/jhmei/repair_vehicle_{{rescue[5].issel?'yellow':'white'}}.png" />
+            </view>
+            <view class="item-type-text {{rescue[5].issel?'yellow':''}}">现场修理</view>
+          </view>
+          <view class="rescue-item" style="background-color: unset"></view>
         </view>
-
-        <view class="recuopr_item">
-            <view class="recuopr_itemicon"><image style="width:90px" src="/images/rescus_addr.png" class="itemimg" /></view>
-            <view class="recuopr_itemtxt"><view   bindtap="bindaddtap" class="addsel {{addr!='救援地址  请选择救援地点'?'in':''}}">{{addr}}</view></view>
+        <view class="opt-btns-wrapper">
+          <button bindtap="back">返回</button>
+          <button formType="submit" disabled="{{disabledHelp}}">我要救援</button>
         </view>
-        <!--<view class="recuopr_item">
-            <view class="recuopr_itemicon"><image style="width:90px" src="/images/jxs.jpeg" class="itemimg" /></view>
-            <view class="recuopr_itemtxt" style="font-size:13px;padding-top:2px;color:#8a8b90" bindtap="tap_selarea">{{delearname}}</view>
-        </view>-->
-    <view class="rescuesel">
-        <view class="item0">
-            <view  bindtap="bindrescue" data-id="{{rescue[0].id}}"><image style="width:60px;height:60px;" src="https://rescue.gacfcasales.com/carOwner/images/tuoche{{rescue[0].issel?'ing':''}}.png"/></view>
-            <veiw class="item0txt {{rescue[0].issel?'blue':''}}">拖车</veiw>
-        </view>
-        <view class="item1">
-            <view  bindtap="bindrescue" data-id="{{rescue[1].id}}"><image style="width:60px;height:60px;" src="https://rescue.gacfcasales.com/carOwner/images/tuodiao{{rescue[1].issel?'ing':''}}.png"/></view>
-            <veiw class="item1txt {{rescue[1].issel?'blue':''}}" >{{rescue[1].str}}</veiw>
-
-        </view>
-        <view class="item2">
-            <view bindtap="bindrescue" data-id="{{rescue[2].id}}"><image style="width:60px;height:60px;" src="https://rescue.gacfcasales.com/carOwner/images/huantai{{rescue[2].issel?'ing':''}}.png"/></view>
-            <veiw class="item2txt {{rescue[2].issel?'blue':''}}">换胎</veiw>
-
-        </view>
-    </view>
-    <view class="rescuesel" >
-        <view class="item0">
-            <view bindtap="bindrescue" data-id="{{rescue[3].id}}"><image style="width:60px;height:60px;" src="https://rescue.gacfcasales.com/carOwner/images/songyou{{rescue[3].issel?'ing':''}}.png"/></view>
-            <veiw class="item0txt {{rescue[3].issel?'blue':''}}">送油</veiw>
-        </view>
-        <!-- <view class="item1">
-            <view bindtap="bindrescue" data-id="{{rescue[4].id}}"><image style="width:60px;height:60px;" src="/images/kuijingjiuyuan{{rescue[4].issel?'ing':''}}.png"/></view>
-            <veiw class="item1txt">困境救援</veiw>
-
-        </view> -->
-        <view class="item1">
-            <view bindtap="bindrescue" data-id="{{rescue[5].id}}"><image style="width:60px;height:60px" src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuan{{rescue[5].issel?'ing':''}}.png"/></view>
-            <veiw class="item2txt {{rescue[5].issel?'blue':''}}" style="margin-right:0px">现场修理</veiw>
-        </view>
-         <!-- <view class="item2">
-           <view bindtap="bindrescue" data-id="{{rescue[4].id}}"><image style="width:60px;height:60px" src="https://rescue.gacfcasales.com/carOwner/images/dadian{{rescue[4].issel?'ing':''}}.png"/></view>
-            <veiw class="item2txt {{rescue[4].issel?'blue':''}}" style="margin-right:15px">搭电</veiw>
-        </view> -->
-        <view class="item2">
-        </view>
-    </view>
-   <view style="margin-top:20px;"></view>
-</view>
- <view class="rescuehelp"><button formType="submit" class="need-help" disabled="{{disabledHelp}}">我要救援</button></view>
- </form>
-
+      </view>
+    </form>
+  </view>
 </scroll-view>
 
 <view class="zhehaoindex" style="height:{{windowHeight}}px" bindtap="closezz" wx:if="{{isshouwzhezhao}}">
-    <view class="salersbd" catchtap="canceltap">
-        <picker class="pickerinfo" style="width:25%" bindchange="bindProvinceChange" range-key="name" value="{{index}}" range="{{province}}">
-        <view class="picker">
+  <view class="salersbd" catchtap="canceltap">
+    <picker class="pickerinfo" style="width:25%" bindchange="bindProvinceChange" range-key="name" value="{{index}}"
+      range="{{province}}">
+      <view class="picker">
         <view class="picker" style='{{!isselprovince?"":"color:#000"}}'>{{isselprovince?province[provinceindex].name:"请选择省份"}}</view>
-        </view>
+      </view>
     </picker>
     <picker class="pickerinfo" style="width:30%" bindchange="bindCityChange" range-key="name" value="{{index}}" range="{{seledcity}}">
-        <view class="picker">
+      <view class="picker">
         <view class="picker" style='{{!isselcity?"":"color:#000"}}'>{{isselcity?seledcity[cityindex].name:"请选择地区"}}</view>
-        </view>
+      </view>
     </picker>
     <picker class="pickerinfo" style="width:45%" bindchange="bindDelearChange" range-key="name" value="{{index}}" range="{{delear}}">
-        <view class="picker">
+      <view class="picker">
         <view class="picker" style='{{!isseldelear?"":"color:#000"}}'>{{isseldelear?delear[delearindex].name:"请选择经销商"}}</view>
-        </view>
+      </view>
     </picker>
-    </view>
+  </view>
 </view>

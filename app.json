@@ -1,13 +1,12 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/carerescue/carerescue",
     "pages/rescuecar/rescuecar",
+    "pages/record/record",
     "pages/launchaid/launchaid",
-    "pages/casestart/casestart",
     "pages/comment/comment",
     "pages/rescueing/rescueing",
-    "pages/record/record",
-    "pages/carerescue/carerescue",
     "pages/cancel/cancel"
   ],
   "window": {

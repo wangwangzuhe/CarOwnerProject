@@ -18,16 +18,16 @@
 }
 .cbody {
   padding: 30rpx;
-}
-.cbody .carerinfo {
-  background-color: #212121;
-  border-radius: 10rpx;
-}
-.cbody .comment-detail {
-  margin-top: 20rpx;
-  background-color: #212121;
-  padding-bottom: 30rpx;
-  border-radius: 10rpx;
+  .carerinfo {
+    background-color: #212121;
+    border-radius: 10rpx;
+  }
+  .comment-detail {
+    margin-top: 20rpx;
+    background-color: #212121;
+    padding-bottom: 30rpx;
+    border-radius: 10rpx;
+  }
 }
 .carepic {
   float: left;
@@ -71,12 +71,14 @@
   margin: 15rpx 60rpx 40rpx;
   background-color: #000;
   line-height: 80rpx;
+  image {
+    width: 43rpx;
+    height: 43rpx;
+    margin-left: 20rpx;
+    vertical-align: text-bottom;
+  }
 }
-.review .vitem image {
-  width: 43rpx;
-  height: 43rpx;
-  margin-left: 20rpx;
-  vertical-align: text-bottom;
+.vitemleft {
 }
 .vitemxing {
   color: #535353;
@@ -84,6 +86,7 @@
 .revcontent {
   margin: auto 60rpx;
 }
+
 .textarea {
   height: 206rpx;
   background-color: #000;
@@ -94,7 +97,7 @@
   line-height: 40rpx;
 }
 .submit {
-  background-color: #f5b302;
+  background-color: rgb(245, 179, 2);
   text-align: center;
   line-height: 90rpx;
   margin: 50rpx 60rpx;

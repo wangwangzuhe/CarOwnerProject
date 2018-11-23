@@ -5,8 +5,9 @@
   bottom: 30rpx;
   right: 30rpx;
   padding: 60rpx;
-  background: #212121;
+  background-color: #212121;
   text-align: center;
+  border-radius: 10rpx;
 }
 .login-container .vehicle-wrapper {
   margin-top: 170rpx;
@@ -75,6 +76,7 @@
 .login-container .login-btn-wrapper .login-btn {
   line-height: 90rpx;
   background-color: #f5b302;
+  color: #000;
 }
 .login-container .wx-icon:before {
   content: '';

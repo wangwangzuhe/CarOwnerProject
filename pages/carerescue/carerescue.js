@@ -12,8 +12,8 @@ app.vaildPage({
     isseldate: false,
     isseltme: false,
     time: '',
-    vaildisabled: false,
-    vaildtxt: '发送验证码',
+    isSendSmsBtnDisabled: false,
+    sendSmsBtnContent: '发送验证码',
     rescuetype: '0', //救援类型
     rescue: [
       {
@@ -49,9 +49,9 @@ app.vaildPage({
     ],
     name: '',
     phone: '',
-    addr: '救援地址  请选择救援地点',
-    carno: '',
-    carmodel: '',
+    addr: '请选择救援地点',
+    licenseNo: '',
+    chassisNo: '',
     vcode: '',
     vaildsaler: '', //经销商
     isselprovince: false, //是否选择省
@@ -170,7 +170,7 @@ app.vaildPage({
       rescuetype: '1'
     })
   },
-  bindHelp(e) {
+  submitRescue(e) {
     var _this = this
     var formid = e.detail.formId
     if (this.data.name == '') {
@@ -198,7 +198,7 @@ app.vaildPage({
       return
     }
 
-    if (this.data.carno.length != 7) {
+    if (this.data.licenseNo.length != 7) {
       wx.showModal({
         title: '',
         content: '请输入正确的车牌号',
@@ -279,14 +279,14 @@ app.vaildPage({
             username: this.data.name,
             phone: this.data.phone,
             verifyCode: this.data.vcode,
-            licenseNumber: this.data.carno,
+            licenseNumber: this.data.licenseNo,
             address: this.data.addr,
             reliefType: selectediAppoint.id.toString(), //救援项目
             isAppoint: this.data.rescuetype, //是否预约
             appointTime: this.data.date + ' ' + this.data.time + ':00', //预约时间
             formId: formid,
             locationGps: this.data.locationGPS,
-            velVin: this.data.carmodel,
+            velVin: this.data.chassisNo,
             branchName: '-',
             branchCode: '-'
           }
@@ -322,9 +322,10 @@ app.vaildPage({
       )
     })
   },
+  back() {
+    wx.navigateBack()
+  },
   bindrescue(e) {
-    //console.log(e.currentTarget.dataset.id);
-
     var that = this
     var rescue = this.data.rescue
     that.setData({
@@ -341,7 +342,7 @@ app.vaildPage({
       rescue: rescue
     })
   },
-  sendvaild() {
+  sendSmsCode() {
     if (!util.phoneNumReg(this.data.phone)) {
       wx.showModal({
         title: '',
@@ -353,7 +354,7 @@ app.vaildPage({
 
     //发送验证码
     this.setData({
-      vaildisabled: true
+      isSendSmsBtnDisabled: true
     })
     httpreq.request(
       {
@@ -371,12 +372,12 @@ app.vaildPage({
     var _this = this
     second--
     _this.setData({
-      vaildtxt: second + 's后重试'
+      sendSmsBtnContent: second + 's后重试'
     })
     if (second == 0) {
       this.setData({
-        vaildisabled: false,
-        vaildtxt: '发送验证码'
+        isSendSmsBtnDisabled: false,
+        sendSmsBtnContent: '发送验证码'
       })
     } else {
       setTimeout(function() {
@@ -384,12 +385,12 @@ app.vaildPage({
       }, 1000)
     }
   },
-  bindName(e) {
+  bindInputName(e) {
     this.setData({
       name: e.detail.value
     })
   },
-  bindPhone(e) {
+  bindInputPhone(e) {
     this.setData({
       phone: e.detail.value
     })
@@ -405,27 +406,27 @@ app.vaildPage({
           res = res.data
           if (res.success) {
             this.setData({
-              carmodel: this.data.carmodel ? this.data.carmodel : res.data.vin,
-              carno: this.data.carno ? this.data.carno : res.data.carNumber
+              chassisNo: this.data.chassisNo ? this.data.chassisNo : res.data.vin,
+              licenseNo: this.data.licenseNo ? this.data.licenseNo : res.data.carNumber
             })
           }
         }.bind(this)
       )
     }
   },
-  bindVaildcode(e) {
+  bindInputSmsCode(e) {
     this.setData({
       vcode: e.detail.value
     })
   },
-  bindCarno(e) {
+  bindInputLicenseNo(e) {
     this.setData({
-      carno: e.detail.value
+      licenseNo: e.detail.value
     })
   },
-  bindCarmodelno(e) {
+  bindInputChassisNo(e) {
     this.setData({
-      carmodel: e.detail.value
+      chassisNo: e.detail.value
     })
   },
   bindAddr(e) {
@@ -433,7 +434,7 @@ app.vaildPage({
       addr: e.detail.value
     })
   },
-  bindaddtap() {
+  selectRescueAddress() {
     var _this = this
     wx.chooseLocation({
       success: function(res) {

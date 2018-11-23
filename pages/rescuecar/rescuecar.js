@@ -4,8 +4,10 @@ var app = getApp()
 var wbs = require('../../utils/wbs.js')
 var appEnum = require('../../utils/enum.js')
 const OPENID = wx.getStorageSync('openId')
+var util = require('../../utils/util.js')
+
 var time = null
-var time2 = null
+
 var homeData = {
   data: {
     serverUrl: wbs.url,
@@ -16,7 +18,7 @@ var homeData = {
     timeStep: {},
     status: '',
     orderId: '',
-    code: 0,
+    code: 1,
     rescueStyle: appEnum.rescueStyle,
     rescueStaus: appEnum.rescueStaus,
     btnflag: 2,
@@ -41,7 +43,7 @@ var homeData = {
         success: function(res) {
           var latitude = res.latitude + ''
           var longitude = res.longitude + ''
-          util.httpIntercept(wx.getStorageSync('openId')).then(resolve => {
+          util.httpIntercept(OPENID).then(resolve => {
             var data = {
               orderId: _this.data.orderId + '',
               openId: resolve,
@@ -106,13 +108,13 @@ var homeData = {
       }
     })
   },
-  toOwner() {
+  contactVehicleOwner() {
     var _this = this
     wx.makePhoneCall({
       phoneNumber: _this.data.phone
     })
   },
-  tapUpdate(e) {
+  updateRescueProgress(e) {
     var _this = this
 
     let myType = e.target.dataset.type + ''

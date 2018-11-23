@@ -6,15 +6,15 @@
   background-color: #212121;
   text-align: center;
   border-radius: 10rpx;
-}
-.header .dashed-line {
-  width: 85%;
-  height: 0;
-  border: 1rpx dashed #fff;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  .dashed-line {
+    width: 85%;
+    height: 0;
+    border: 1rpx dashed #fff;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 .header .rescue-style {
   text-align: center;
@@ -48,11 +48,11 @@
   border-radius: 50%;
   border: 2rpx solid #ccc;
   font-size: 0;
-}
-.header .rescue-style .defstyle .circle image {
-  width: 60rpx;
-  height: 50rpx;
-  vertical-align: middle;
+  image {
+    width: 60rpx;
+    height: 50rpx;
+    vertical-align: middle;
+  }
 }
 .header .rescue-style .defstyle .circle-blue {
   width: 90rpx;
@@ -71,10 +71,12 @@
 .header .rescue-style .defstyle .style-name.active {
   color: #fff;
 }
+
 .header .rescue-status {
   line-height: 60rpx;
   background-color: #000;
 }
+
 .rescuebox {
   margin-top: 18.75rpx;
   padding: 30rpx 50rpx;
@@ -89,10 +91,10 @@
 }
 .rescuecar-style {
   line-height: 52rpx;
-}
-.rescuecar-style image {
-  margin-right: 16rpx;
-  vertical-align: text-bottom;
+  image {
+    margin-right: 16rpx;
+    vertical-align: text-bottom;
+  }
 }
 .rescuecar-style:nth-child(2) {
   margin-top: 13rpx;
@@ -102,9 +104,11 @@
   height: 183rpx;
   margin-top: 7.5rpx;
 }
-.tel-box .disbtel image {
-  width: 97rpx;
-  height: 97rpx;
+.tel-box .disbtel {
+  image {
+    width: 97rpx;
+    height: 97rpx;
+  }
 }
 .rescue-info {
   margin-top: 18.75rpx;
@@ -126,34 +130,36 @@
   text-align: center;
 }
 .content {
-  color: #666666;
+  color: rgb(102, 102, 102);
   font-size: 26rpx;
 }
 /*底部*/
 .rescue-progress {
   margin: 50rpx auto;
-}
-.rescue-progress view {
-  display: flex;
-  justify-content: space-around;
-}
-.rescue-progress .progress-icon image {
-  width: 60rpx;
-  height: 36rpx;
-}
-.rescue-progress .dashed-line {
-  height: 0;
-  border: 1rpx dashed #666;
-  margin: 16rpx auto 12rpx;
-  align-items: center;
-}
-.rescue-progress .dashed-line text {
-  display: inline-block;
-  width: 10rpx;
-  height: 10rpx;
-  border-radius: 50%;
-  background-color: #fff;
-}
-.rescue-progress .progress-text text {
-  color: #666;
+  view {
+    display: flex;
+    justify-content: space-around;
+  }
+  .progress-icon {
+    image {
+      width: 60rpx;
+      height: 36rpx;
+    }
+  }
+  .dashed-line {
+    height: 0;
+    border: 1rpx dashed #666;
+    margin: 16rpx auto 12rpx;
+    align-items: center;
+    text {
+      display: inline-block;
+      width: 10rpx;
+      height: 10rpx;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  }
+  .progress-text text {
+    color: #666;
+  }
 }
