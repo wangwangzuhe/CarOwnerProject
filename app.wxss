@@ -75,12 +75,10 @@ picker {
 }
 .yellow-circle {
   border-radius: 50%;
-  border: 2rpx solid #f5b302;
-  width: 110rpx;
-  height: 110rpx;
-  line-height: 100rpx;
+  border: 1rpx solid #f5b302;
   display: inline-block;
   font-size: 0;
+  padding: 20rpx;
 }
 .placeholder-cls {
   color: #bfc1c5;

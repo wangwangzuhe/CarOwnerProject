@@ -1,6 +1,6 @@
 <view class="cancel-container">
   <view class="cancel">
-    <image src="../../images/jhmei/rescue_vehicle_img.png" style="width:107rpx;height:55rpx" />
+    <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/rescue_vehicle_img.png" style="width:107rpx;height:55rpx" />
     <view class="xian"></view>
     <view>
       <view style="font-size:24px;margin-top:40rpx">{{showtxt}}</view>

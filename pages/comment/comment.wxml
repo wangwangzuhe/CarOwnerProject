@@ -15,45 +15,45 @@
     </view>
     <view class="review">
       <view class="vitem clear">
-        <text class="vitemleft">响应速度：</text>
+        <text>响应速度：</text>
         <text class="vitemxing">{{respeedxing}}</text>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[0].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[0].issel?'ed':''}}.png"
           data-id="1" bindtap="bindrespeed" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[1].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[1].issel?'ed':''}}.png"
           data-id="2" bindtap="bindrespeed" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[2].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[2].issel?'ed':''}}.png"
           data-id="3" bindtap="bindrespeed" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[3].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[3].issel?'ed':''}}.png"
           data-id="4" bindtap="bindrespeed" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{respeed[4].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[4].issel?'ed':''}}.png"
           data-id="5" bindtap="bindrespeed" />
       </view>
       <view class="vitem clear">
-        <text class="vitemleft">服务态度：</text>
+        <text>服务态度：</text>
         <text class="vitemxing">{{servattrixing}}</text>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[0].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[0].issel?'ed':''}}.png"
           data-id="1" bindtap="bindservattr" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[1].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[1].issel?'ed':''}}.png"
           data-id="2" bindtap="bindservattr" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[2].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[2].issel?'ed':''}}.png"
           data-id="3" bindtap="bindservattr" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[3].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[3].issel?'ed':''}}.png"
           data-id="4" bindtap="bindservattr" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{servattri[4].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[4].issel?'ed':''}}.png"
           data-id="5" bindtap="bindservattr" />
       </view>
       <view class="vitem clear">
-        <text class="vitemleft">实用功能：</text>
+        <text>实用功能：</text>
         <text class="vitemxing">{{realfunxing}}</text>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[0].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[0].issel?'ed':''}}.png"
           data-id="1" bindtap="bindrealfun" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[1].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[1].issel?'ed':''}}.png"
           data-id="2" bindtap="bindrealfun" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[2].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[2].issel?'ed':''}}.png"
           data-id="3" bindtap="bindrealfun" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[3].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[3].issel?'ed':''}}.png"
           data-id="4" bindtap="bindrealfun" />
-        <image src="https://rescue.gacfcasales.com/carOwner/images/comment/xing{{realfun[4].issel?'ed':''}}.png"
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[4].issel?'ed':''}}.png"
           data-id="5" bindtap="bindrealfun" />
       </view>
     </view>

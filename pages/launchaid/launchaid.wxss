@@ -1,9 +1,3 @@
-.launchaid-top {
-  width: 100%;
-  height: 390rpx;
-  box-sizing: content-box;
-  position: relative;
-}
 .launchaid-title {
   height: 88rpx;
   display: flex;
@@ -24,10 +18,6 @@
   color: #000;
   background-color: #f5b302;
 }
-.gang {
-  flex: 1;
-  text-align: center;
-}
 .chakan {
   flex: 5;
   text-align: center;
@@ -44,18 +34,6 @@
   margin-left: 93rpx;
   position: relative;
   box-sizing: border-box;
-}
-.status-box .line {
-  width: 4rpx;
-  height: 615rpx;
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  margin-left: -4rpx;
-  margin-top: -307rpx;
-  background: url(https://rescue.gacfcasales.com/carOwner/images/lie.png);
-  background-size: cover;
 }
 .status-box .car-status {
   width: 354rpx;
@@ -84,43 +62,14 @@
   font-weight: bold;
   color: #8a8b90;
 }
-.clearfix:after {
-  content: ' ';
-  display: block;
-  clear: both;
-  height: 0;
-}
-.clearfix {
-  zoom: 1;
-}
-.logo {
-  float: right;
-  width: 126rpx;
-  height: 44rpx;
-  background: url(https://rescue.gacfcasales.com/carOwner/images/logo.png);
-  background-size: cover;
-  margin-top: 76rpx;
-  margin-right: 39rpx;
-}
 .sever-des {
-  margin-top: 50rpx;
-  color: #fff;
+  margin-top: 20rpx;
   background-color: #212121;
   padding: 60rpx 50rpx;
   border-radius: 10rpx;
 }
-.sever-des-flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 .sever-des-item {
   flex: 1;
-}
-.sever-des-item2 {
-  flex: 9;
-  font-size: 28rpx;
 }
 .back-btn {
   background-color: #f5b302;
@@ -129,18 +78,14 @@
   line-height: 90rpx;
   margin-top: 60rpx;
 }
-.server-des-item2-t {
-  font-size: 14px;
-  color: #fff;
-}
 .server-des-item2-c {
-  font-size: 12px;
-  line-height: 18px;
-  margin-top: 4px;
+  font-size: 28rpx;
+  line-height: 38rpx;
+  margin-top: 8rpx;
 }
 .server-des-item2-c .service-content {
   margin-right: 30rpx;
-  font-size: 12px;
+  font-size: 28rpx;
 }
 .server-des-item2-c .service-content:before {
   content: '';
@@ -152,34 +97,9 @@
   margin-right: 10rpx;
   vertical-align: middle;
 }
-.font {
-  font-size: 33rpx;
-  line-height: 50rpx;
-}
 .nostart {
   width: 40px;
   height: 20px;
-  vertical-align: middle;
-  border-radius: 50%;
-}
-.time {
-  float: left;
-  font-size: 16px;
-  line-height: 100rpx;
-  width: 220rpx;
-  text-align: right;
-  font-weight: bold;
-  box-sizing: border-box;
-  padding-right: 20rpx;
-}
-.rescustatus {
-  float: left;
-  line-height: 100rpx;
-  width: 120rpx;
-}
-.rescustatus image {
-  width: 80rpx;
-  height: 80rpx;
   vertical-align: middle;
   border-radius: 50%;
 }
@@ -198,10 +118,6 @@
 .helping,
 .company {
   margin-top: 0px;
-}
-.time image {
-  width: 45px;
-  height: 15px;
 }
 .oper {
   line-height: 50px;
@@ -229,50 +145,23 @@
   background: #21242e;
   box-sizing: border-box;
 }
-.map {
-  width: 100%;
-  height: 640rpx;
-}
 .distlabel {
   display: inline-block;
   width: 40px;
   text-align: center;
 }
-.cancel,
-.cui {
-  width: 50%;
-  float: left;
-  line-height: 40px;
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
-}
-.cancel {
-  background: #42517d;
-}
-.cui {
-  background: #627ecc;
-}
-.fixed {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-}
 .header {
-  width: 100%;
-  box-sizing: content-box;
   position: relative;
-  padding-top: 28rpx;
-  padding-bottom: 50rpx;
+  padding: 50rpx;
   background-color: #212121;
   border-radius: 10rpx;
 }
 .header .dashed-line {
   width: 85%;
   height: 0;
-  border: 1rpx dashed #fff;
+  border: 1rpx dashed #bfc1c5;
   position: absolute;
-  top: 42%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, 0);
 }
@@ -289,96 +178,44 @@
   margin: auto;
 }
 .header .rescue-style {
-  height: 186rpx;
   text-align: center;
   display: flex;
   justify-content: center;
 }
-.header .rescue-style .defstyle {
-  width: 90rpx;
-  height: 186rpx;
-  margin: 0 10rpx;
+.header .rescue-style .defstyle .time text:first-child {
+  display: inline-block;
+  width: 10rpx;
 }
-.header .rescue-style .defstyle .time {
-  color: #21242e;
-  font-size: 30rpx;
-  height: 30rpx;
-  line-height: 30rpx;
-  width: 90rpx;
-  text-align: center;
-  font-weight: bold;
-}
-.header .rescue-style .defstyle .time.active {
+.header .rescue-style .defstyle .time text:last-child {
   color: #8a8a8d;
+  font-size: 26rpx;
 }
-.header .rescue-style .defstyle .time.gang {
-  width: 90rpx;
-  height: 30rpx;
+.header .rescue-style .defstyle .time text.active {
+  color: #f5b302;
 }
 .header .rescue-style .defstyle .circle {
-  width: 90rpx;
-  height: 90rpx;
-  line-height: 80rpx;
-  margin-top: 38rpx;
-  border-radius: 50%;
-  border: 2rpx solid #ccc;
+  margin-top: 20rpx;
   font-size: 0;
+  display: flex;
+  align-items: center;
+}
+.header .rescue-style .defstyle .circle text {
+  display: inline-block;
+  height: 0;
+  width: 10rpx;
+  border: 1rpx dashed #bfc1c5;
 }
 .header .rescue-style .defstyle .circle image {
-  width: 60rpx;
-  height: 50rpx;
-  vertical-align: middle;
-}
-.header .rescue-style .defstyle .circle-blue {
   width: 90rpx;
   height: 90rpx;
-  background: url(https://rescue.gacfcasales.com/carOwner/images/circle-blue.png);
-  background-size: cover;
-  margin-top: 38rpx;
 }
 .header .rescue-style .defstyle .style-name {
-  text-align: center;
-  font-weight: bold;
-  width: 90rpx;
   color: #8a8a8d;
   margin-top: 18.75rpx;
-  white-space: nowrap;
+  text-align: right;
+  padding-right: 18rpx;
+  font-size: 26rpx;
 }
 .header .rescue-style .defstyle .style-name.active {
-  color: #21242e;
-}
-.header .logo {
-  width: 126rpx;
-  height: 44rpx;
-  background: url(https://rescue.gacfcasales.com/carOwner/images/logo.png);
-  background-size: cover;
-  margin: 0 auto;
-  /* margin-bottom:36.75rpx; */
-}
-.rescuebox {
-  width: 100%;
-  margin-top: 18.75rpx;
-  padding: 45rpx 0;
-  box-sizing: border-box;
-  position: relative;
-  background: #fff;
-}
-.rescuebox .box-content {
-  width: 660rpx;
-  float: right;
-}
-.rescuecar-style {
-  font-size: 33rpx;
-  color: #393f4f;
-  line-height: 52rpx;
-}
-.rescuecar-style:nth-child(2) {
-  margin-top: 13rpx;
-}
-.rescuecar-style .name {
-  font-weight: bold;
-  color: #393f4f;
-}
-.clearbox {
-  clear: both;
+  color: #f5b302;
 }

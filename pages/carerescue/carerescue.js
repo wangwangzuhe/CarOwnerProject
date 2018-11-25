@@ -429,11 +429,6 @@ app.vaildPage({
       chassisNo: e.detail.value
     })
   },
-  bindAddr(e) {
-    this.setData({
-      addr: e.detail.value
-    })
-  },
   selectRescueAddress() {
     var _this = this
     wx.chooseLocation({

@@ -5,8 +5,8 @@
   border-radius: 10rpx;
 }
 .rescue-hotline-wrapper image {
-  width: 100rpx;
-  height: 100rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 .recubg {
   padding: 50rpx;
@@ -20,7 +20,7 @@
 }
 .recubg .recu_flex .flexitem {
   width: 48%;
-  line-height: 26px;
+  line-height: 88rpx;
   border: 1rpx solid #f5b302;
   text-align: center;
   border-radius: 10rpx;
@@ -96,8 +96,8 @@
   padding: 20rpx 0;
 }
 .rescue-type-wrapper .rescue-type-list .rescue-item image {
-  width: 60rpx;
-  height: 60rpx;
+  width: 50rpx;
+  height: 36rpx;
 }
 .item-type-text {
   font-size: 24rpx;

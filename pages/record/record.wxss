@@ -1,6 +1,7 @@
 .header-wrapper {
   background-color: #212121;
   border-radius: 10rpx;
+  padding: 30rpx 30rpx 50rpx;
 }
 .header-wrapper .rescue-count {
   text-align: right;
@@ -10,6 +11,7 @@
 .header-wrapper .rescue-switches {
   display: flex;
   justify-content: space-between;
+  margin-top: 30rpx;
 }
 .header-wrapper .rescue-switches .switch-item {
   width: 48%;
@@ -22,84 +24,41 @@
   color: #000;
   background-color: #f5b302;
 }
-.scroll-list {
-  margin-top: 20rpx;
-}
-.scroll-list .list {
+.scroll-list-container .list-item-wrapper {
   background-color: #212121;
   border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+  margin-top: 30rpx;
 }
-.list-l {
-  float: left;
-  width: 138rpx;
-  margin-top: 50rpx;
+.scroll-list-container .list-item-wrapper .rescue-type-wrapper {
+  width: 82rpx;
+  margin-right: 20rpx;
 }
-.list-r {
-  float: left;
-  width: 592rpx;
-  margin-top: 10rpx;
+.scroll-list-container .list-item-wrapper .rescue-type-wrapper image {
+  width: 82rpx;
+  height: 82rpx;
 }
-.clearfix:after {
-  content: ' ';
-  display: block;
-  clear: both;
-  height: 0;
+.scroll-list-container .list-item-wrapper .rescue-info-wrapper {
+  flex: 1;
 }
-.clearfix {
-  zoom: 1;
+.scroll-list-container .list-item-wrapper .rescue-info-wrapper view {
+  margin: 10rpx 0;
 }
-.list-l .img-tag {
-  width: 121rpx;
-  height: 121rpx;
+.scroll-list-container .list-item-wrapper .rescue-info-wrapper view text {
+  font-size: 26rpx;
 }
-.list-one {
-  padding-top: 20rpx;
-  float: left;
-  color: #535353;
-  font-size: 30rpx;
-  width: 592rpx;
+.scroll-list-container .list-item-wrapper .rescue-info-wrapper view.line-item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  word-break: break-all;
 }
-.list-one .list-one-one {
-  text-align: left;
-  white-space: nowrap;
-  float: left;
-}
-.list-one .list-one-one:nth-child(2) {
-  text-align: left;
-  white-space: nowrap;
-}
-.list-one .list-one-one .list-one-one-o {
-  color: #21242e;
-}
-.list-two {
-  float: left;
-  font-size: 30rpx;
-  color: #21242e;
-  margin-top: 20rpx;
-  width: 100%;
-}
-.list-two .list-two-two {
-  white-space: nowrap;
-  text-align: center;
-  float: left;
-  color: #535353;
-}
-.list-two .list-two-two:nth-child(1) {
-  text-align: left;
-}
-.null-data {
-  width: 100%;
+.loading-tip {
   height: 50rpx;
   line-height: 50rpx;
   text-align: center;
   font-size: 26rpx;
-}
-.fffffl {
-  float: left;
-  width: 110rpx;
-}
-.ffffffl {
-  float: left;
-  width: 460rpx;
-  white-space: normal;
+  margin-top: 30rpx;
 }

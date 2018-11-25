@@ -1,4 +1,3 @@
-/*头部*/
 .header {
   box-sizing: content-box;
   position: relative;
@@ -9,67 +8,63 @@
   .dashed-line {
     width: 85%;
     height: 0;
-    border: 1rpx dashed #fff;
+    border: 1rpx dashed #bfc1c5;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, 0);
   }
 }
 .header .rescue-style {
-  text-align: center;
   display: flex;
   justify-content: center;
+  align-items:center;
 }
-.header .rescue-style .defstyle {
-  margin: 0 10rpx;
-}
+// .header .rescue-style .defstyle {
+//   // margin: 0 10rpx;
+//   text {
+//     display: inline-block;
+//     height: 0;
+//     border: 1rpx dashed #bfc1c5;
+//   }
+// }
 .header .rescue-style .defstyle .time {
-  color: #21242e;
-  font-size: 30rpx;
-  height: 30rpx;
-  line-height: 30rpx;
-  width: 90rpx;
-  text-align: center;
-  font-weight: bold;
-}
-.header .rescue-style .defstyle .time.active {
-  color: #fff;
-}
-.header .rescue-style .defstyle .time.gang {
-  width: 90rpx;
-  height: 30rpx;
-}
-.header .rescue-style .defstyle .circle {
-  width: 90rpx;
-  height: 90rpx;
-  line-height: 80rpx;
-  margin-top: 38rpx;
-  border-radius: 50%;
-  border: 2rpx solid #ccc;
-  font-size: 0;
-  image {
-    width: 60rpx;
-    height: 50rpx;
-    vertical-align: middle;
+  // text-align: left;
+  // padding-left: 16rpx;
+  text {
+    &:first-child {
+      display: inline-block;
+      width: 10rpx;
+    }
+    &:last-child {
+      // width: 90rpx;
+      color: #8a8a8d;
+      font-size: 26rpx;
+    }
   }
 }
-.header .rescue-style .defstyle .circle-blue {
-  width: 90rpx;
-  height: 90rpx;
-  margin-top: 11.25rpx;
+.header .rescue-style .defstyle .circle {
+  margin-top: 20rpx;
+  font-size: 0;
+  display: flex;
+  align-items: center;
+  text {
+    display: inline-block;
+    height: 0;
+    width: 10rpx;
+    border: 1rpx dashed #bfc1c5;
+  }
+  image {
+    width: 90rpx;
+    height: 90rpx;
+  }
 }
 .header .rescue-style .defstyle .style-name {
-  font-size: 26rpx;
-  text-align: center;
-  font-weight: bold;
-  width: 90rpx;
   color: #8a8a8d;
   margin-top: 18.75rpx;
-  white-space: nowrap;
-}
-.header .rescue-style .defstyle .style-name.active {
-  color: #fff;
+  text-align: right;
+  padding-right: 18rpx;
+  font-size: 26rpx;
 }
 
 .header .rescue-status {
@@ -93,11 +88,8 @@
   line-height: 52rpx;
   image {
     margin-right: 16rpx;
-    vertical-align: text-bottom;
+    vertical-align: -4rpx;
   }
-}
-.rescuecar-style:nth-child(2) {
-  margin-top: 13rpx;
 }
 .tel-box {
   width: 100%;
@@ -142,8 +134,8 @@
   }
   .progress-icon {
     image {
-      width: 60rpx;
-      height: 36rpx;
+      width: 46rpx;
+      height: 46rpx;
     }
   }
   .dashed-line {
@@ -157,9 +149,15 @@
       height: 10rpx;
       border-radius: 50%;
       background-color: #fff;
+      &.unactive {
+        background-color: #666;
+      }
     }
   }
   .progress-text text {
-    color: #666;
+    font-size: 26rpx;
+    &.unactive {
+      color: #666;
+    }
   }
 }

@@ -1,53 +1,68 @@
 <!--发起救援 首页-->
 <view style="padding: 30rpx;">
-  <view class='launchaid-top'>
+  <view>
     <view class="header">
-      <view class="dashed-line"></view>
+      <!-- <view class="dashed-line"></view> -->
       <view class="rescue-style">
         <view class="defstyle">
-          <view class="time" wx:if="{{times.caseTime}}">{{times.caseTime}}</view>
-          <view class="time gang" wx:else>--:--</view>
-          <view class="circle-blue" wx:if="{{times.caseTime&&!times.sendTime}}"></view>
-          <view class="circle" wx:else>
-            <image src="../../images/jhmei/vehicle_grey.png" />
+          <view class="time" wx:if="{{times.caseTime}}"><text style="width: 40rpx"></text><text class="{{times.sendTime?'':'active'}}">{{times.caseTime}}</text></view>
+          <view class="time" wx:else><text style="width: 40rpx"></text><text>--:--</text></view>
+          <view class="circle" wx:if="{{times.caseTime&&!times.sendTime}}">
+            <text style="width: 40rpx"></text>
+            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
-          <view class="style-name">开案</view>
+          <view class="circle" wx:else>
+            <text style="width: 40rpx"></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+          </view>
+          <view class="style-name {{(times.caseTime&&!times.sendTime)?'active':''}}">开案</view>
         </view>
         <view class="defstyle">
-          <view class="time" wx:if="{{times.sendTime}}">{{times.sendTime}}</view>
-          <view class="time gang" wx:else>--:--</view>
-          <view class="circle-blue" wx:if="{{times.sendTime&&!times.arrivalTime}}"></view>
-          <view class="circle" wx:else>
-            <image src="../../images/jhmei/vehicle_grey.png" />
+          <view class="time" wx:if="{{times.sendTime}}"><text></text><text class="{{times.arrivalTime?'':'active'}}">{{times.sendTime}}</text></view>
+          <view class="time" wx:else><text></text><text>--:--</text></view>
+          <view class="circle" wx:if="{{times.sendTime&&!times.arrivalTime}}">
+            <text></text>
+            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
-          <view class="style-name">派案</view>
+          <view class="circle" wx:else>
+            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+          </view>
+          <view class="style-name {{(times.sendTime&&!times.arrivalTime)?'active':''}}">派案</view>
         </view>
         <view class="defstyle">
-          <view class="time" wx:if="{{times.arrivalTime}}">{{times.arrivalTime}}</view>
-          <view class="time gang" wx:else>--:--</view>
-          <view class="circle-blue" wx:if="{{times.arrivalTime&&!times.rescueTime}}"></view>
-          <view class="circle" wx:else>
-            <image src="../../images/jhmei/vehicle_grey.png" />
+          <view class="time" wx:if="{{times.arrivalTime}}"><text></text><text class="{{times.rescueTime?'':'active'}}">{{times.arrivalTime}}</text></view>
+          <view class="time" wx:else><text></text><text>--:--</text></view>
+          <view class="circle" wx:if="{{times.arrivalTime&&!times.rescueTime}}">
+            <text></text>
+            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
-          <view class="style-name">到达</view>
+          <view class="circle" wx:else>
+            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+          </view>
+          <view class="style-name {{(times.arrivalTime&&!times.rescueTime)?'active':''}}"">到达</view>
         </view>
         <view class="defstyle">
-          <view class="time" wx:if="{{times.rescueTime}}">{{times.rescueTime}}</view>
-          <view class="time gang" wx:else>--:--</view>
-          <view class="circle-blue" wx:if="{{times.rescueTime&&!times.finishTime}}"></view>
-          <view class="circle" wx:else>
-            <image src="../../images/jhmei/vehicle_grey.png" />
+          <view class="time" wx:if="{{times.rescueTime}}"><text></text><text class="{{times.finishTime?'':'active'}}">{{times.rescueTime}}</text></view>
+          <view class="time" wx:else><text></text><text>--:--</text></view>
+          <view class="circle" wx:if="{{times.rescueTime&&!times.finishTime}}">
+            <text></text>
+            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
-          <view class="style-name">救援中</view>
+          <view class="circle" wx:else>
+            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+          </view>
+          <view class="style-name {{(times.rescueTime&&!times.finishTime)?'active':''}}" style="padding-right: 8rpx">救援中</view>
         </view>
         <view class="defstyle">
-          <view class="time" wx:if="{{times.rescueTime}}">{{times.rescueTime}}</view>
-          <view class="time gang" wx:else>--:--</view>
-          <view class="circle-blue" wx:if="{{times.rescueTime&&!times.finishTime}}"></view>
-          <view class="circle" wx:else>
-            <image src="../../images/jhmei/vehicle_grey.png" />
+          <view class="time" style="text-align:left;padding-left:12rpx" wx:if="{{times.finishTime}}"><text></text><text class="active">{{times.finishTime}}</text></view>
+          <view class="time" style="text-align:left;padding-left:12rpx" wx:else><text></text><text>--:--</text></view>
+          <view class="circle" wx:if="{{times.finishTime}}">
+            <text></text>
+            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
-          <view class="style-name">完成</view>
+          <view class="circle" wx:else>
+            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" /><text style="width: 40rpx"></text>
+          </view>
+          <view class="style-name {{times.finishTime?'active':''}}" style="text-align: unset;padding-right: 32rpx">完成</view>
         </view>
       </view>
     </view>
@@ -57,32 +72,29 @@
     </view>
   </view>
   <view class="sever-des">
-    <view class="sever-des-flex">
-      <view class="sever-des-item2">
-        <view class="server-des-item2-t">最广救援范围</view>
-        <view class="server-des-item2-c">铺装路面、非铺装路面、越野地形，所有救援车辆能够到达的地点。
+    <view>
+      <view>最广救援范围</view>
+      <view class="server-des-item2-c">铺装路面、非铺装路面、越野地形，所有救援车辆能够到达的地点。</view>
+      <view style="margin-top: 40rpx">最全救援条件</view>
+      <view class="server-des-item2-c">车辆故障、驾驶员失误（蓄电池电压不足、缺乏燃料、钥匙丢失/损坏、扎胎/爆胎）、交通事故等原因造成的车辆不能继续行驶。 </view>
+      <view style="margin-top: 40rpx">服务内容</view>
+      <view class="server-des-item2-c">
+        <view>
+          <text class="service-content">家中或道路救援服务</text>
+          <text class="service-content">拖车服务</text>
+          <text class="service-content">出租车服务</text>
         </view>
-        <view class="server-des-item2-t" style="margin-top:10px;">最全救援条件</view>
-        <view class="server-des-item2-c">车辆故障、驾驶员失误（蓄电池电压不足、缺乏燃料、钥匙丢失/损坏、扎胎/爆胎）、交通事故等原因造成的车辆不能继续行驶。 </view>
-        <view class="server-des-item2-t" style="margin-top:10px;">服务内容</view>
-        <view class="server-des-item2-c">
-          <view>
-            <text class="service-content">家中或道路救援服务</text>
-            <text class="service-content">拖车服务</text>
-            <text class="service-content">出租车服务</text>
-          </view>
-          <view>
-            <text class="service-content">法律咨询</text>
-            <text class="service-content">医疗咨询</text>
-            <text class="service-content">带司机备用车服务</text>
-          </view>
-          <view>
-            <text class="service-content">酒店住宿/继续旅程</text>
-            <text class="service-content">维修完毕后车辆交付服务</text>
-          </view>
+        <view>
+          <text class="service-content">法律咨询</text>
+          <text class="service-content">医疗咨询</text>
+          <text class="service-content">带司机备用车服务</text>
+        </view>
+        <view>
+          <text class="service-content">酒店住宿/继续旅程</text>
+          <text class="service-content">维修完毕后车辆交付服务</text>
         </view>
       </view>
     </view>
-    <view class="back-btn" bindtap="returnBack">返回</view>
+    <view class="back-btn" bindtap="exit">返回</view>
   </view>
 </view>

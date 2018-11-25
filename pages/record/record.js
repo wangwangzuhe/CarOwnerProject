@@ -7,12 +7,12 @@ var util = require('../../utils/util')
 var option = {
   data: {
     loading: false,
-    count: '',
+    totalRescueCount: '',
     pageIndex: 1,
     comments: [],
     pageSize: 10,
-    tipText: '加载中..',
-    tabflag: true
+    loadingTipText: '加载中..',
+    isShowMyRescueRecords: true
   },
   split: function(i) {
     return i.split(' ')[0]
@@ -24,8 +24,8 @@ var option = {
   getList(url) {
     var _this = this
     if (_this.data.pageIndex > _this.data.pageSize) {
-      if (_this.data.count) {
-        _this.setData({ tipText: '已显示全部' })
+      if (_this.data.totalRescueCount) {
+        _this.setData({ loadingTipText: '已显示全部' })
         return
       }
     }
@@ -35,12 +35,12 @@ var option = {
         data: { openId: resolve, pageIndex: _this.data.pageIndex + '' },
         method: 'POST',
         success: function(res) {
-          // success
           res = res.data
-          console.log(res)
+          // console.log(res)
           if (res.success) {
-            if (!res.data.count) {
-              _this.setData({ tipText: '暂无数据' })
+            const totalRescueCount = res.data.count
+            if (!totalRescueCount) {
+              _this.setData({ loadingTipText: '暂无数据' })
               return
             }
             let comments = _this.data.comments.concat(res.data.comments),
@@ -53,13 +53,13 @@ var option = {
             _this.setData({
               pageIndex: _this.data.pageIndex + 1,
               comments: commentss,
-              pageSize: res.data.count / 8 < 1 ? 1 : Math.ceil(res.data.count / 8),
-              tipText: '加载中..',
-              count: res.data.count
+              pageSize: totalRescueCount / 8 < 1 ? 1 : Math.ceil(totalRescueCount / 8),
+              loadingTipText: '加载中..',
+              totalRescueCount
             })
-            if (res.data.count - 8 <= 0) {
+            if (totalRescueCount <= 8) {
               _this.setData({
-                tipText: ''
+                loadingTipText: ''
               })
             }
           }
@@ -68,37 +68,37 @@ var option = {
     })
   },
   scrolltolower() {
-    if (this.data.tabflag) {
+    if (this.data.isShowMyRescueRecords) {
       this.getList(wbs.my)
       return
     }
     this.getList(wbs.all)
   },
-  tapTab(event) {
+  switchTabItem(event) {
     var _this = this,
       time = null
     var type = event.target.dataset.type
-    if (_this.data.tabflag && type == 1) {
+    if (_this.data.isShowMyRescueRecords && type == 1) {
       return
     }
-    if (!_this.data.tabflag && type == 2) {
+    if (!_this.data.isShowMyRescueRecords && type == 2) {
       return
     }
     _this.setData({
-      tabflag: !_this.data.tabflag
+      isShowMyRescueRecords: !_this.data.isShowMyRescueRecords
     })
     _this.setData({
-      count: '',
+      totalRescueCount: '',
       pageIndex: 1,
       comments: [],
       pageSize: 10,
-      tipText: '加载中..'
+      loadingTipText: '加载中..'
     })
     getMyList()
     function getMyList() {
       time = setTimeout(function() {
-        if (_this.data.count == '') {
-          if (_this.data.tabflag) {
+        if (_this.data.totalRescueCount == '') {
+          if (_this.data.isShowMyRescueRecords) {
             _this.getList(wbs.my)
           } else {
             _this.getList(wbs.all)

@@ -1,100 +1,84 @@
 <view style="padding: 30rpx">
   <view class="header-wrapper">
-    <view class="rescue-count">累计救援：{{ count }}</view>
+    <view class="rescue-count">累计救援：{{ totalRescueCount }}</view>
     <view class="rescue-switches">
-      <view class="switch-item {{tabflag?'active':''}}" data-type="1" bindtap="tapTab">我的救援记录</view>
-      <view class="switch-item {{!tabflag?'active':''}}" data-type="2" bindtap="tapTab">救援评价</view>
+      <view class="switch-item {{isShowMyRescueRecords?'active':''}}" data-type="1" bindtap="switchTabItem">我的救援记录</view>
+      <view class="switch-item {{isShowMyRescueRecords?'':'active'}}" data-type="2" bindtap="switchTabItem">救援评价</view>
     </view>
   </view>
-  <scroll-view class="scroll-list" scroll-y="true" lower-threshold="100" bindscrolltolower="scrolltolower">
+  <scroll-view class="scroll-list-container" scroll-y="true" lower-threshold="100" bindscrolltolower="scrolltolower">
     <!-- 我的 -->
-    <view class="list clearfix" wx:if="{{tabflag}}" wx:for="{{comments}}" wx:key="{{item.fileNo}}">
-      <view class="list-l">
-        <image src="https://rescue.gacfcasales.com/carOwner/images/tuocheing.png" class="img-tag" wx:if="{{item.reliefType==1}}"></image>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/tuodiaoing.png" class="img-tag" wx:if="{{item.reliefType==2}}"></image>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/huantaiing.png" class="img-tag" wx:if="{{item.reliefType==3}}"></image>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/songyouing.png" class="img-tag" wx:if="{{item.reliefType==4}}"></image>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==5}}"></image>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==6}}"></image>
+    <view class="list-item-wrapper" wx:if="{{isShowMyRescueRecords}}" wx:for="{{comments}}" wx:key="{{item.fileNo}}">
+      <view class="rescue-type-wrapper">
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==1}}"></image>
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_tow_vehicle.png" wx:if="{{item.reliefType==2}}"></image>
+        <!-- <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/huantaiing.png" wx:if="{{item.reliefType==3}}"></image> -->
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==3}}"></image>
+        <!-- <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/songyouing.png" wx:if="{{item.reliefType==4}}"></image> -->
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==4}}"></image>
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==5}}"></image>
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==6}}"></image>
       </view>
-      <view class="list-r">
-        <view class="list-one">
-          <view class="list-one-one" style="width:250rpx"
-            >订单号：<text class="list-one-one-o" style=" white-space:nowrap;">{{ item.fileNo }}</text></view
-          >
-          <view class="list-one-one" style="margin-left:10rpx;"></view>
+      <view class="rescue-info-wrapper">
+        <view>
+          <text>订单号：{{ item.fileNo }}</text>
         </view>
-        <view class="list-two">
-          <view class="list-two-two" style="width:40%;"
-            >服务类型：<text style="color:#21242e" wx:if="{{item.reliefType==1}}">拖车</text><text style="color:#21242e" wx:if="{{item.reliefType==2}}">拖吊</text
-            ><text style="color:#21242e" wx:if="{{item.reliefType==3}}">换胎</text><text style="color:#21242e" wx:if="{{item.reliefType==4}}">送油</text
-            ><text style="color:#21242e" wx:if="{{item.reliefType==5}}">现场救援</text></view
-          >
-          <view class="list-two-two" style="width:60%;padding-left:20rpx;box-sizing: border-box;"
-            >救援日期：<text style="color:#21242e">{{ item.orderTime }}</text></view
-          >
-        </view>
-        <view class="list-two clearfix">
-          <view class="list-two-two" style="width:100%"
-            >救援状态：<text style="color:#21242e" wx:if="{{item.status==5||item.status==6}}">救援完成</text
-            ><text style="color:#21242e" wx:if="{{item.status==7}}">救援取消</text></view
-          >
-        </view>
-        <view class="list-two" style="width:100%">
-          <view class="list-two-two" style="width:100%">
-            <view class="fffffl">故障地：</view>
-            <view class="ffffffl"
-              ><text style="color:#21242e">{{ item.address }}</text></view
-            >
+        <view class="line-item-wrapper">
+          <view>
+            <text>服务类型：</text>
+            <text wx:if="{{item.reliefType==1}}">拖车</text>
+            <text wx:if="{{item.reliefType==2}}">拖吊</text>
+            <text wx:if="{{item.reliefType==3}}">换胎</text>
+            <text wx:if="{{item.reliefType==4}}">送油</text>
+            <text wx:if="{{item.reliefType==5}}">现场救援</text>
           </view>
+          <view><text>救援日期：{{ item.orderTime }}</text></view>
+        </view>
+        <view>
+          <text>救援状态：</text><text wx:if="{{item.status==5||item.status==6}}">救援完成</text><text wx:if="{{item.status==7}}">救援取消</text>
+        </view>
+        <view>
+          <text>故障地：{{ item.address }}</text>
         </view>
       </view>
     </view>
     <!-- 全部 -->
-    <view class="list clearfix" wx:if="{{!tabflag}}" wx:for="{{comments}}" wx:key="{{item.fileNo}}">
-      <view class="list-l">
-        <image src="https://rescue.gacfcasales.com/carOwner/images/tuocheing.png" class="img-tag" wx:if="{{item.reliefType==1}}"></image>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/tuodiaoing.png" class="img-tag" wx:if="{{item.reliefType==2}}"></image>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/huantaiing.png" class="img-tag" wx:if="{{item.reliefType==3}}"></image>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/songyouing.png" class="img-tag" wx:if="{{item.reliefType==4}}"></image>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==5}}"></image>
-        <image src="https://rescue.gacfcasales.com/carOwner/images/xianchangjiuyuaning.png" class="img-tag" wx:if="{{item.reliefType==6}}"></image>
+    <view class="list-item-wrapper" wx:if="{{!isShowMyRescueRecords}}" wx:for="{{comments}}" wx:key="{{item.fileNo}}">
+      <view class="rescue-type-wrapper">
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==1}}"></image>
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_tow_vehicle.png" wx:if="{{item.reliefType==2}}"></image>
+        <!-- <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/huantaiing.png" wx:if="{{item.reliefType==3}}"></image> -->
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==3}}"></image>
+        <!-- <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/songyouing.png" wx:if="{{item.reliefType==4}}"></image> -->
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==4}}"></image>
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==5}}"></image>
+        <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==6}}"></image>
       </view>
-      <view class="list-r">
-        <view class="list-one">
-          <view class="list-one-one" style="width:250rpx"
-            >车主姓名：<text class="list-one-one-o" style=" white-space:nowrap;">{{ item.carOwnerName }}</text></view
-          >
-          <view class="list-one-one" style="margin-left:10rpx;"
-            >救援日期：<text class="list-one-one-o">{{ item.orderTime }}</text></view
-          >
+      <view class="rescue-info-wrapper">
+        <view class="line-item-wrapper">
+          <view><text>车主姓名：{{ item.carOwnerName }}</text></view>
+          <view><text>救援日期：{{ item.orderTime }}</text></view>
         </view>
-        <view class="list-two">
-          <view class="list-two-two"
-            >响应速度：<text style="color:#21242e">{{ item.responseSpeed }}</text></view
-          >
-          <view class="list-two-two" style="margin-left:20rpx;"
-            >现场服务：<text style="color:#21242e">{{ item.serviceAttitude }}</text></view
-          >
-          <view class="list-two-two" style="margin-left:20rpx;"
-            >功能使用：<text style="color:#21242e">{{ item.practicability }}</text></view
-          >
+        <view class="line-item-wrapper">
+          <view><text>响应速度：{{ item.responseSpeed }}</text></view>
+          <view><text>现场服务：{{ item.serviceAttitude }}</text></view>
+          <view><text>功能使用：{{ item.practicability }}</text></view>
         </view>
-        <view class="list-two" wx:if="{{item.comment}}" style="width:100%">
-          <view class="list-two-two" style="width:100%">车主评价：</view>
-          <view class="list-two-two" style="text-align:left;word-wrap:break-word;white-space:normal"
-            ><text style="line-height:35rpx;color:#21242e">{{ item.comment }}</text></view
-          >
+        <view class="line-item-wrapper" wx:if="{{item.comment}}">
+          <view><text>车主评价：</text></view>
+          <view style="flex:1;">
+            <text>{{ item.comment }}</text>
+          </view>
         </view>
-        <view class="list-two" wx:if="{{item.feedback}}" style="width:100%">
-          <view class="list-two-two" style="width:100%">反馈：</view>
-          <view class="list-two-two" style="text-align:left;word-wrap:break-word;white-space:normal"
-            ><text style="line-height:35rpx;color:#21242e">{{ item.feedback }}</text></view
-          >
+        <view class="line-item-wrapper" wx:if="{{item.feedback}}">
+          <view><text>反馈：</text></view>
+          <view style="flex:1;">
+            <text>{{ item.feedback }}</text>
+          </view>
         </view>
       </view>
     </view>
-    <view class="null-data">{{ tipText }}</view>
+    <view class="loading-tip">{{ loadingTipText }}</view>
   </scroll-view>
 </view>
 <!-- 加载器 -->

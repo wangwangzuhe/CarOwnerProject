@@ -36,52 +36,82 @@
 <view style="padding: 30rpx">
   <view class="header">
     <view class="rescue-status">救援状态：{{statustxt}}</view>
-    <view class="dashed-line"></view>
+    <!-- <view class="dashed-line"></view> -->
     <view class="rescue-style">
       <view class="defstyle">
-        <view class="time" wx:if="{{times.caseTime}}">{{times.caseTime}}</view>
-        <view class="time gang" wx:else></view>
-        <view class="circle-blue" wx:if="{{times.caseTime&&!times.sendTime}}"></view>
-        <view class="circle" wx:else></view>
-        <view class="style-name">开案</view>
+        <view class="time" wx:if="{{times.caseTime}}"><text style="width: 40rpx"></text><text class="{{times.sendTime?'':'active'}}">{{times.caseTime}}</text></view>
+        <view class="time" wx:else><text style="width: 40rpx"></text><text>--:--</text></view>
+        <view class="circle" wx:if="{{times.caseTime&&!times.sendTime}}">
+          <text style="width: 40rpx"></text>
+          <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+        </view>
+        <view class="circle" wx:else>
+          <text style="width: 40rpx"></text>
+          <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+        </view>
+        <view class="style-name {{(times.caseTime&&!times.sendTime)?'active':''}}">开案</view>
       </view>
       <view class="defstyle">
-        <view class="time" wx:if="{{times.sendTime}}">{{times.sendTime}}</view>
-        <view class="time gang" wx:else></view>
-        <view class="circle-blue" wx:if="{{times.sendTime&&!times.arrivalTime}}"></view>
-        <view class="circle" wx:else></view>
-        <view class="style-name">派案</view>
+        <view class="time" wx:if="{{times.sendTime}}"><text></text><text class="{{times.arrivalTime?'':'active'}}">{{times.sendTime}}</text></view>
+        <view class="time" wx:else><text></text><text>--:--</text></view>
+        <view class="circle" wx:if="{{times.sendTime&&!times.arrivalTime}}">
+          <text></text>
+          <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+        </view>
+        <view class="circle" wx:else>
+          <text></text>
+          <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+        </view>
+        <view class="style-name {{(times.sendTime&&!times.arrivalTime)?'active':''}}">派案</view>
       </view>
       <view class="defstyle">
-        <view class="time" wx:if="{{times.arrivalTime}}">{{times.arrivalTime}}</view>
-        <view class="time gang" wx:else></view>
-        <view class="circle-blue" wx:if="{{times.arrivalTime&&!times.rescueTime}}"></view>
-        <view class="circle" wx:else></view>
-        <view class="style-name">到达</view>
+        <view class="time" wx:if="{{times.arrivalTime}}"><text></text><text class="{{times.rescueTime?'':'active'}}">{{times.arrivalTime}}</text></view>
+        <view class="time" wx:else><text></text><text>--:--</text></view>
+        <view class="circle" wx:if="{{times.arrivalTime&&!times.rescueTime}}">
+          <text></text>
+          <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+        </view>
+        <view class="circle" wx:else>
+          <text></text>
+          <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+        </view>
+        <view class="style-name {{(times.arrivalTime&&!times.rescueTime)?'active':''}}">到达</view>
       </view>
       <view class="defstyle">
-        <view class="time" wx:if="{{times.rescueTime}}">{{times.rescueTime}}</view>
-        <view class="time gang" wx:else></view>
-        <view class="circle-blue" wx:if="{{times.rescueTime&&!times.finishTime}}"></view>
-        <view class="circle" wx:else></view>
-        <view class="style-name">救援中</view>
+        <view class="time" wx:if="{{times.rescueTime}}"><text></text><text class="{{times.finishTime?'':'active'}}">{{times.rescueTime}}</text></view>
+        <view class="time" wx:else><text></text><text>--:--</text></view>
+        <view class="circle" wx:if="{{times.rescueTime&&!times.finishTime}}">
+          <text></text>
+          <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+        </view>
+        <view class="circle" wx:else>
+          <text></text>
+          <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+        </view>
+        <view class="style-name {{(times.rescueTime&&!times.finishTime)?'active':''}}" style="padding-right: 8rpx">救援中</view>
       </view>
       <view class="defstyle">
-        <view class="time" wx:if="{{times.finishTime}}">{{times.finishTime}}</view>
-        <view class="time gang" wx:else></view>
-        <view class="circle-blue" wx:if="{{times.finishTime}}"></view>
-        <view class="circle" wx:else></view>
-        <view class="style-name">完成</view>
+        <view class="time" style="text-align:left;padding-left:12rpx" wx:if="{{times.finishTime}}"><text></text><text class="active">{{times.finishTime}}</text></view>
+        <view class="time" style="text-align:left;padding-left:12rpx" wx:else><text></text><text>--:--</text></view>
+        <view class="circle" wx:if="{{times.finishTime}}">
+          <text></text>
+          <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" /><text style="width: 40rpx"></text>
+        </view>
+        <view class="circle" wx:else>
+          <text></text>
+          <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" /><text style="width: 40rpx"></text>
+        </view>
+        <view class="style-name {{times.finishTime?'active':''}}" style="text-align: unset;padding-right: 32rpx">完成</view>
       </view>
     </view>
   </view>
   <view class="oper clear">
     <view class="item">
-      <image src="../../images/jhmei/vehicle_distance_icon.png"/>
+      <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_distance_icon.png"/>
       <text>救援车辆距离：{{distace}}km</text>
     </view>
     <view class="item">
-      <image src="../../images/jhmei/clock_icon.png"/>
+      <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/clock_icon.png"/>
       <text>预计到达时间：{{remainmin}}min</text>
     </view>
   </view>

@@ -80,6 +80,7 @@
 }
 .vitemxing {
   color: #535353;
+  margin: auto auto auto 30rpx;
 }
 .revcontent {
   margin: auto 60rpx;
@@ -98,4 +99,5 @@
   text-align: center;
   line-height: 90rpx;
   margin: 50rpx 60rpx;
+  color: #000;
 }

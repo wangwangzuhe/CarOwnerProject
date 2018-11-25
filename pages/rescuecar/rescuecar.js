@@ -18,7 +18,7 @@ var homeData = {
     timeStep: {},
     status: '',
     orderId: '',
-    code: 1,
+    code: 0,
     rescueStyle: appEnum.rescueStyle,
     rescueStaus: appEnum.rescueStaus,
     btnflag: 2,

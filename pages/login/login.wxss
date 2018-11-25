@@ -31,8 +31,8 @@
   margin-top: 50rpx;
 }
 .login-container .phone-wrapper image {
-  width: 54rpx;
-  height: 75rpx;
+  width: 56rpx;
+  height: 56rpx;
   vertical-align: middle;
 }
 .login-container .login-tip1 {
