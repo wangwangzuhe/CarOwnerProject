@@ -38,7 +38,7 @@
           <view class="circle" wx:else>
             <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
           </view>
-          <view class="style-name {{(times.arrivalTime&&!times.rescueTime)?'active':''}}"">到达</view>
+          <view class="style-name {{(times.arrivalTime&&!times.rescueTime)?'active':''}}">到达</view>
         </view>
         <view class="defstyle">
           <view class="time" wx:if="{{times.rescueTime}}"><text></text><text class="{{times.finishTime?'':'active'}}">{{times.rescueTime}}</text></view>
