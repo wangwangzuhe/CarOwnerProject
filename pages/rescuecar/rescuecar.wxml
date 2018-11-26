@@ -7,52 +7,63 @@
         <view class="defstyle">
           <view class="time" wx:if="{{timeStep.stepStatus>0}}"><text style="width: 40rpx"></text><text>{{ timeStep.caseTime }}</text></view>
           <view class="time" wx:else><text style="width: 40rpx"></text><text>--:--</text></view>
-          <view class="circle" wx:if="{{timeStep.stepStatus==1}}"></view>
-          <view class="circle" wx:else>
-            <text style="width: 40rpx"></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+          <view class="circle" wx:if="{{timeStep.stepStatus==1}}">
+            <text style="width: 40rpx"></text>
+            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
-          <view class="style-name" wx:if="{{timeStep.stepStatus==1}}">开案</view>
-          <view class="style-name" wx:else>开案</view>
+          <view class="circle" wx:else>
+            <text style="width: 40rpx"></text>
+            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+          </view>
+          <view class="style-name {{timeStep.stepStatus==1?'active':''}}">开案</view>
         </view>
         <view class="defstyle">
           <view class="time" wx:if="{{timeStep.stepStatus>1}}"><text></text><text>{{ timeStep.sendTime }}</text></view>
           <view class="time" wx:else><text></text><text>--:--</text></view>
-          <view class="circle" wx:if="{{timeStep.stepStatus==2}}"></view>
-          <view class="circle" wx:else>
-            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+          <view class="circle" wx:if="{{timeStep.stepStatus==2}}">
+            <text></text>
+            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
-          <view class="style-name" wx:if="{{timeStep.stepStatus==2}}">派案</view>
-          <view class="style-name" wx:else>派案</view>
+          <view class="circle" wx:else>
+            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+          </view>
+          <view class="style-name {{timeStep.stepStatus==2?'active':''}}">派案</view>
         </view>
         <view class="defstyle">
           <view class="time" wx:if="{{timeStep.stepStatus>2}}"><text></text><text>{{ timeStep.arrivalTime }}</text></view>
           <view class="time" wx:else><text></text><text>--:--</text></view>
-          <view class="circle" wx:if="{{timeStep.stepStatus==3}}"></view>
-          <view class="circle" wx:else>
-            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+          <view class="circle" wx:if="{{timeStep.stepStatus==3}}">
+            <text></text>
+            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
-          <view class="style-name" wx:if="{{timeStep.stepStatus==3}}">到达</view>
-          <view class="style-name" wx:else>到达</view>
+          <view class="circle" wx:else>
+            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+          </view>
+          <view class="style-name {{timeStep.stepStatus==3?'active':''}}">到达</view>
         </view>
         <view class="defstyle">
           <view class="time" wx:if="{{timeStep.stepStatus>3}}"><text></text><text>{{ timeStep.rescueTime }}</text></view>
           <view class="time" wx:else><text></text><text>--:--</text></view>
-          <view class="circle" wx:if="{{timeStep.stepStatus==4}}"></view>
-          <view class="circle" wx:else>
-            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+          <view class="circle" wx:if="{{timeStep.stepStatus==4}}">
+            <text></text>
+            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
-          <view class="style-name" style="padding-right: 8rpx" wx:if="{{timeStep.stepStatus==4}}">救援中</view>
-          <view class="style-name" style="padding-right: 8rpx" wx:else>救援中</view>
+          <view class="circle" wx:else>
+            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+          </view>
+          <view class="style-name {{timeStep.stepStatus==4?'active':''}}" style="padding-right: 8rpx">救援中</view>
         </view>
         <view class="defstyle">
           <view class="time" style="text-align:left;padding-left:12rpx" wx:if="{{timeStep.stepStatus>4}}"><text></text><text>{{ timeStep.rescueTime }}</text></view>
           <view class="time" style="text-align:left;padding-left:12rpx" wx:else><text></text><text>--:--</text></view>
-          <view class="circle" wx:if="{{timeStep.stepStatus==5}}"></view>
-          <view class="circle" wx:else>
-            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" /><text style="width: 40rpx"></text>
+          <view class="circle" wx:if="{{timeStep.stepStatus==5}}">
+            <text></text>
+            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" /><text style="width: 40rpx"></text>
           </view>
-          <view class="style-name" style="text-align: unset;padding-right: 32rpx" wx:if="{{timeStep.stepStatus==5}}">完成</view>
-          <view class="style-name" style="text-align: unset;padding-right: 32rpx" wx:else>完成</view>
+          <view class="circle" wx:else>
+            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" /><text style="width: 40rpx"></text>
+          </view>
+          <view class="style-name {{timeStep.stepStatus==5?'active':''}}" style="text-align: unset;padding-right: 32rpx">完成</view>
         </view>
       </view>
     </view>

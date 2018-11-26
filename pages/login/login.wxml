@@ -46,12 +46,12 @@
       <text>手机号登录</text><text>（仅需电话发起救援的车主）</text>
     </block>
     <block wx:else>
-      <text class="wx-icon">改用微信登录</text>
+      <text class="wx-icon-grey" style="font-size: 26rpx">改用微信登录</text>
     </block>
   </view>
   <view class="login-btn-wrapper">
     <!-- 需要使用 button 来授权登录 wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="wechatLogin"-->
-    <button class="login-btn {{isWechatLogin ? 'wx-icon' : ''}}" bindtap="goToLogin">{{loginBtnContent}}</button>
+    <button class="login-btn {{isWechatLogin ? 'wx-icon-black' : ''}}" bindtap="goToLogin">{{loginBtnContent}}</button>
     <!-- <text wx:else>请升级微信版本</text> -->
   </view>
 </view>

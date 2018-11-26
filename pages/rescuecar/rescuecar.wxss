@@ -51,6 +51,9 @@
   padding-right: 18rpx;
   font-size: 26rpx;
 }
+.header .rescue-style .defstyle .style-name.active {
+  color: #f5b302;
+}
 .header .rescue-status {
   line-height: 60rpx;
   background-color: #000;
