@@ -6,7 +6,7 @@
 //   secret: '16859f5c7b652b8e4084abc1fb824644'
 // }
 // 测试
-var URL = 'http://dcctraining.jeepsupport.com.cn/carOwner/'
+var URL = 'https://dcctraining.jeepsupport.com.cn/carOwner/'
 
 var appInfo = {
   appId: 'wx734cf64670c67342',

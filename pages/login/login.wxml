@@ -1,7 +1,7 @@
 <view class="login-container">
   <block wx:if="{{isWechatLogin}}">
     <view class="vehicle-wrapper">
-      <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/rescue_vehicle_img.png" />
+      <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/rescue_vehicle_img.png" />
     </view>
     <view class="rescue-slogan">广汽菲克道路救援</view>
     <view class="rescue-tip">
@@ -11,14 +11,14 @@
   </block>
   <block wx:else>
     <view class="phone-wrapper yellow-circle">
-      <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/login_phone_img.png" />
+      <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/login_phone_img.png" />
     </view>
     <view class="login-tip1">(仅需电话发起救援的车主填写)</view>
     <view class="login-box-wrapper">
       <view class="weui-cells">
         <view class="weui-cell">
           <view class="weui-cell__hd">
-            <image class="weui-label" src="http://dcctraining.jeepsupport.com.cn/carOwner/images/login_phone_icon.png" />
+            <image class="weui-label" src="https://dcctraining.jeepsupport.com.cn/carOwner/images/login_phone_icon.png" />
           </view>
           <view class="weui-cell__bd">
             <input class="weui-input" type="number" maxlength='11' placeholder="电话" bindinput="bindInputphoneNo"
@@ -27,7 +27,7 @@
         </view>
         <view class="weui-cell weui-cell_vcode">
           <view class="weui-cell__hd">
-            <image class="weui-label" src="http://dcctraining.jeepsupport.com.cn/carOwner/images/login_code_icon.png" />
+            <image class="weui-label" src="https://dcctraining.jeepsupport.com.cn/carOwner/images/login_code_icon.png" />
           </view>
           <view class="weui-cell__bd">
             <input class="weui-input" type="number" maxlength='4' placeholder="验证码" bindinput="bindInputSmsCode"

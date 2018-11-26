@@ -9,10 +9,10 @@
           <view class="time" wx:else><text style="width: 40rpx"></text><text>--:--</text></view>
           <view class="circle" wx:if="{{times.caseTime&&!times.sendTime}}">
             <text style="width: 40rpx"></text>
-            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+            <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
           <view class="circle" wx:else>
-            <text style="width: 40rpx"></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+            <text style="width: 40rpx"></text><image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
           </view>
           <view class="style-name {{(times.caseTime&&!times.sendTime)?'active':''}}">开案</view>
         </view>
@@ -21,10 +21,10 @@
           <view class="time" wx:else><text></text><text>--:--</text></view>
           <view class="circle" wx:if="{{times.sendTime&&!times.arrivalTime}}">
             <text></text>
-            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+            <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
           <view class="circle" wx:else>
-            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+            <text></text><image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
           </view>
           <view class="style-name {{(times.sendTime&&!times.arrivalTime)?'active':''}}">派案</view>
         </view>
@@ -33,10 +33,10 @@
           <view class="time" wx:else><text></text><text>--:--</text></view>
           <view class="circle" wx:if="{{times.arrivalTime&&!times.rescueTime}}">
             <text></text>
-            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+            <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
           <view class="circle" wx:else>
-            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+            <text></text><image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
           </view>
           <view class="style-name {{(times.arrivalTime&&!times.rescueTime)?'active':''}}">到达</view>
         </view>
@@ -45,10 +45,10 @@
           <view class="time" wx:else><text></text><text>--:--</text></view>
           <view class="circle" wx:if="{{times.rescueTime&&!times.finishTime}}">
             <text></text>
-            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+            <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
           <view class="circle" wx:else>
-            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
+            <text></text><image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" />
           </view>
           <view class="style-name {{(times.rescueTime&&!times.finishTime)?'active':''}}" style="padding-right: 8rpx">救援中</view>
         </view>
@@ -57,10 +57,10 @@
           <view class="time" style="text-align:left;padding-left:12rpx" wx:else><text></text><text>--:--</text></view>
           <view class="circle" wx:if="{{times.finishTime}}">
             <text></text>
-            <image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
+            <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_yellow.png" />
           </view>
           <view class="circle" wx:else>
-            <text></text><image src="http://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" /><text style="width: 40rpx"></text>
+            <text></text><image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/vehicle_grey.png" /><text style="width: 40rpx"></text>
           </view>
           <view class="style-name {{times.finishTime?'active':''}}" style="text-align: unset;padding-right: 32rpx">完成</view>
         </view>
