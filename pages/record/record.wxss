@@ -44,16 +44,14 @@
 .scroll-list-container .list-item-wrapper .rescue-info-wrapper {
   flex: 1;
 }
-.scroll-list-container .list-item-wrapper .rescue-info-wrapper view {
-  margin: 10rpx 0;
-}
-.scroll-list-container .list-item-wrapper .rescue-info-wrapper view text {
-  font-size: 26rpx;
-}
-.scroll-list-container .list-item-wrapper .rescue-info-wrapper view.line-item-wrapper {
+.scroll-list-container .list-item-wrapper .rescue-info-wrapper .line-item-wrapper {
   display: flex;
   justify-content: space-between;
+  margin: 4rpx 0;
   word-break: break-all;
+}
+.scroll-list-container .list-item-wrapper .rescue-info-wrapper .line-item-wrapper text {
+  font-size: 26rpx;
 }
 .loading-tip {
   height: 50rpx;

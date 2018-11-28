@@ -12,15 +12,13 @@
       <view class="rescue-type-wrapper">
         <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==1}}"></image>
         <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_tow_vehicle.png" wx:if="{{item.reliefType==2}}"></image>
-        <!-- <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/huantaiing.png" wx:if="{{item.reliefType==3}}"></image> -->
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==3}}"></image>
-        <!-- <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/songyouing.png" wx:if="{{item.reliefType==4}}"></image> -->
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==4}}"></image>
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_change_tire.png" wx:if="{{item.reliefType==3}}"></image>
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_send_oil.png" wx:if="{{item.reliefType==4}}"></image>
         <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==5}}"></image>
         <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==6}}"></image>
       </view>
       <view class="rescue-info-wrapper">
-        <view>
+        <view class="line-item-wrapper">
           <text>订单号：{{ item.fileNo }}</text>
         </view>
         <view class="line-item-wrapper">
@@ -34,10 +32,10 @@
           </view>
           <view><text>救援日期：{{ item.orderTime }}</text></view>
         </view>
-        <view>
-          <text>救援状态：</text><text wx:if="{{item.status==5||item.status==6}}">救援完成</text><text wx:if="{{item.status==7}}">救援取消</text>
+        <view class="line-item-wrapper">
+          <text>救援状态：<block wx:if="{{item.status==5||item.status==6}}">救援完成</block><block wx:if="{{item.status==7}}">救援取消</block></text>
         </view>
-        <view>
+        <view class="line-item-wrapper">
           <text>故障地：{{ item.address }}</text>
         </view>
       </view>
@@ -47,34 +45,28 @@
       <view class="rescue-type-wrapper">
         <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==1}}"></image>
         <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_tow_vehicle.png" wx:if="{{item.reliefType==2}}"></image>
-        <!-- <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/huantaiing.png" wx:if="{{item.reliefType==3}}"></image> -->
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==3}}"></image>
-        <!-- <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/songyouing.png" wx:if="{{item.reliefType==4}}"></image> -->
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==4}}"></image>
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_change_tire.png" wx:if="{{item.reliefType==3}}"></image>
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_send_oil.png" wx:if="{{item.reliefType==4}}"></image>
         <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==5}}"></image>
         <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==6}}"></image>
       </view>
       <view class="rescue-info-wrapper">
         <view class="line-item-wrapper">
-          <view><text>车主姓名：{{ item.carOwnerName }}</text></view>
-          <view><text>救援日期：{{ item.orderTime }}</text></view>
+          <text>车主姓名：{{ item.carOwnerName }}</text>
+          <text>救援日期：{{ item.orderTime }}</text>
         </view>
         <view class="line-item-wrapper">
-          <view><text>响应速度：{{ item.responseSpeed }}</text></view>
-          <view><text>现场服务：{{ item.serviceAttitude }}</text></view>
-          <view><text>功能使用：{{ item.practicability }}</text></view>
+          <text>响应速度：{{ item.responseSpeed }}</text>
+          <text>现场服务：{{ item.serviceAttitude }}</text>
+          <text>功能使用：{{ item.practicability }}</text>
         </view>
         <view class="line-item-wrapper" wx:if="{{item.comment}}">
-          <view><text>车主评价：</text></view>
-          <view style="flex:1;">
-            <text>{{ item.comment }}</text>
-          </view>
+          <text>车主评价：</text>
+          <text style="flex:1;">{{ item.comment }}</text>
         </view>
         <view class="line-item-wrapper" wx:if="{{item.feedback}}">
-          <view><text>反馈：</text></view>
-          <view style="flex:1;">
-            <text>{{ item.feedback }}</text>
-          </view>
+          <text>反馈：</text>
+          <text style="flex:1;">{{ item.feedback }}</text>
         </view>
       </view>
     </view>

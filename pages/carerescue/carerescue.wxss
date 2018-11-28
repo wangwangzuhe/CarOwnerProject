@@ -61,7 +61,7 @@
   height: 31rpx;
   float: left;
   margin-right: 24rpx;
-  margin-top: 6rpx;
+  margin-top: 2rpx;
 }
 .rescue-info-wrapper .select-address-wrapper {
   border-bottom: 0;
@@ -75,7 +75,7 @@
   width: 28rpx;
   height: 36rpx;
   margin-right: 24rpx;
-  vertical-align: text-bottom;
+  vertical-align: -6rpx;
 }
 .rescue-type-wrapper {
   padding: 30rpx 50rpx 50rpx;
