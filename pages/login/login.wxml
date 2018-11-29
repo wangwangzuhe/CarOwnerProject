@@ -1,5 +1,5 @@
 <view class="login-container">
-  <block wx:if="{{isWechatLogin}}">
+  <view wx:if="{{isWechatLogin}}" style="margin-top: 100rpx">
     <view class="vehicle-wrapper">
       <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/rescue_vehicle_img.png" />
     </view>
@@ -8,8 +8,8 @@
       <view>如您已拨打电话发起了救援，请使用手机号登录，</view>
       <view>查看案件最新状态</view>
     </view>
-  </block>
-  <block wx:else>
+  </view>
+  <view wx:else style="margin-top: 100rpx">
     <view class="phone-wrapper yellow-circle">
       <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/login_phone_img.png" />
     </view>
@@ -40,18 +40,20 @@
       </view>
       <view class="login-tip2">*如您已拨打电话发起了救援，请使用手机号登录，查看案件最新状态</view>
     </view>
-  </block>
-  <view class="login-mode-wrapper arrow-right" bindtap="switchLoginMode">
-    <block wx:if="{{isWechatLogin}}">
-      <text>手机号登录</text><text>（仅需电话发起救援的车主）</text>
-    </block>
-    <block wx:else>
-      <text class="wx-icon-grey" style="font-size: 26rpx">改用微信登录</text>
-    </block>
   </view>
-  <view class="login-btn-wrapper">
-    <!-- 需要使用 button 来授权登录 wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="wechatLogin"-->
-    <button class="login-btn {{isWechatLogin ? 'wx-icon-black' : ''}}" bindtap="goToLogin">{{loginBtnContent}}</button>
-    <!-- <text wx:else>请升级微信版本</text> -->
+  <view class="login-wrapper">
+    <view class="login-mode-wrapper arrow-right" bindtap="switchLoginMode">
+      <block wx:if="{{isWechatLogin}}">
+        <text>手机号登录</text><text>（仅需电话发起救援的车主）</text>
+      </block>
+      <block wx:else>
+        <text class="wx-icon-grey" style="font-size: 26rpx">改用微信登录</text>
+      </block>
+    </view>
+    <view class="login-btn-wrapper">
+      <!-- 需要使用 button 来授权登录 wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="wechatLogin"-->
+      <button class="login-btn {{isWechatLogin ? 'wx-icon-black' : ''}}" bindtap="goToLogin">{{loginBtnContent}}</button>
+      <!-- <text wx:else>请升级微信版本</text> -->
+    </view>
   </view>
 </view>

@@ -27,18 +27,17 @@
   font-size: 20rpx;
   color: #fff;
 }
-.login-container .phone-wrapper {
-  margin-top: 50rpx;
-}
 .login-container .phone-wrapper image {
   width: 56rpx;
   height: 56rpx;
-  vertical-align: middle;
 }
 .login-container .login-tip1 {
   font-size: 24rpx;
   color: #f5b302;
   margin-top: 30rpx;
+}
+.login-container .login-box-wrapper {
+  margin-top: 100rpx;
 }
 .login-container .login-box-wrapper .weui-label {
   width: 40rpx;
@@ -55,30 +54,35 @@
   color: #fff;
   margin-top: 10rpx;
 }
-.login-container .login-mode-wrapper {
+.login-container .login-wrapper {
+  position: absolute;
+  bottom: 100rpx;
+  left: 60rpx;
+  right: 60rpx;
+}
+.login-container .login-wrapper .login-mode-wrapper {
   line-height: 70rpx;
   background-color: #101010;
   text-align: left;
   padding-left: 30rpx;
-  margin-top: 300rpx;
 }
-.login-container .login-mode-wrapper text:first-child {
+.login-container .login-wrapper .login-mode-wrapper text:first-child {
   font-size: 26rpx;
   color: #fff;
 }
-.login-container .login-mode-wrapper text:last-child {
+.login-container .login-wrapper .login-mode-wrapper text:last-child {
   font-size: 20rpx;
   color: #666666;
 }
-.login-container .login-btn-wrapper {
+.login-container .login-wrapper .login-btn-wrapper {
   margin-top: 40rpx;
 }
-.login-container .login-btn-wrapper .login-btn {
+.login-container .login-wrapper .login-btn-wrapper .login-btn {
   line-height: 90rpx;
   background-color: #f5b302;
   color: #000;
 }
-.login-container .wx-icon-black:before {
+.login-container .login-wrapper .wx-icon-black:before {
   content: '';
   display: inline-block;
   width: 35rpx;
@@ -88,7 +92,7 @@
   margin-right: 20rpx;
   vertical-align: -2rpx;
 }
-.login-container .wx-icon-grey:before {
+.login-container .login-wrapper .wx-icon-grey:before {
   content: '';
   display: inline-block;
   width: 35rpx;

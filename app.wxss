@@ -15,7 +15,7 @@ picker {
   color: #fff;
 }
 .weui-cells {
-  background-color: unset;
+  background-color: unset!important;
 }
 .weui-cells .weui-cell {
   padding: 0;
