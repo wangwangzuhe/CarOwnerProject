@@ -136,14 +136,24 @@ function setOpenId(cb) {
   wx.login({
     success: function(ress) {
       if (ress.code) {
-        wx.getUserInfo({
-          success: function(res) {
+        // TODO 需要后端提供接口
+        /**
+         * 逻辑变更 之前getUserInfo 获取 secret，iv，encryptedData 而传给后端让后端去获取用户基本信息
+         * 
+         * 新接口 直接把code 传给后端 让后端直接获取
+         * https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
+         * 返回openid 而后 返回 opendid
+         * 
+         * 新 getUserInfo 是通过用户授权获取到用户 基本信息 本项目用不到
+         * */ 
+        // wx.getUserInfo({
+        //   success: function(res) {
             var dataArg = {
               appId: wbs.appInfo.appId, //---小程序唯一标识
               secret: wbs.appInfo.secret, //--小程序的 app secret
               jsCode: ress.code, //--登录时获取的 code
-              iv: res.iv, // ---加密算法的初始向量
-              encryptedData: res.encryptedData //--包括敏感数据在内的完整用户信息的加密数据
+              // iv: res.iv, // ---加密算法的初始向量
+              // encryptedData: res.encryptedData //--包括敏感数据在内的完整用户信息的加密数据
             }
             wx.request({
               url: wbs.saveInfo,
@@ -160,11 +170,11 @@ function setOpenId(cb) {
               }
             })
           }
-        })
+        // })
       }
-    }
-  })
-}
+    })
+  }
+
 
 const toast = (title, image, icon = 'none', duration = 1500) => {
   if (title && title.trim()) {
