@@ -31,7 +31,7 @@
 }
 .rescue-info-wrapper {
   padding: 50rpx;
-  background-color: #212121;
+  background-color: #212121!important;
   margin-top: 20rpx;
   border-radius: 10rpx;
 }
@@ -67,9 +67,7 @@
   border-bottom: 0;
   margin-top: 30rpx;
   background-color: #000;
-  padding-top: 20rpx;
-  padding-bottom: 30rpx;
-  padding-left: 24rpx;
+  padding: 20rpx 24rpx;
 }
 .rescue-info-wrapper .select-address-wrapper image {
   width: 28rpx;
@@ -98,6 +96,9 @@
 .rescue-type-wrapper .rescue-type-list .rescue-item image {
   width: 50rpx;
   height: 36rpx;
+}
+.rescue-type-wrapper .rescue-type-list .arrow-right:after {
+  right: 16rpx;
 }
 .item-type-text {
   font-size: 24rpx;

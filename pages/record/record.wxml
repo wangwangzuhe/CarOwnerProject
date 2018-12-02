@@ -1,3 +1,9 @@
+<wxs module="Util">
+  module.exports.handleTextLength = function(text) {
+    return (text && text.length > 5) ? text.substring(0, 5)+'..' : text;
+  }
+</wxs>
+
 <view style="padding: 30rpx">
   <view class="header-wrapper">
     <view class="rescue-count">累计救援：{{ totalRescueCount }}</view>
@@ -52,7 +58,7 @@
       </view>
       <view class="rescue-info-wrapper">
         <view class="line-item-wrapper">
-          <text>车主姓名：{{ item.carOwnerName }}</text>
+          <text>车主姓名：{{ Util.handleTextLength(item.carOwnerName) }}</text>
           <text>救援日期：{{ item.orderTime }}</text>
         </view>
         <view class="line-item-wrapper">

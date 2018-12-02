@@ -81,7 +81,7 @@
             </picker>
           </view>
         </view>
-        <view class="weui-cell select-address-wrapper arrow-down" bindtap="selectRescueAddress">
+        <view class="weui-cell select-address-wrapper" bindtap="selectRescueAddress">
           <view class="weui-cell__bd">
             <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/position_grey_icon.png"/><text style='font-size:28rpx;{{locationGPS?"":"color: #bfc1c5"}}'>{{addr}}</text>
           </view>
@@ -120,7 +120,7 @@
             </view>
             <view class="item-type-text {{rescue[5].issel?'yellow':''}}">现场修理</view>
           </view>
-          <view class="rescue-item" style="background-color: unset"></view>
+          <view class="rescue-item" style="background-color: unset!important"></view>
         </view>
         <view class="opt-btns-wrapper">
           <button bindtap="back">返回</button>
