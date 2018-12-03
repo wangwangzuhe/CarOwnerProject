@@ -190,7 +190,7 @@ app.vaildPage({
           url: wbs.addcomment,
           data: {
             orderId: this.data.orderid + '',
-            openId: wx.getStorageSync('openId') + '',
+            openId: resolve,
             username: this.data.username,
             reliefType: this.data.reliefType + '',
             responseSpeed: this.data.respeedxing + '',

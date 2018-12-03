@@ -16,7 +16,7 @@ app.vaildPage({
         {
           url: wbs.owner,
           data: {
-            openId: wx.getStorageSync('openId')
+            openId: resolve
           }
         },
         function(res) {

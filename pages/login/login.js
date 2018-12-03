@@ -22,26 +22,22 @@ Page({
     })
   },
   onLoad(options) {
-    console.log(options,'options');
+    console.log(options, 'options')
     wx.getSetting({
       success(res) {
-        console.log(res.authSetting,'---');
+        console.log(res.authSetting, '---')
         if (!res.authSetting['scope.userLocation']) {
           wx.authorize({
             scope: 'scope.userLocation',
             success() {
-            
-             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-              
+              // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             },
-            fail(){
+            fail() {
               wx.showModal({
                 title: '提示',
                 content: '您将无法成功救援!请长按小程序删除 从新搜索小程序，再次授权',
-                success(res) {
-                  
-                }
-              });
+                success(res) {}
+              })
             }
           })
         }
@@ -136,7 +132,7 @@ Page({
             url: wbs.fileStatus,
             data: {
               fileNo: args[1],
-              openId: wx.getStorageSync('openId')
+              openId: resolve
             }
           },
           function(ress) {
@@ -180,7 +176,7 @@ Page({
           {
             url: wbs.owner,
             data: {
-              openId: wx.getStorageSync('openId')
+              openId: resolve
             }
           },
           function(res) {
@@ -277,7 +273,7 @@ Page({
                     url: wbs.location,
                     data: {
                       fileNo: res.data.data,
-                      openId: wx.getStorageSync('openId'),
+                      openId: resolve,
                       latitude: latitude + '',
                       longitude: longitude + ''
                     }
