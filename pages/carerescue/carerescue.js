@@ -68,7 +68,7 @@ app.vaildPage({
     delearindex: 0,
     delearname: '请选择经销商',
     locationGPS: '',
-    disabledHelp: false,
+    // disabledHelp: false,
     isloading: false
   },
   bindDelearChange(e) {
@@ -264,9 +264,8 @@ app.vaildPage({
     //       "velModel": "SUV",
     //       "locationGPS":"455454.2656,2665.1215"
     //     }
-    var openId = wx.getStorageSync('openId')
     _this.setData({
-      disabledHelp: true,
+      // disabledHelp: true,
       isloading: true
     })
     util.httpIntercept(wx.getStorageSync('openId')).then(resolve => {
@@ -293,7 +292,7 @@ app.vaildPage({
         },
         function(res) {
           _this.setData({
-            disabledHelp: false,
+            // disabledHelp: false,
             isloading: false
           })
           if (res.data.success) {
