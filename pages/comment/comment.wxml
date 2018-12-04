@@ -1,67 +1,63 @@
 <import src="../../templates/loading.wxml" />
 <template is="loading" data="{{isloading}}"></template>
 <view class="cbody">
-  <view class="carerinfo clear">
+  <view class="carerinfo">
     <view class="carepic"><image src="{{avitor}}"/></view>
     <view class="careinfoitem">
-      <view class="item"><label>车主姓名：</label>{{username}}</view>
-      <view class="item"><label>救援日期：</label>{{createTime}}</view>
-      <view class="item"><label>救援类型：</label>{{reliefTypetxt}}</view>
+      <view class="item">车主姓名：{{username}}</view>
+      <view class="item">救援日期：{{createTime}}</view>
+      <view class="item">救援类型：{{reliefTypetxt}}</view>
     </view>
   </view>
   <view class="comment-detail">
-    <view class="hx">
-      [您的点评会让我们做得更好]
-    </view>
+    <view class="hx">[您的点评会让我们做得更好]</view>
     <view class="review">
-      <view class="vitem clear">
+      <view class="vitem">
         <text>响应速度：</text>
         <text class="vitemxing">{{respeedxing}}</text>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[0].issel?'ed':''}}.png"
-          data-id="1" bindtap="bindrespeed" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[1].issel?'ed':''}}.png"
-          data-id="2" bindtap="bindrespeed" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[2].issel?'ed':''}}.png"
-          data-id="3" bindtap="bindrespeed" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[3].issel?'ed':''}}.png"
-          data-id="4" bindtap="bindrespeed" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[4].issel?'ed':''}}.png"
-          data-id="5" bindtap="bindrespeed" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[0]?'ed':''}}.png"
+          data-index="0" bindtap="bindrespeed" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[1]?'ed':''}}.png"
+          data-index="1" bindtap="bindrespeed" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[2]?'ed':''}}.png"
+          data-index="2" bindtap="bindrespeed" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[3]?'ed':''}}.png"
+          data-index="3" bindtap="bindrespeed" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[4]?'ed':''}}.png"
+          data-index="4" bindtap="bindrespeed" />
       </view>
-      <view class="vitem clear">
+      <view class="vitem">
         <text>服务态度：</text>
         <text class="vitemxing">{{servattrixing}}</text>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[0].issel?'ed':''}}.png"
-          data-id="1" bindtap="bindservattr" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[1].issel?'ed':''}}.png"
-          data-id="2" bindtap="bindservattr" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[2].issel?'ed':''}}.png"
-          data-id="3" bindtap="bindservattr" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[3].issel?'ed':''}}.png"
-          data-id="4" bindtap="bindservattr" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[4].issel?'ed':''}}.png"
-          data-id="5" bindtap="bindservattr" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[0]?'ed':''}}.png"
+          data-index="0" bindtap="bindservattr" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[1]?'ed':''}}.png"
+          data-index="1" bindtap="bindservattr" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[2]?'ed':''}}.png"
+          data-index="2" bindtap="bindservattr" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[3]?'ed':''}}.png"
+          data-index="3" bindtap="bindservattr" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[4]?'ed':''}}.png"
+          data-index="4" bindtap="bindservattr" />
       </view>
-      <view class="vitem clear">
+      <view class="vitem">
         <text>实用功能：</text>
         <text class="vitemxing">{{realfunxing}}</text>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[0].issel?'ed':''}}.png"
-          data-id="1" bindtap="bindrealfun" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[1].issel?'ed':''}}.png"
-          data-id="2" bindtap="bindrealfun" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[2].issel?'ed':''}}.png"
-          data-id="3" bindtap="bindrealfun" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[3].issel?'ed':''}}.png"
-          data-id="4" bindtap="bindrealfun" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[4].issel?'ed':''}}.png"
-          data-id="5" bindtap="bindrealfun" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[0]?'ed':''}}.png"
+          data-index="0" bindtap="bindrealfun" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[1]?'ed':''}}.png"
+          data-index="1" bindtap="bindrealfun" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[2]?'ed':''}}.png"
+          data-index="2" bindtap="bindrealfun" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[3]?'ed':''}}.png"
+          data-index="3" bindtap="bindrealfun" />
+        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[4]?'ed':''}}.png"
+          data-index="4" bindtap="bindrealfun" />
       </view>
     </view>
     <view class="revcontent">
-      <view>
-        <textarea class="textarea" bindconfirm="bindTextAreaBlur" bindblur="bindTextAreaBlur" maxlength="40"
+      <textarea class="textarea" bindconfirm="bindTextAreaBlur" bindblur="bindTextAreaBlur" maxlength="40"
           placeholder="您最多可输入40个字" name="textarea"/>
-      </view>
     </view>
     <view class="submit" bindtap="submitComment">提交</view>
   </view>

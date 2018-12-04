@@ -7,57 +7,9 @@ var session = require('../../utils/session')
 
 app.vaildPage({
   data: {
-    respeed: [
-      {
-        issel: true
-      },
-      {
-        issel: true
-      },
-      {
-        issel: true
-      },
-      {
-        issel: true
-      },
-      {
-        issel: true
-      }
-    ],
-    servattri: [
-      {
-        issel: true
-      },
-      {
-        issel: true
-      },
-      {
-        issel: true
-      },
-      {
-        issel: true
-      },
-      {
-        issel: true
-      }
-    ],
-    realfun: [
-      {
-        issel: true
-      },
-      {
-        issel: true
-      },
-      {
-        issel: true
-      },
-      {
-        issel: true
-      },
-      {
-        issel: true
-      }
-    ],
+    respeed: [true, true, true, true, true],
+    servattri: [true, true, true, true, true],
+    realfun: [true, true, true, true, true],
     orderid: '',
     fileNo: '',
     respeedxing: '5',
@@ -71,64 +23,45 @@ app.vaildPage({
     isloading: false
     //avitor: //用户头像
   },
-  printxing(obj, id, cb) {
-    var respeed = new Array(5)
-    var count = 5
-    var respeedfalse = 5 - id
-    var num = 0
-    obj.forEach(function(item) {
-      if (num < respeedfalse) {
-        respeed[4 - num] = {
-          issel: false
-        }
+  printxing(index, arr, cb) {
+    for (let i = 0; i < 5; i++) {
+      if (i <= index) {
+        !arr[i] && (arr[i] = true)
       } else {
-        respeed[4 - num] = {
-          issel: true
-        }
+        arr[i] = false
       }
-      num++
-    })
-    cb(respeed)
+    }
+    typeof cb === 'function' && cb()
   },
   bindrespeed(e) {
-    var id = parseInt(e.currentTarget.dataset.id)
-    this.printxing(
-      this.data.respeed,
-      id,
-      function(respeed) {
-        this.setData({
-          respeed: respeed,
-          respeedxing: id
-        })
-      }.bind(this)
-    )
+    const index = parseInt(e.currentTarget.dataset.index)
+    const respeed = this.data.respeed
+    this.printxing(index, respeed, () => {
+      this.setData({
+        respeed: respeed,
+        respeedxing: index + 1
+      })
+    })
   },
   bindservattr(e) {
-    var id = parseInt(e.currentTarget.dataset.id)
-    this.printxing(
-      this.data.servattri,
-      id,
-      function(servattri) {
-        this.setData({
-          servattri: servattri,
-          servattrixing: id
-        })
-      }.bind(this)
-    )
+    const index = parseInt(e.currentTarget.dataset.index)
+    const servattri = this.data.servattri
+    this.printxing(index, servattri, () => {
+      this.setData({
+        servattri: servattri,
+        servattrixing: index + 1
+      })
+    })
   },
   bindrealfun(e) {
-    var id = parseInt(e.currentTarget.dataset.id)
-
-    this.printxing(
-      this.data.realfun,
-      id,
-      function(realfun) {
-        this.setData({
-          realfun: realfun,
-          realfunxing: id
-        })
-      }.bind(this)
-    )
+    const index = parseInt(e.currentTarget.dataset.index)
+    const realfun = this.data.realfun
+    this.printxing(index, realfun, () => {
+      this.setData({
+        realfun: realfun,
+        realfunxing: index + 1
+      })
+    })
   },
   bindTextAreaBlur(e) {
     this.setData({

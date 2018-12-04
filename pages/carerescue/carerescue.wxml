@@ -126,6 +126,7 @@
           <button bindtap="back">返回</button>
           <button formType="submit" disabled="{{disabledHelp}}">我要救援</button>
         </view>
+        <view style="width: 100%;height: 30rpx"></view>
       </view>
     </form>
   </view>

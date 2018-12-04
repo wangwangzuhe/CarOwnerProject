@@ -32,8 +32,8 @@
 .btngo {
   border: none;
   border-radius: 8rpx;
-  color: #fff;
+  color: #000;
   background-color: rgb(245, 179, 2);
   width: 420rpx;
-  line-height: 50px;
+  line-height: 80rpx;
 }
