@@ -15,43 +15,43 @@
       <view class="vitem">
         <text>响应速度：</text>
         <text class="vitemxing">{{respeedxing}}</text>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[0]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{respeed[0]?'ed':''}}.png"
           data-index="0" bindtap="bindrespeed" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[1]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{respeed[1]?'ed':''}}.png"
           data-index="1" bindtap="bindrespeed" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[2]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{respeed[2]?'ed':''}}.png"
           data-index="2" bindtap="bindrespeed" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[3]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{respeed[3]?'ed':''}}.png"
           data-index="3" bindtap="bindrespeed" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{respeed[4]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{respeed[4]?'ed':''}}.png"
           data-index="4" bindtap="bindrespeed" />
       </view>
       <view class="vitem">
         <text>服务态度：</text>
         <text class="vitemxing">{{servattrixing}}</text>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[0]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{servattri[0]?'ed':''}}.png"
           data-index="0" bindtap="bindservattr" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[1]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{servattri[1]?'ed':''}}.png"
           data-index="1" bindtap="bindservattr" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[2]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{servattri[2]?'ed':''}}.png"
           data-index="2" bindtap="bindservattr" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[3]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{servattri[3]?'ed':''}}.png"
           data-index="3" bindtap="bindservattr" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{servattri[4]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{servattri[4]?'ed':''}}.png"
           data-index="4" bindtap="bindservattr" />
       </view>
       <view class="vitem">
         <text>实用功能：</text>
         <text class="vitemxing">{{realfunxing}}</text>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[0]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{realfun[0]?'ed':''}}.png"
           data-index="0" bindtap="bindrealfun" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[1]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{realfun[1]?'ed':''}}.png"
           data-index="1" bindtap="bindrealfun" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[2]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{realfun[2]?'ed':''}}.png"
           data-index="2" bindtap="bindrealfun" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[3]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{realfun[3]?'ed':''}}.png"
           data-index="3" bindtap="bindrealfun" />
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/xing{{realfun[4]?'ed':''}}.png"
+        <image src="https://rescue.gacfcasales.com/carOwner/images/xing{{realfun[4]?'ed':''}}.png"
           data-index="4" bindtap="bindrealfun" />
       </view>
     </view>

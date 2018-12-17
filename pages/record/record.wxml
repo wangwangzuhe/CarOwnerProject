@@ -16,12 +16,12 @@
     <!-- 我的 -->
     <view class="list-item-wrapper" wx:if="{{isShowMyRescueRecords}}" wx:for="{{comments}}" wx:key="{{item.fileNo}}">
       <view class="rescue-type-wrapper">
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==1}}"></image>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_tow_vehicle.png" wx:if="{{item.reliefType==2}}"></image>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_change_tire.png" wx:if="{{item.reliefType==3}}"></image>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_send_oil.png" wx:if="{{item.reliefType==4}}"></image>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==5}}"></image>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==6}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==1}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_tow_vehicle.png" wx:if="{{item.reliefType==2}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_change_tire.png" wx:if="{{item.reliefType==3}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_send_oil.png" wx:if="{{item.reliefType==4}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==5}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==6}}"></image>
       </view>
       <view class="rescue-info-wrapper">
         <view class="line-item-wrapper">
@@ -49,12 +49,12 @@
     <!-- 全部 -->
     <view class="list-item-wrapper" wx:if="{{!isShowMyRescueRecords}}" wx:for="{{comments}}" wx:key="{{item.fileNo}}">
       <view class="rescue-type-wrapper">
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==1}}"></image>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_tow_vehicle.png" wx:if="{{item.reliefType==2}}"></image>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_change_tire.png" wx:if="{{item.reliefType==3}}"></image>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_send_oil.png" wx:if="{{item.reliefType==4}}"></image>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==5}}"></image>
-        <image src="https://dcctraining.jeepsupport.com.cn/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==6}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_trail_vehicle.png" wx:if="{{item.reliefType==1}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_tow_vehicle.png" wx:if="{{item.reliefType==2}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_change_tire.png" wx:if="{{item.reliefType==3}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_send_oil.png" wx:if="{{item.reliefType==4}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==5}}"></image>
+        <image src="https://rescue.gacfcasales.com/carOwner/images/type_repair_vehicle.png" wx:if="{{item.reliefType==6}}"></image>
       </view>
       <view class="rescue-info-wrapper">
         <view class="line-item-wrapper">
