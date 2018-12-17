@@ -1,6 +1,5 @@
 var app = getApp()
 var wbs = require('../../utils/wbs.js')
-var appEnum = require('../../utils/enum.js')
 const OPENID = wx.getStorageSync('openId')
 var util = require('../../utils/util')
 
@@ -29,14 +28,13 @@ var option = {
         return
       }
     }
-    util.httpIntercept(wx.getStorageSync('openId')).then(resolve => {
+    util.httpIntercept(OPENID).then(resolve => {
       wx.request({
         url: url,
         data: { openId: resolve, pageIndex: _this.data.pageIndex + '' },
         method: 'POST',
         success: function(res) {
           res = res.data
-          // console.log(res)
           if (res.success) {
             const totalRescueCount = res.data.count
             if (!totalRescueCount) {
@@ -67,7 +65,7 @@ var option = {
       })
     })
   },
-  scrolltolower() {
+  onReachBottom() {
     if (this.data.isShowMyRescueRecords) {
       this.getList(wbs.my)
       return
@@ -109,12 +107,6 @@ var option = {
         }
       }, 100)
     }
-  },
-  onReady: function() {},
-  navtourl() {
-    wx.redirectTo({
-      url: '../launchaid/launchaid'
-    })
   }
 }
 app.vaildPage(option)
