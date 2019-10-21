@@ -148,32 +148,32 @@ function setOpenId(cb) {
          * */
         // wx.getUserInfo({
         //   success: function(res) {
-            var dataArg = {
-              appId: wbs.appInfo.appId, //---小程序唯一标识
-              secret: wbs.appInfo.secret, //--小程序的 app secret
-              jsCode: ress.code, //--登录时获取的 code
-              // iv: res.iv, // ---加密算法的初始向量
-              // encryptedData: res.encryptedData //--包括敏感数据在内的完整用户信息的加密数据
+        const dataArg = {
+          appId: wbs.appInfo.appId, //---小程序唯一标识
+          secret: wbs.appInfo.secret, //--小程序的 app secret
+          jsCode: ress.code //--登录时获取的 code
+          // iv: res.iv, // ---加密算法的初始向量
+          // encryptedData: res.encryptedData //--包括敏感数据在内的完整用户信息的加密数据
+        }
+        wx.request({
+          url: wbs.saveInfo,
+          data: dataArg,
+          method: 'POST',
+          success(res) {
+            res = res.data
+            if (res.success) {
+              const { openId, sessionKey } = res.data
+              wx.setStorageSync('sessionKey', sessionKey)
+              wx.setStorageSync('openId', openId)
+              typeof cb == 'function' && cb(res.data)
             }
-            wx.request({
-              url: wbs.saveInfo,
-              data: dataArg,
-              method: 'POST',
-              success: function(res) {
-                res = res.data
-                //console.log(res.data)
-                if (res.success) {
-                  wx.setStorageSync('openId', res.data)
-                  typeof cb == 'function' && cb(res.data)
-                }
-              }
-            })
           }
-        // })
+        })
       }
-    })
-  }
-
+      // })
+    }
+  })
+}
 
 const toast = (title, image, icon = 'none', duration = 1500) => {
   if (title && title.trim()) {

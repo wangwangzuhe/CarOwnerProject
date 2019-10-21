@@ -11,27 +11,30 @@ Page({
     vcode: '',
     phone: '',
     isWechatLogin: true,
-    loginBtnContent: '微信一键登录',
+    loginBtnContent: '微信一键登录道路救援',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  makePhoneCall() {
+    wx.makePhoneCall({
+      phoneNumber: '4006500118'
+    })
   },
   switchLoginMode() {
     const isWechatLogin = !this.data.isWechatLogin
     this.setData({
       isWechatLogin,
-      loginBtnContent: isWechatLogin ? '微信一键登录' : '登录'
+      loginBtnContent: isWechatLogin ? '微信一键登录道路救援' : '登录'
     })
   },
   onLoad(options) {
-    console.log(options, 'options')
+    // 查看是否授权
     wx.getSetting({
       success(res) {
-        console.log(res.authSetting, '---')
-        if (!res.authSetting['scope.userLocation']) {
+        const authSettings = res.authSetting
+        if (!authSettings['scope.userLocation']) {
           wx.authorize({
             scope: 'scope.userLocation',
-            success() {
-              // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-            },
+            success() {},
             fail() {
               wx.showModal({
                 title: '提示',
@@ -41,12 +44,17 @@ Page({
             }
           })
         }
+        if (authSettings['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+        }
       }
     })
     this.tapwxlogo(1, options.fileNo)
   },
   bindGetUserInfo(e) {
-    console.log(e.detail.userInfo)
+    // const { encryptedData, iv, signature } = e.detail
+    // console.log(encryptedData, iv, signature)
+    this.goToLogin()
   },
   bindInputphoneNo(e) {
     this.setData({
@@ -63,7 +71,6 @@ Page({
       util.toast('请输入正确的手机号')
       return
     }
-
     //发送验证码
     this.setData({
       isSendSmsBtnDisabled: true
@@ -123,7 +130,6 @@ Page({
   },
   topage() {
     const args = [].slice.call(arguments)
-
     //从模板跳转过来走这个跳转逻辑
     if (args[1]) {
       util.httpIntercept(wx.getStorageSync('openId')).then(resolve => {
@@ -182,12 +188,10 @@ Page({
           function(res) {
             var res = res.data
             var userinfo = session.userinfo.getuser()
-
             if (!userinfo.orderId) {
               res.data && session.userinfo.login(userinfo.identity, res.data.oderId)
               !res.data && session.userinfo.login(userinfo.identity, '')
             }
-
             if (res.code == 'owner_inexistence_order' || res.code == 'owner_null_apply') {
               if (!args.length) {
                 wx.redirectTo({
@@ -255,7 +259,6 @@ Page({
     //车主登录
     this.setlogin(session.enum_identity.owner, function(res) {
       session.userinfo.login(session.enum_identity.owner, res.data.data) //设置登录
-
       if (res.data.success) {
         wx.redirectTo({
           url: '../launchaid/launchaid'
@@ -302,5 +305,6 @@ Page({
         }
       }
     })
-  }
+  },
+  viewInstructions() {}
 })

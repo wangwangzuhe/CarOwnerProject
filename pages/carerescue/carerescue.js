@@ -115,6 +115,31 @@ app.vaildPage({
     })
   },
   onLoad(options) {
+    // 必须是在用户已经授权的情况下调用
+    wx.getUserInfo({
+      success(res) {
+        const { nickName } = res.userInfo
+        const { iv, encryptedData } = res
+        wx.request({
+          url: wbs.compByWechat,
+          data: {
+            iv,
+            encryptedData,
+            sessionKey: wx.getStorageSync('sessionKey')
+          },
+          method: 'POST',
+          success(res) {
+            if (res.success) {
+              const { vin, carNumber, ownerName } = res
+              that.setData({
+                name: ownerName,
+                licenseNo: carNumber
+              })
+            }
+          }
+        })
+      }
+    })
     this.setdatetime()
     if (options.type) {
       this.setData({
@@ -168,6 +193,14 @@ app.vaildPage({
   bindrescuemegent(e) {
     this.setData({
       rescuetype: '1'
+    })
+  },
+  bindViewRecord(e) {
+    this.setData({
+      rescuetype: '2'
+    })
+    wx.navigateTo({
+      url: '../record/record'
     })
   },
   submitRescue(e) {
