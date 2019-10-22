@@ -108,47 +108,34 @@ app.vaildPage({
     var datetime = util.formatTime(new Date()).split(' ')
     var time = datetime[1]
     var lastindex = time.lastIndexOf(':')
-
     this.setData({
       date: datetime[0],
       time: time.substr(0, lastindex)
     })
   },
+  setCarOwnerInfo() {
+    const carOwnerInfo = wx.getStorageSync('carOwnerInfo')
+    if (!carOwnerInfo) return
+    let obj = {}
+    if (typeof carOwnerInfo === 'string') {
+      obj.phone = carOwnerInfo
+    } else {
+      const { ownerName: name, phone, carNumber: licenseNo, vin: chassisNo } = carOwnerInfo
+      obj = { name, phone, licenseNo, chassisNo }
+    }
+    this.setData(obj)
+  },
   onLoad(options) {
-    // 必须是在用户已经授权的情况下调用
-    wx.getUserInfo({
-      success(res) {
-        const { nickName } = res.userInfo
-        const { iv, encryptedData } = res
-        wx.request({
-          url: wbs.compByWechat,
-          data: {
-            iv,
-            encryptedData,
-            sessionKey: wx.getStorageSync('sessionKey')
-          },
-          method: 'POST',
-          success(res) {
-            if (res.success) {
-              const { vin, carNumber, ownerName } = res
-              that.setData({
-                name: ownerName,
-                licenseNo: carNumber
-              })
-            }
-          }
-        })
-      }
-    })
+    this.setCarOwnerInfo()
     this.setdatetime()
     if (options.type) {
       this.setData({
         rescuetype: options.type
       })
     }
-    var that = this
+    const that = this
     wx.getSystemInfo({
-      success: function(res) {
+      success(res) {
         that.setData({
           windowHeight: res.windowHeight
         })
@@ -160,12 +147,12 @@ app.vaildPage({
         method: 'GET',
         data: {}
       },
-      function(res) {
+      res => {
         var area = res.data.data.area
         var result = area.filter(function(item) {
           return item.parentcode == -1
         })
-        that.setData({
+        this.setData({
           province: result,
           province_all: area,
           dealerall: res.data.data.dealer

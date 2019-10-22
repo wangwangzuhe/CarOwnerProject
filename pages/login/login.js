@@ -12,7 +12,7 @@ Page({
     phone: '',
     isWechatLogin: true,
     loginBtnContent: '微信一键登录道路救援',
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getPhoneNumber')
   },
   makePhoneCall() {
     wx.makePhoneCall({
@@ -44,16 +44,25 @@ Page({
             }
           })
         }
-        if (authSettings['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-        }
       }
     })
     this.tapwxlogo(1, options.fileNo)
   },
-  bindGetUserInfo(e) {
-    // const { encryptedData, iv, signature } = e.detail
-    // console.log(encryptedData, iv, signature)
+  getPhoneNumber(e) {
+    const { iv, encryptedData } = e.detail
+    wx.request({
+      url: wbs.compByWechat,
+      data: {
+        iv,
+        encryptedData,
+        sessionKey: wx.getStorageSync('sessionKey')
+      },
+      method: 'POST',
+      success(res) {
+        // console.log(res)
+        wx.setStorageSync('carOwnerInfo', res.data.data)
+      }
+    })
     this.goToLogin()
   },
   bindInputphoneNo(e) {
@@ -305,6 +314,6 @@ Page({
         }
       }
     })
-  },
-  viewInstructions() {}
+  }
+  // viewInstructions() {}
 })

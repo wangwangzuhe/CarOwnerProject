@@ -20,7 +20,8 @@ app.vaildPage({
     reliefType: '',
     reliefTypetxt: '',
     createTime: '',
-    isloading: false
+    isloading: false,
+    isCommentAnonymously: true
     //avitor: //用户头像
   },
   printxing(index, arr, cb) {
@@ -66,6 +67,11 @@ app.vaildPage({
   bindTextAreaBlur(e) {
     this.setData({
       commenttxt: e.detail.value
+    })
+  },
+  switchCommentAnonymously() {
+    this.setData({
+      isCommentAnonymously: !this.data.isCommentAnonymously
     })
   },
   onLoad(options) {
@@ -118,20 +124,21 @@ app.vaildPage({
       isloading: true
     })
     util.httpIntercept(wx.getStorageSync('openId')).then(resolve => {
+      const { orderid, isCommentAnonymously, username, reliefType, respeedxing, servattrixing, realfunxing, commenttxt, createTime, fileNo } = this.data
       httpreq.request(
         {
           url: wbs.addcomment,
           data: {
-            orderId: this.data.orderid + '',
+            orderId: orderid + '',
             openId: resolve,
-            username: this.data.username,
-            reliefType: this.data.reliefType + '',
-            responseSpeed: this.data.respeedxing + '',
-            serviceAttitude: this.data.servattrixing + '',
-            practicability: this.data.realfunxing + '',
-            comment: this.data.commenttxt,
-            createTime: this.data.createTime,
-            fileNo: this.data.fileNo
+            username: isCommentAnonymously ? '匿名' : username,
+            reliefType: reliefType + '',
+            responseSpeed: respeedxing + '',
+            serviceAttitude: servattrixing + '',
+            practicability: realfunxing + '',
+            comment: commenttxt,
+            createTime: createTime,
+            fileNo
           }
         },
         function(res) {

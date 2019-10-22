@@ -29,7 +29,7 @@
             <image class="weui-label" src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/name_icon.png" />
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="默认为微信昵称" bindinput="bindInputName" placeholder-class="placeholder-cls" />
+            <input class="weui-input" placeholder="默认为微信昵称" bindinput="bindInputName" placeholder-class="placeholder-cls" value="{{name}}"/>
           </view>
         </view>
         <view class="weui-cell">
@@ -38,7 +38,7 @@
           </view>
           <view class="weui-cell__bd">
             <input type="number" maxlength="11" class="weui-input" placeholder="默认为微信手机号" bindinput="bindInputPhone"
-              placeholder-class="placeholder-cls" />
+              placeholder-class="placeholder-cls" value="{{phone}}"/>
           </view>
         </view>
         <view class="weui-cell weui-cell_vcode">

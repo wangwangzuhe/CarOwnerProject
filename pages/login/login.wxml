@@ -60,11 +60,9 @@
     </view>
     <view class="mobile-login-tip" wx:if="{{isWechatLogin}}">如您已经拨打电话发起了救援，请使用手机号登录，查看案件最新状态</view>
     <view class="wx-login-wrapper">
-      <!-- <button class="login-btn {{isWechatLogin ? 'wx-icon-black' : ''}}" bindtap="goToLogin">{{loginBtnContent}}</button> -->
-      <!-- 需要使用 button 来授权登录 -->
-      <button class="login-btn {{isWechatLogin ? 'wx-icon-black' : ''}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{canIUse}}">{{loginBtnContent}}</button>
+      <button class="login-btn {{isWechatLogin ? 'wx-icon-black' : ''}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{canIUse}}">{{loginBtnContent}}</button>
       <view wx:else>请升级微信版本</view>
     </view>
-    <view class="instructions" bindtap="viewInstructions">*广汽菲克道路救援说明</view>
+    <!-- <view class="instructions" bindtap="viewInstructions">*广汽菲克道路救援说明</view> -->
   </view>
 </view>

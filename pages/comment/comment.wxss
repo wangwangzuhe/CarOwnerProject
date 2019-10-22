@@ -65,6 +65,10 @@
   padding: 10rpx;
   line-height: 40rpx;
 }
+.cbody .comment-detail .anonymous-comment-wrapper {
+  margin: 30rpx 60rpx 50rpx;
+  text-align: right;
+}
 .cbody .comment-detail .submit {
   background-color: #f5b302;
   text-align: center;

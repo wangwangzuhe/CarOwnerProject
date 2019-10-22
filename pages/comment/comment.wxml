@@ -59,6 +59,9 @@
       <textarea class="textarea" bindconfirm="bindTextAreaBlur" bindblur="bindTextAreaBlur" maxlength="40"
           placeholder="您最多可输入40个字" name="textarea"/>
     </view>
+    <view class="anonymous-comment-wrapper">
+      <switch checked="{{isCommentAnonymously}}" bindchange="switchCommentAnonymously" color="#f5b302"/>匿名点评
+    </view>
     <view class="submit" bindtap="submitComment">提交</view>
   </view>
 </view>

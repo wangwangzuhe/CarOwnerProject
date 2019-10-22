@@ -20,7 +20,7 @@
 }
 .recubg .recu_flex .flexitem {
   width: 30%;
-  line-height: 88rpx;
+  line-height: 66rpx;
   border: 1rpx solid #f5b302;
   text-align: center;
   border-radius: 10rpx;
