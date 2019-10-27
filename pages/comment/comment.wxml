@@ -10,7 +10,7 @@
     </view>
   </view>
   <view class="comment-detail">
-    <view class="hx">[您的点评会让我们做得更好]</view>
+    <view class="hx">[您的反馈会让我们做的更好]</view>
     <view class="review">
       <view class="vitem">
         <text>响应速度：</text>
@@ -61,6 +61,9 @@
     </view>
     <view class="anonymous-comment-wrapper">
       <switch checked="{{isCommentAnonymously}}" bindchange="switchCommentAnonymously" color="#f5b302"/>匿名点评
+    </view>
+     <view class="anonymous-comment-wrapper-new">
+
     </view>
     <view class="submit" bindtap="submitComment">提交</view>
   </view>

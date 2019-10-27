@@ -44,12 +44,46 @@ Page({
             }
           })
         }
+        // if (!authSettings['scope.userInfo']) {
+        //   wx.authorize({
+        //     scope: 'scope.userInfo',
+        //     success: function(res) {
+        //       var userInfo = res.userInfo
+        //       // var nickName = userInfo.nickName
+        //       // var avatarUrl = userInfo.avatarUrl
+        //       // var gender = userInfo.gender //性别 0：未知、1：男、2：女
+        //       // var province = userInfo.province
+        //       // var city = userInfo.city
+        //       // var country = userInfo.country
+        //       console.log(userInfo,'userInfo')
+        //     },
+        //     fail() {
+        //       console.log('您将无法成功救援!请长按小程序删除');
+        //       wx.showModal({
+        //         title: '提示',
+        //         content: '您将无法成功救援!请长按小程序删除 从新搜索小程序，再次授权',
+        //         success(res) {}
+        //       })
+        //     }
+        //   })
+        // }
+        // if (res.authSetting['scope.userInfo']) {
+        //   // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+        //   wx.getUserInfo({
+        //     success: function(res) {
+        //       console.log(res.userInfo,'111111')
+        //     }
+        //   })
+        // }
       }
     })
     this.tapwxlogo(1, options.fileNo)
   },
   getPhoneNumber(e) {
-    const { iv, encryptedData } = e.detail
+    const { iv, encryptedData } = e.detail;
+    if(!~~iv){
+      return
+    }
     wx.request({
       url: wbs.compByWechat,
       data: {
@@ -59,7 +93,6 @@ Page({
       },
       method: 'POST',
       success(res) {
-        // console.log(res)
         wx.setStorageSync('carOwnerInfo', res.data.data)
       }
     })
@@ -118,12 +151,16 @@ Page({
     const args = [].slice.call(arguments)
     //微信登录
     util.httpIntercept(wx.getStorageSync('openId')).then(resolve => {
+      const carOwnerInfo = wx.getStorageSync('carOwnerInfo');
+      const phone =(Object.prototype.toString.call(carOwnerInfo).toLocaleLowerCase() === ('[object Object]'.toLocaleLowerCase())) ?carOwnerInfo.phone: carOwnerInfo;
+      console.log(Object.prototype.toString.call(resolve))
       httpreq.request(
         {
           url: wbs.login,
           data: {
             identityType: session.enum_identity.owner,
-            openId: resolve
+            openId: (Object.prototype.toString.call(resolve).toLocaleLowerCase() === '[object Object]'.toLocaleLowerCase()) ? (resolve.openId): resolve,
+            phone
           }
         },
         function(res) {
@@ -132,6 +169,7 @@ Page({
             _this.topage()
             return
           }
+          console.log(args,'args',res.data.data);
           _this.topage(...args)
         }
       )
@@ -159,7 +197,7 @@ Page({
               })
               return
             }
-            var resss = typeof ress.data.data == 'number' ? ress.data.data : parseInt(ress.data.data)
+            var resss = ~~ress.data.data;
             switch (resss) {
               case 5:
                 wx.redirectTo({
@@ -238,12 +276,13 @@ Page({
   setlogin(identityType, cb) {
     var _this = this
     util.httpIntercept(wx.getStorageSync('openId')).then(resolve => {
+      console.log(resolve);
       httpreq.request(
         {
           url: wbs.login,
           data: {
             identityType: identityType,
-            openId: resolve,
+            openId: (Object.prototype.toString.call(resolve).toLocaleLowerCase() === ('[Object Object]'.toLocaleLowerCase())) ?resolve.openId:resolve,
             phone: _this.data.phone,
             code: _this.data.vcode
           }

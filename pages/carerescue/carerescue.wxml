@@ -29,7 +29,7 @@
             <image class="weui-label" src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/name_icon.png" />
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="默认为微信昵称" bindinput="bindInputName" placeholder-class="placeholder-cls" value="{{name}}"/>
+            <input class="weui-input" placeholder="请输入您的名称" bindinput="bindInputName" placeholder-class="placeholder-cls" value="{{name}}"/>
           </view>
         </view>
         <view class="weui-cell">
@@ -41,7 +41,8 @@
               placeholder-class="placeholder-cls" value="{{phone}}"/>
           </view>
         </view>
-        <view class="weui-cell weui-cell_vcode">
+        
+        <view class="weui-cell weui-cell_vcode" wx:if="{{showPhoneCode}}">
           <view class="weui-cell__hd">
             <image class="weui-label" src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/login_code_icon.png" />
           </view>

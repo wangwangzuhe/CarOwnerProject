@@ -18,7 +18,7 @@ module.exports = {
   appInfo,
   url: URL,
   saveInfo: `${URL}ws/cust/saveInfo`, // 获取openid
-  login: `${URL}ws/cust/login`, // 登录接口
+  // login: `${URL}ws/cust/login`, // 登录接口
   owner: `${URL}ws/cust/owner`, //获取车主当前订单信息
   worker: `${URL}ws/cust/worker`, //获取救援师傅当前任务信息
   save: `${URL}ws/position/save`, //保存救援人员信息

@@ -6,10 +6,10 @@
 
 <view style="padding: 30rpx">
   <view class="header-wrapper">
-    <view class="rescue-count">累计救援：{{ totalRescueCount }}</view>
+    <view class="rescue-count">累计点评：{{ totalRescueCount }}</view>
     <view class="rescue-switches">
       <view class="switch-item {{isShowMyRescueRecords?'active':''}}" data-type="1" bindtap="switchTabItem">我的救援记录</view>
-      <view class="switch-item {{isShowMyRescueRecords?'':'active'}}" data-type="2" bindtap="switchTabItem">救援评价</view>
+      <view class="switch-item {{isShowMyRescueRecords?'':'active'}}" data-type="2" bindtap="switchTabItem">救援点评</view>
     </view>
   </view>
   <scroll-view class="scroll-list-container" scroll-y="true" lower-threshold="100" bindscrolltolower="scrolltolower">

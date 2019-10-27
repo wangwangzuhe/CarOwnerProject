@@ -69,7 +69,9 @@ app.vaildPage({
     delearname: '请选择经销商',
     locationGPS: '',
     // disabledHelp: false,
-    isloading: false
+    isloading: false,
+    showPhoneCode:false,
+    definePhone:'',
   },
   bindDelearChange(e) {
     var that = this
@@ -118,10 +120,11 @@ app.vaildPage({
     if (!carOwnerInfo) return
     let obj = {}
     if (typeof carOwnerInfo === 'string') {
-      obj.phone = carOwnerInfo
+      obj.phone =  obj.definePhone = carOwnerInfo;
+     
     } else {
       const { ownerName: name, phone, carNumber: licenseNo, vin: chassisNo } = carOwnerInfo
-      obj = { name, phone, licenseNo, chassisNo }
+      obj = { name, phone, licenseNo, chassisNo,definePhone }
     }
     this.setData(obj)
   },
@@ -209,7 +212,7 @@ app.vaildPage({
       })
       return
     }
-    if (this.data.vcode.length != 4) {
+    if (this.data.vcode.length != 4&&this.data.phone!=this.data.definePhone) {
       wx.showModal({
         title: '',
         content: '请输入正确的手机验证码',
@@ -297,7 +300,7 @@ app.vaildPage({
             openId: resolve,
             username: this.data.name,
             phone: this.data.phone,
-            verifyCode: this.data.vcode,
+            verifyCode: this.data.phone==this.data.definePhone?null:this.data.vcode,
             licenseNumber: this.data.licenseNo,
             address: this.data.addr,
             reliefType: selectediAppoint.id.toString(), //救援项目
@@ -410,18 +413,29 @@ app.vaildPage({
     })
   },
   bindInputPhone(e) {
+    const {definePhone} = this.data;
+    const {value}= e.detail;
+    if(definePhone!=value){
+      this.setData({
+        showPhoneCode: true
+      })
+    }else{
+      this.setData({
+        showPhoneCode: false
+      })
+    }
     this.setData({
-      phone: e.detail.value
+      phone:value
     })
     if (util.phoneNumReg(e.detail.value)) {
       httpreq.request(
         {
           url: wbs.complement,
           data: {
-            phone: e.detail.value
+            phone:value
           }
         },
-        function(res) {
+        (res)=>{
           res = res.data
           if (res.success) {
             this.setData({
@@ -429,7 +443,7 @@ app.vaildPage({
               licenseNo: this.data.licenseNo ? this.data.licenseNo : res.data.carNumber
             })
           }
-        }.bind(this)
+        }
       )
     }
   },
