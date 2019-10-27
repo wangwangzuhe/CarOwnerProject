@@ -15,7 +15,7 @@ picker {
   color: #fff;
 }
 .weui-cells {
-  background-color: unset!important;
+  background-color: unset !important;
 }
 .weui-cells .weui-cell {
   padding: 0;
@@ -83,4 +83,16 @@ picker {
 .placeholder-cls {
   color: #bfc1c5;
   font-size: 28rpx;
+}
+.wx-switch-input {
+  width: 82rpx !important;
+  height: 40rpx !important;
+}
+.wx-switch-input:before {
+  width: 82rpx !important;
+  height: 40rpx !important;
+}
+.wx-switch-input:after {
+  width: 37rpx !important;
+  height: 37rpx !important;
 }
