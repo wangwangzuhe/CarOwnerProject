@@ -136,7 +136,6 @@ function setOpenId(cb) {
   wx.login({
     success: function(ress) {
       if (ress.code) {
-        
         const dataArg = {
           appId: wbs.appInfo.appId, //---小程序唯一标识
           secret: wbs.appInfo.secret, //--小程序的 app secret
@@ -154,8 +153,8 @@ function setOpenId(cb) {
               const { openId, sessionKey } = res.data
               wx.setStorageSync('sessionKey', sessionKey)
               wx.setStorageSync('openId', openId)
-              typeof cb == 'function' && cb(res.data)
-            }else{
+              typeof cb == 'function' && cb(openId)
+            } else {
               setOpenId(cb)
             }
           }

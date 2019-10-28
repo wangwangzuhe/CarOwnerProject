@@ -80,14 +80,18 @@ Page({
     this.tapwxlogo(1, options.fileNo)
   },
   getPhoneNumber(e) {
-    const { iv, encryptedData } = e.detail;
-    if(!iv){
+    const { iv, encryptedData } = e.detail
+    if (!iv) {
       return
     }
-    this.getUsrInfo(iv,encryptedData);
+    this.getUsrInfo(iv, encryptedData)
   },
-  getUsrInfo(iv,encryptedData){
-    const _this = this;
+  getUsrInfo(iv, encryptedData) {
+    wx.showLoading({
+      title: '登录中',
+      mask: true
+    })
+    const _this = this
     wx.request({
       url: wbs.compByWechat,
       data: {
@@ -97,17 +101,19 @@ Page({
       },
       method: 'POST',
       success(res) {
-        if(res.code!='session_key_invalid'){
-          wx.setStorageSync('carOwnerInfo', res.data.data);
-          setTimeout(()=>{
-            _this.goToLogin();
+        if (res.code != 'session_key_invalid') {
+          wx.setStorageSync('carOwnerInfo', res.data.data)
+          setTimeout(() => {
+            _this.goToLogin()
           })
           return
         }
-        util.httpIntercept()
-        .then(res=>{
-          _this.getUsrInfo(iv,encryptedData);
+        util.httpIntercept().then(res => {
+          _this.getUsrInfo(iv, encryptedData)
         })
+      },
+      complete() {
+        wx.hideLoading()
       }
     })
   },
@@ -164,15 +170,14 @@ Page({
     const args = [].slice.call(arguments)
     //微信登录
     util.httpIntercept(wx.getStorageSync('openId')).then(resolve => {
-      const carOwnerInfo = wx.getStorageSync('carOwnerInfo');
-      const phone =(Object.prototype.toString.call(carOwnerInfo).toLocaleLowerCase() === ('[object Object]'.toLocaleLowerCase())) ?carOwnerInfo.phone: carOwnerInfo;
-      console.log(Object.prototype.toString.call(resolve))
+      const carOwnerInfo = wx.getStorageSync('carOwnerInfo')
+      const phone = Object.prototype.toString.call(carOwnerInfo).toLocaleLowerCase() === '[object Object]'.toLocaleLowerCase() ? carOwnerInfo.phone : carOwnerInfo
       httpreq.request(
         {
           url: wbs.login,
           data: {
             identityType: session.enum_identity.owner,
-            openId: (Object.prototype.toString.call(resolve).toLocaleLowerCase() === '[object Object]'.toLocaleLowerCase()) ? (resolve.openId): resolve,
+            openId: Object.prototype.toString.call(resolve).toLocaleLowerCase() === '[object Object]'.toLocaleLowerCase() ? resolve.openId : resolve,
             phone
           }
         },
@@ -182,7 +187,6 @@ Page({
             _this.topage()
             return
           }
-          console.log(args,'args',res.data.data);
           _this.topage(...args)
         }
       )
@@ -210,7 +214,7 @@ Page({
               })
               return
             }
-            var resss = ~~ress.data.data;
+            var resss = ~~ress.data.data
             switch (resss) {
               case 5:
                 wx.redirectTo({
@@ -289,13 +293,13 @@ Page({
   setlogin(identityType, cb) {
     var _this = this
     util.httpIntercept(wx.getStorageSync('openId')).then(resolve => {
-      console.log(resolve);
+      console.log(resolve)
       httpreq.request(
         {
           url: wbs.login,
           data: {
             identityType: identityType,
-            openId: (Object.prototype.toString.call(resolve).toLocaleLowerCase() === ('[Object Object]'.toLocaleLowerCase())) ?resolve.openId:resolve,
+            openId: Object.prototype.toString.call(resolve).toLocaleLowerCase() === '[Object Object]'.toLocaleLowerCase() ? resolve.openId : resolve,
             phone: _this.data.phone,
             code: _this.data.vcode
           }
