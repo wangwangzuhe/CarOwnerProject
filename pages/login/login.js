@@ -326,7 +326,7 @@ Page({
       session.userinfo.login(session.enum_identity.owner, res.data.data) //设置登录
       if (res.data.success) {
         wx.redirectTo({
-          url: '../launchaid/launchaid'
+          url: '../carerescue/carerescue'
         })
       } else {
         if (res.data.code == 'owner_get_location') {
@@ -370,6 +370,10 @@ Page({
         }
       }
     })
+  },
+  viewInstructions() {
+    wx.redirectTo({
+      url: '../launchaid/launchaid'
+    })
   }
-  // viewInstructions() {}
 })

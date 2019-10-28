@@ -66,10 +66,12 @@
         </view>
       </view>
     </view>
+    <!--
     <view class="launchaid-title">
       <view class='faqi' bindtap="bindfaqi">发起紧急救援</view>
       <view class='chakan' bindtap="bindchakan">查看救援记录</view>
     </view>
+    -->
   </view>
   <view class="sever-des">
     <view>
