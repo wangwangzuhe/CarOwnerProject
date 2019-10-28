@@ -81,9 +81,13 @@ Page({
   },
   getPhoneNumber(e) {
     const { iv, encryptedData } = e.detail;
-    if(!~~iv){
+    if(!iv){
       return
     }
+    this.getUsrInfo(iv,encryptedData);
+  },
+  getUsrInfo(iv,encryptedData){
+    const _this = this;
     wx.request({
       url: wbs.compByWechat,
       data: {
@@ -93,10 +97,19 @@ Page({
       },
       method: 'POST',
       success(res) {
-        wx.setStorageSync('carOwnerInfo', res.data.data)
+        if(res.code!='session_key_invalid'){
+          wx.setStorageSync('carOwnerInfo', res.data.data);
+          setTimeout(()=>{
+            _this.goToLogin();
+          })
+          return
+        }
+        util.httpIntercept()
+        .then(res=>{
+          _this.getUsrInfo(iv,encryptedData);
+        })
       }
     })
-    this.goToLogin()
   },
   bindInputphoneNo(e) {
     this.setData({
@@ -242,7 +255,7 @@ Page({
             if (res.code == 'owner_inexistence_order' || res.code == 'owner_null_apply') {
               if (!args.length) {
                 wx.redirectTo({
-                  url: '../launchaid/launchaid'
+                  url: '../carerescue/carerescue'
                 })
               }
             } else if (res.code == 'owner_exist_order' && res.data.status == 'finish') {
@@ -253,7 +266,7 @@ Page({
               //有一个预约申请
               if (!args.length) {
                 wx.redirectTo({
-                  url: '../launchaid/launchaid'
+                  url: '../carerescue/carerescue'
                 })
               }
             } else {
