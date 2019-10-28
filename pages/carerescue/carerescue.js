@@ -124,7 +124,7 @@ app.vaildPage({
      
     } else {
       const { ownerName: name, phone, carNumber: licenseNo, vin: chassisNo } = carOwnerInfo
-      obj = { name, phone, licenseNo, chassisNo,definePhone }
+      obj = { name, phone, licenseNo, chassisNo,definePhone:phone }
     }
     this.setData(obj)
   },
