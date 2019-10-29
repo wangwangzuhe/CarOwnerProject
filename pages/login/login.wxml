@@ -63,6 +63,6 @@
       <button class="login-btn {{isWechatLogin ? 'wx-icon-black' : ''}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{canIUse}}">{{loginBtnContent}}</button>
       <view wx:else>请升级微信版本</view>
     </view>
-    <view class="instructions" bindtap="viewInstructions">*广汽菲克道路救援说明</view>
+    <view class="instructions" wx:if="{{isWechatLogin}}" bindtap="viewInstructions">*广汽菲克道路救援说明</view>
   </view>
 </view>
