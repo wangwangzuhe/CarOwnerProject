@@ -2,9 +2,12 @@
 <template is="loading" data="{{isloading}}"></template>
 <view class="cbody">
   <view class="carerinfo">
-    <view class="carepic"><image src="{{avitor}}"/></view>
+    <view class="carepic">
+      <image src="{{avitor}}" wx:if="{{avitor}}"/>
+      <view class="default-avatar" wx:else></view>
+    </view>
     <view class="careinfoitem">
-      <view class="item">车主姓名：{{username}}发生的</view>
+      <view class="item">车主姓名：{{username}}</view>
       <view class="item">救援日期：{{createTime}}</view>
       <view class="item">救援类型：{{reliefTypetxt}}</view>
     </view>
