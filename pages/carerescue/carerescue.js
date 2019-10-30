@@ -297,7 +297,7 @@ app.vaildPage({
           url: wbs.custapply,
           //data:aa
           data: {
-            openId: resolve,
+            openId: resolve[0],
             username: this.data.name,
             phone: this.data.phone,
             verifyCode: this.data.phone==this.data.definePhone?null:this.data.vcode,

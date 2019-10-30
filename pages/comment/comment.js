@@ -82,7 +82,7 @@ app.vaildPage({
         {
           url: wbs.owner,
           data: {
-            openId: resolve
+            openId: resolve[0]
           }
         },
         function(res) {
@@ -130,7 +130,7 @@ app.vaildPage({
           url: wbs.addcomment,
           data: {
             orderId: orderid + '',
-            openId: resolve,
+            openId: resolve[0],
             username: isCommentAnonymously ? '匿名' : username,
             reliefType: reliefType + '',
             responseSpeed: respeedxing + '',

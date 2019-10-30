@@ -86,22 +86,24 @@ Page({
     }
     this.getUsrInfo(iv, encryptedData)
   },
-  getUsrInfo(iv, encryptedData) {
+  getUsrInfo(iv, encryptedData,sessionKey) {
     wx.showLoading({
       title: '登录中',
       mask: true
     })
     const _this = this
+    console.log(iv,'encryptedData',encryptedData,'sessionKey',sessionKey,'sessionKey本地',wx.getStorageSync('sessionKey'),'iv, encryptedData,sessionKey')
     wx.request({
       url: wbs.compByWechat,
       data: {
         iv,
         encryptedData,
-        sessionKey: wx.getStorageSync('sessionKey')
+        sessionKey: sessionKey||wx.getStorageSync('sessionKey')
       },
       method: 'POST',
       success(res) {
-        if (res.code != 'session_key_invalid') {
+        console.log(JSON.stringify(res),'JSON.stringify(res)')
+        if (res.data.code != 'session_key_invalid') {
           wx.setStorageSync('carOwnerInfo', res.data.data)
           setTimeout(() => {
             _this.goToLogin()
@@ -109,7 +111,8 @@ Page({
           return
         }
         util.httpIntercept().then(res => {
-          _this.getUsrInfo(iv, encryptedData)
+          console.log(res,'resresresresresresres')
+          _this.getUsrInfo(iv, encryptedData,res[1])
         })
       },
       complete() {
@@ -177,7 +180,7 @@ Page({
           url: wbs.login,
           data: {
             identityType: session.enum_identity.owner,
-            openId: Object.prototype.toString.call(resolve).toLocaleLowerCase() === '[object Object]'.toLocaleLowerCase() ? resolve.openId : resolve,
+            openId: wx.getStorageSync('openId'),
             phone
           }
         },
@@ -202,7 +205,7 @@ Page({
             url: wbs.fileStatus,
             data: {
               fileNo: args[1],
-              openId: resolve
+              openId: resolve[0]
             }
           },
           function(ress) {
@@ -246,7 +249,7 @@ Page({
           {
             url: wbs.owner,
             data: {
-              openId: resolve
+              openId: resolve[0]
             }
           },
           function(res) {
@@ -299,7 +302,7 @@ Page({
           url: wbs.login,
           data: {
             identityType: identityType,
-            openId: Object.prototype.toString.call(resolve).toLocaleLowerCase() === '[Object Object]'.toLocaleLowerCase() ? resolve.openId : resolve,
+            openId: resolve[0],
             phone: _this.data.phone,
             code: _this.data.vcode
           }
@@ -341,7 +344,7 @@ Page({
                     url: wbs.location,
                     data: {
                       fileNo: res.data.data,
-                      openId: resolve,
+                      openId: resolve[0],
                       latitude: latitude + '',
                       longitude: longitude + ''
                     }

@@ -16,7 +16,7 @@ app.vaildPage({
         {
           url: wbs.owner,
           data: {
-            openId: resolve
+            openId: resolve[0]
           }
         },
         function(res) {

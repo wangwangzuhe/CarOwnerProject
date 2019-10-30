@@ -46,7 +46,7 @@ var homeData = {
           util.httpIntercept(OPENID).then(resolve => {
             var data = {
               orderId: _this.data.orderId + '',
-              openId: resolve,
+              openId: resolve[0],
               latitude: latitude,
               longitude: longitude
             }

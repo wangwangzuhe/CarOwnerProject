@@ -126,7 +126,8 @@ function httpIntercept(openid) {
     if (!openid) {
       setOpenId(resolve)
     } else {
-      resolve(openid)
+      console.log(openid,'openidopenidopenid')
+      resolve([openid])
     }
   })
   return httpInterceptPromise
@@ -153,7 +154,8 @@ function setOpenId(cb) {
               const { openId, sessionKey } = res.data
               wx.setStorageSync('sessionKey', sessionKey)
               wx.setStorageSync('openId', openId)
-              typeof cb == 'function' && cb(openId)
+              console.log(openId, sessionKey,'openId, sessionKey')
+              typeof cb == 'function' && cb([openId,sessionKey])
             } else {
               setOpenId(cb)
             }

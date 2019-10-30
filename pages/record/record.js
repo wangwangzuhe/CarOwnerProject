@@ -31,7 +31,7 @@ var option = {
     util.httpIntercept(OPENID).then(resolve => {
       wx.request({
         url: url,
-        data: { openId: resolve, pageIndex: _this.data.pageIndex + '' },
+        data: { openId: resolve[0], pageIndex: _this.data.pageIndex + '' },
         method: 'POST',
         success: function(res) {
           res = res.data
