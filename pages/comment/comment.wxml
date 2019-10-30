@@ -4,7 +4,7 @@
   <view class="carerinfo">
     <view class="carepic"><image src="{{avitor}}"/></view>
     <view class="careinfoitem">
-      <view class="item">车主姓名：{{username}}</view>
+      <view class="item">车主姓名：{{username}}发生的</view>
       <view class="item">救援日期：{{createTime}}</view>
       <view class="item">救援类型：{{reliefTypetxt}}</view>
     </view>
@@ -61,9 +61,6 @@
     </view>
     <view class="anonymous-comment-wrapper">
       <switch checked="{{isCommentAnonymously}}" bindchange="switchCommentAnonymously" color="#f5b302"/>匿名点评
-    </view>
-     <view class="anonymous-comment-wrapper-new">
-
     </view>
     <view class="submit" bindtap="submitComment">提交</view>
   </view>
