@@ -119,3 +119,15 @@
   font-size: 24rpx;
   text-decoration: underline;
 }
+.home_icon{
+  position:absolute;
+  top:20rpx;
+  left:50rpx;
+  width:50rpx;
+  height:50rpx;
+  opacity:0.5;
+}
+.home_icon image{
+    width:50rpx;
+    height:50rpx;
+}

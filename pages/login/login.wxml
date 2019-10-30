@@ -1,4 +1,5 @@
 <view class="login-container">
+  
   <block wx:if="{{isWechatLogin}}">
     <view class="rescue-hotline-wrapper" bindtap="makePhoneCall">
     <view class="yellow-circle">
@@ -19,6 +20,9 @@
     </view>
   </block>
   <block wx:else>
+  <view class="home_icon" bindtap="switchLoginMode">
+    <image  src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/home_icon.png" /> 
+  </view>
     <view class="phone-wrapper yellow-circle" bindtap="makePhoneCall">
       <image src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/login_phone_img.png" />
     </view>
@@ -51,6 +55,7 @@
     </view>
   </block>
   <view class="login-opt-wrapper">
+    
     <view class="mobile-login-wrapper" bindtap="switchLoginMode" wx:if="{{isWechatLogin}}">
       <text>手机号登录</text>
       <text style="font-size: 24rpx">（已拨打过道路救援热线）</text>
