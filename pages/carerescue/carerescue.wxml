@@ -127,7 +127,7 @@
           <view class="rescue-item" style="background-color: unset!important"></view>
         </view>
         <view class="opt-btns-wrapper">
-          <button bindtap="back">返回</button>
+          <button bindtap="exit">返回</button>
           <button formType="submit">我要救援</button><!--disabled="{{disabledHelp}}" -->
         </view>
         <view style="width: 100%;height: 30rpx"></view>
