@@ -7,7 +7,7 @@
         <image src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/rescue_hotline_icon.png"/>
       </view>
       <view style="font-size: 40rpx;margin:14rpx auto 6rpx">400-650-0118</view>
-      <view style="font-size: 24rpx;color: #666;">电话预约救援热线</view>
+      <view style="font-size: 24rpx;color: #666;">24h救援热线</view>
     </view>
     <view class="recubg">
       <view class="recu_flex">

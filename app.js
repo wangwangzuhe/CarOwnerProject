@@ -15,6 +15,7 @@ App({
     wx.setKeepScreenOn({
       keepScreenOn: true
     })
+    
   },
   globalData: {
     userInfo: null,

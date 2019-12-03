@@ -4,31 +4,52 @@
   top: 0;
   bottom: 0;
   right: 0;
-  padding: 50rpx 40rpx;
+  padding: 20rpx 20rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  
+}
+.login-wrap{
+  width:100%;
+  height:100%;
+  background-color: #212121;
+}
+.login-wrap.backgroundnone{
+  background:none !important;
+}
+
+.login-container .rescue-hotline-wrapper {
+  padding: 100rpx 50rpx 0;
+  /* background-color: #212121; */
   text-align: center;
   border-radius: 10rpx;
 }
-.login-container .rescue-hotline-wrapper {
-  padding: 30rpx 50rpx;
-  background-color: #212121;
-  text-align: center;
-  border-radius: 10rpx;
+.pdtop150{
+  padding-top:150rpx !important;
+}
+.mrtop150{
+  margin-top:150rpx !important;
+}
+.pdtop110{
+  padding-top:110rpx !important;
 }
 .login-container .rescue-hotline-wrapper image {
-  width: 60rpx;
-  height: 60rpx;
+  width: 120rpx;
+  height: 120rpx;
 }
 .login-container .vehicle-wrapper {
-  padding: 30rpx 50rpx;
-  margin-top: 40rpx;
+  padding: 50rpx 50rpx;
+  /* margin-top: 40rpx; */
   background-color: #212121;
 }
 .login-container .vehicle-wrapper image {
-  width: 231rpx;
-  height: 185rpx;
+  width: 130rpx;
+  height: 104rpx;
+  margin-top:20rpx;
 }
 .login-container .vehicle-wrapper .rescue-slogan {
-  margin-top: 30rpx;
+  margin-top: 15rpx;
+  font-size:26rpx;
 }
 .login-container .vehicle-wrapper .rescue-tip {
   margin-top: 30rpx;
@@ -47,7 +68,9 @@
   margin-top: 30rpx;
 }
 .login-container .login-box-wrapper {
-  margin-top: 100rpx;
+  margin-top: 80rpx;
+  padding-left:80rpx;
+  padding-right:80rpx;
 }
 .login-container .login-box-wrapper .weui-label {
   width: 40rpx;
@@ -63,9 +86,10 @@
   font-size: 20rpx;
   color: #fff;
   margin-top: 10rpx;
+  text-align: left;
 }
 .login-container .login-opt-wrapper {
-  padding: 80rpx;
+  padding: 80rpx 30rpx 0;
 }
 .login-container .login-opt-wrapper .mobile-login-wrapper {
   display: flex;
@@ -73,6 +97,7 @@
   justify-content: center;
   height: 90rpx;
   background-color: #f5b302;
+  border-radius: 5rpx;
 }
 .login-container .login-opt-wrapper .mobile-login-wrapper text {
   color: #000;
@@ -82,8 +107,9 @@
   background-color: #101010;
 }
 .login-container .login-opt-wrapper .mobile-login-tip {
-  font-size: 24rpx;
+  font-size: 20rpx;
   text-align: left;
+  margin-top:10rpx;
 }
 .login-container .login-opt-wrapper .wx-icon-grey:before {
   content: '';
@@ -99,8 +125,8 @@
   margin-top: 40rpx;
 }
 .login-container .login-opt-wrapper .wx-login-wrapper .login-btn {
-  height: 90rpx;
-  line-height: 90rpx;
+  height:110rpx;
+  line-height: 110rpx;
   background-color: #f5b302;
   color: #000;
 }

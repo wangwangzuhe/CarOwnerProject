@@ -80,6 +80,12 @@ picker {
   font-size: 0;
   padding: 20rpx;
 }
+.yellow-circle1 {
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 0;
+  height:104rpx;
+}
 .placeholder-cls {
   color: #bfc1c5;
   font-size: 28rpx;

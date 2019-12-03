@@ -1,18 +1,18 @@
 <view class="login-container">
-  
+  <view class="login-wrap {{isWechatLogin?'':'backgroundnone'}}">
   <block wx:if="{{isWechatLogin}}">
-    <view class="rescue-hotline-wrapper" bindtap="makePhoneCall">
-    <view class="yellow-circle">
-      <image src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/rescue_hotline_icon.png"/>
+    <view class="rescue-hotline-wrapper  {{isIpx?'pdtop150':''}}" bindtap="makePhoneCall">
+    <view class="yellow-circle1">
+      <image src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/rescue_hotline_icon.png?tt=2"/>
     </view>
-    <view style="font-size: 40rpx;margin: 10rpx 0 20rpx">400-650-0118</view>
-      <view style="font-size: 24rpx">点击电话按钮即可拨打道路救援热线</view>
+    <view style="font-size: 40rpx;margin: 10rpx 0 0rpx">400-650-0118</view>
+      <view style="font-size: 20rpx">点击电话按钮即可拨打道路救援热线</view>
     </view>
-    <view class="vehicle-wrapper">
+    <view class="vehicle-wrapper {{isIpx?'pdtop110':''}}" >
       <view>
-        <image src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/rescue_vehicle_img.png" />
+        <!-- <image src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/rescue_vehicle_img.png" /> -->
       </view>
-      <view class="rescue-slogan">广汽菲克道路救援</view>
+      <!-- <view class="rescue-slogan">广汽菲克道路救援</view> -->
       <!-- <view class="rescue-tip">
         <view>如您已拨打电话发起了救援，请使用手机号登录，</view>
         <view>查看案件最新状态</view>
@@ -23,7 +23,7 @@
   <view class="home_icon" bindtap="switchLoginMode">
     <image  src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/home_icon.png" /> 
   </view>
-    <view class="phone-wrapper yellow-circle" bindtap="makePhoneCall">
+    <view class="phone-wrapper yellow-circle {{isIpx?'mrtop150':''}}" bindtap="makePhoneCall">
       <image src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/login_phone_img.png" />
     </view>
     <view class="login-tip1">(仅需电话发起救援的车主填写)</view>
@@ -54,7 +54,7 @@
       <view class="login-tip2">*如您已拨打电话发起了救援，请使用手机号登录，查看案件最新状态</view>
     </view>
   </block>
-  <view class="login-opt-wrapper">
+  <view class="login-opt-wrapper" style="margin-top:140rpx">
     
     <view class="mobile-login-wrapper" bindtap="switchLoginMode" wx:if="{{isWechatLogin}}">
       <text>手机号登录</text>
@@ -69,5 +69,6 @@
       <view wx:else>请升级微信版本</view>
     </view>
     <view class="instructions" wx:if="{{isWechatLogin}}" bindtap="viewInstructions">*广汽菲克道路救援说明</view>
+  </view>
   </view>
 </view>

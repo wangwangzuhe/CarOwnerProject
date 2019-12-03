@@ -4,6 +4,18 @@ var wbs = require('../../utils/wbs.js')
 var util = require('../../utils/util')
 var app = getApp()
 
+wx.getSystemInfo({
+  success: function (res) {
+    //model中包含着设备信息
+    console.log(res.model)
+    var model = res.model
+    if (model.search('iPhone X') != -1) {
+      app.globalData.isIpx = true;
+    } else {
+      app.globalData.isIpx = false;
+    }
+  }
+})
 Page({
   data: {
     isSendSmsBtnDisabled: false,
@@ -12,7 +24,8 @@ Page({
     phone: '',
     isWechatLogin: true,
     loginBtnContent: '微信一键登录道路救援',
-    canIUse: wx.canIUse('button.open-type.getPhoneNumber')
+    canIUse: wx.canIUse('button.open-type.getPhoneNumber'),
+    isIpx: app.globalData.isIpx
   },
   makePhoneCall() {
     wx.makePhoneCall({
@@ -27,6 +40,7 @@ Page({
     })
   },
   onLoad(options) {
+    console.log(app.globalData.isIpx,'isIpx')
     // 查看是否授权
     wx.getSetting({
       success(res) {

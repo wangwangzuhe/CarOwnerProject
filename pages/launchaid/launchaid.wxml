@@ -95,6 +95,7 @@
           <text class="service-content">酒店住宿/继续旅程</text>
           <text class="service-content">维修完毕后车辆交付服务</text>
         </view>
+         <view style="margin-top: 30rpx;">具体信息，请参考随车《道路救援手册》</view>
       </view>
     </view>
     <view class="back-btn" bindtap="exit">返回</view>
