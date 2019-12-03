@@ -79,6 +79,7 @@ picker {
   display: inline-block;
   font-size: 0;
   padding: 20rpx;
+  margin-top:40rpx;
 }
 .yellow-circle1 {
   border-radius: 50%;

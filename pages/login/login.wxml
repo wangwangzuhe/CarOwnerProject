@@ -3,14 +3,14 @@
   <block wx:if="{{isWechatLogin}}">
     <view class="rescue-hotline-wrapper  {{isIpx?'pdtop150':''}}" bindtap="makePhoneCall">
     <view class="yellow-circle1">
-      <image src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/rescue_hotline_icon.png?tt=2"/>
+      <image src="https://rescue.gacfcasales.com/carOwner/images/rescue_hotline_icon.png?tt=2"/>
     </view>
     <view style="font-size: 40rpx;margin: 10rpx 0 0rpx">400-650-0118</view>
       <view style="font-size: 20rpx">点击电话按钮即可拨打道路救援热线</view>
     </view>
     <view class="vehicle-wrapper {{isIpx?'pdtop110':''}}" >
       <view>
-        <!-- <image src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/rescue_vehicle_img.png" /> -->
+        <!-- <image src="https://rescue.gacfcasales.com/carOwner/images/rescue_vehicle_img.png" /> -->
       </view>
       <!-- <view class="rescue-slogan">广汽菲克道路救援</view> -->
       <!-- <view class="rescue-tip">
@@ -21,17 +21,17 @@
   </block>
   <block wx:else>
   <view class="home_icon" bindtap="switchLoginMode">
-    <image  src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/home_icon.png" /> 
+    <image  src="https://rescue.gacfcasales.com/carOwner/images/home_icon.png" /> 
   </view>
     <view class="phone-wrapper yellow-circle {{isIpx?'mrtop150':''}}" bindtap="makePhoneCall">
-      <image src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/login_phone_img.png" />
+      <image src="https://rescue.gacfcasales.com/carOwner/images/login_phone_img.png" />
     </view>
     <view class="login-tip1">(仅需电话发起救援的车主填写)</view>
     <view class="login-box-wrapper">
       <view class="weui-cells">
         <view class="weui-cell">
           <view class="weui-cell__hd">
-            <image class="weui-label" src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/login_phone_icon.png" />
+            <image class="weui-label" src="https://rescue.gacfcasales.com/carOwner/images/login_phone_icon.png" />
           </view>
           <view class="weui-cell__bd">
             <input class="weui-input" type="number" maxlength='11' placeholder="电话" bindinput="bindInputphoneNo"
@@ -40,7 +40,7 @@
         </view>
         <view class="weui-cell weui-cell_vcode">
           <view class="weui-cell__hd">
-            <image class="weui-label" src="https://dcctrainingprod.jeepsupport.com.cn/carOwner/images/login_code_icon.png" />
+            <image class="weui-label" src="https://rescue.gacfcasales.com/carOwner/images/login_code_icon.png" />
           </view>
           <view class="weui-cell__bd">
             <input class="weui-input" type="number" maxlength='4' placeholder="验证码" bindinput="bindInputSmsCode"
